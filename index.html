@@ -1,1 +1,144 @@
-<h1>Nyheder test</h1>
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thapex Nyhedsoverblik</title>
+    <style>
+        :root {
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --accent: #0284c7;
+            --accent-hover: #0369a1;
+            --border-color: #e2e8f0;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.5;
+            padding: 24px 16px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        header {
+            margin-bottom: 32px;
+            padding-bottom: 16px;
+            border-bottom: 2px solid var(--border-color);
+        }
+        h1 {
+            font-size: 1.85rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: var(--text-main);
+        }
+        .timestamp {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-top: 6px;
+        }
+        .news-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        article {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+        }
+        h2 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            line-height: 1.35;
+            margin-bottom: 8px;
+            color: var(--text-main);
+        }
+        p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+        }
+        .read-more {
+            display: inline-block;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .read-more:hover {
+            color: var(--accent-hover);
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Thapex Nyhedsoverblik</h1>
+            <div class="timestamp">Opdateret: 17. november 2026 kl. 20:30</div>
+        </header>
+
+        <main class="news-list">
+            <article>
+                <h2>Amerikanske politikere tager afstand fra præsident Trump under klimatopmøde</h2>
+                <p>En delegation af fremtrædende amerikanske politikere er rejst til Antalya for at berolige det internationale samfund og understrege, at præsidentens kurs ikke deles af hele nationen.</p>
+                <a class="read-more" href="https://www.dr.dk/nyheder/viden/klima/amerikansk-toppolitiker-til-klimatopmoede-jeg-er-flov" target="_blank" rel="noopener noreferrer">Læs original artikel</a>
+            </article>
+
+            <article>
+                <h2>Klimaaktivister vinder principiel sag i Norges Højesteret</h2>
+                <p>Norges Højesteret har erklæret tilladelser til specifikke oliefelter ugyldige, men domsafsigelsen lukker dog ikke umiddelbart ned for udnyttelsen af de pågældende felter.</p>
+                <a class="read-more" href="https://www.dr.dk/nyheder/udland/klimaaktivister-vinder-sag-om-oliefelter-i-norges-hoejesteret" target="_blank" rel="noopener noreferrer">Læs original artikel</a>
+            </article>
+
+            <article>
+                <h2>FN-fond til klimaerstatninger er tæt på udtømning</h2>
+                <p>Fonden for tab og skader, der skal bistå udsatte udviklingslande, oplever en markant overefterspørgsel og forventes allerede tømt i løbet af sit første leveår.</p>
+                <a class="read-more" href="https://www.dr.dk/nyheder/viden/klima/historisk-fond-til-klimaerstatninger-kan-blive-toemt-naeste-aar" target="_blank" rel="noopener noreferrer">Læs original artikel</a>
+            </article>
+
+            <article>
+                <h2>Milliardbeløb på spil for danske NKT ved FN's klimatopmøde</h2>
+                <p>Udfaldet af de globale klimaforhandlinger får direkte betydning for NKT's fremtidige ordrebog, der allerede tæller kontrakter for næsten 100 milliarder kroner.</p>
+                <a class="read-more" href="https://www.dr.dk/nyheder/viden/klima/milliarder-er-i-spil-dansk-boers-klenodie-paa-fn-s-klimatopmoede" target="_blank" rel="noopener noreferrer">Læs original artikel</a>
+            </article>
+
+            <article>
+                <h2>EU-kommissær varsler hårdere kurs i globale klimaforhandlinger</h2>
+                <p>Da det europæiske kontinent opvarmes dobbelt så hurtigt som det globale gennemsnit, forbereder EU sig på at fremføre skarpere og mere markante krav under forhandlingerne.</p>
+                <a class="read-more" href="https://www.dr.dk/nyheder/viden/klima/klimaboss-er-ikke-i-tvivl-om-europas-rolle-vi-er-noedt-til-spille-haardere-og-tale-hoejere" target="_blank" rel="noopener noreferrer">Læs original artikel</a>
+            </article>
+
+            <article>
+                <h2>El Niño tiltager fortsat i styrke ifølge nye målinger</h2>
+                <p>Prognoser fra det amerikanske institut NOAA viser stigende havtemperaturer i Stillehavet og bekræfter, at vejrfænomenet fortsat udvikler sig mod en usædvanlig styrke.</p>
+                <a class="read-more" href="https://www.dr.dk/nyheder/vejret/staerk-til-meget-staerk-el-nino-klimafaenomenet-vokser-stadig" target="_blank" rel="noopener noreferrer">Læs original artikel</a>
+            </article>
+
+            <article>
+                <h2>Eksperter: Socialt tilskud til elbiler udvander den reelle klimagevinst</h2>
+                <p>Selvom en tilskudsordning hjælper lavindkomstgrupper over i elbiler, vurderer økonomiske eksperter, at samtidige lempelser i brændstofafgifter modvirker CO2-reduktionen.</p>
+                <a class="read-more" href="https://www.dr.dk/nyheder/viden/klima/ekspert-om-socialt-tilskud-til-elbiler-det-er-omfordeling-mere-end-egentlig-klimapolitik" target="_blank" rel="noopener noreferrer">Læs original artikel</a>
+            </article>
+
+            <article>
+                <h2>Sundhedsekspert maner til besindighed ved brug af febernedsættende medicin</h2>
+                <p>Feber er kroppens naturlige forsvarsreaktion, og rutinemæssig dæmpning med håndkøbsmedicin er ikke altid hensigtsmæssig for sygdomsforløbet, påpeger fagfolk.</p>
+                <a class="read-more" href="https://www.dr.dk/nyheder/viden/kroppen/fjerner-du-feberen-med-et-par-piller-saa-er-der-en-ting-du-skal-passe-paa-siger-ekspert" target="_blank" rel="noopener noreferrer">Læs original artikel</a>
+            </article>
+        </main>
+    </div>
+</body>
+</html>
