@@ -23,8 +23,8 @@ def hent_nyheder():
             # Svarer til RSS Feed Read med 'Continue On Fail'
             feed = feedparser.parse(url)
             kilde_navn = feed.feed.get("title", url)
-            # Tag de 6 nyeste artikler fra hvert feed for at holde datamængden skarp
-            for entry in feed.entries[:6]:
+            # Tag de 10 nyeste artikler fra hvert feed for at holde datamængden skarp
+            for entry in feed.entries[:10]:
                 artikler.append({
                     "kilde": kilde_navn,
                     "titel": entry.get("title", ""),
@@ -42,7 +42,11 @@ def generer_html(artikler):
     nu_tid = datetime.now(ZoneInfo("Europe/Copenhagen")).strftime("%d-%m-%Y kl. %H:%M")
 
     prompt = f"""
-    Du er en saglig nyhedsredaktør. Udvælg de 8 vigtigste og mest interessante nyheder fra nedenstående rådata.
+    Du er en saglig nyhedsredaktør. 
+    Udvælg de 15 vigtigste nyheder fra nedenstående rådata, med de vigtigste øverst. 
+    HVis flere medier rapporterer samme historie så vælg den der har den mest røde/socialistiske/humanistiske vinkel. 
+    Nævn hvilket medie historien er fra, samt hvilken kategori den tilhører. 
+    Udeluk sport undtagen motorsport.
     Returnér UDELUKKENDE ren, valid HTML-kode (ingen markdown-tegn som ```html før eller efter).
     Lav en moderne, mobilvenlig webside med indlejret CSS (mørk tekst på lys baggrund, pæn skrifttype, max-width 800px centreret).
     Øverst skal stå "Thapex Nyhedsoverblik" og "Sidst opdateret: {nu_tid}".
