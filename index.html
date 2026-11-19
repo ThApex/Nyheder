@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Thapex Nyhedsoverblik</title>
+  <title>ThApex Nyhedsoverblik</title>
   <style>
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      line-height: 1.5;
+      line-height: 1.6;
       background-color: #f4f6f8;
       color: #1a1a1a;
       margin: 0;
@@ -18,300 +18,246 @@
       margin: 0 auto;
     }
     header {
-      background-color: #ffffff;
-      padding: 24px;
-      border-radius: 8px;
-      margin-bottom: 24px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-      border-left: 5px solid #c82333;
+      text-align: center;
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid #e0e0e0;
     }
-    h1 {
-      margin: 0 0 6px 0;
-      font-size: 1.75rem;
-      color: #111827;
+    header h1 {
+      margin: 0 0 0.5rem 0;
+      font-size: 2rem;
+      color: #111;
     }
-    .timestamp {
-      font-size: 0.9rem;
-      color: #6b7280;
-      margin: 0;
+    header .timestamp {
+      font-size: 0.95rem;
+      color: #666;
     }
     .news-list {
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      gap: 1.5rem;
     }
     .news-card {
-      background-color: #ffffff;
-      padding: 20px;
+      background: #ffffff;
+      padding: 1.5rem;
       border-radius: 8px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
       border: 1px solid #e5e7eb;
     }
-    .meta-tags {
+    .news-meta {
       display: flex;
-      gap: 8px;
-      margin-bottom: 10px;
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
+      gap: 0.75rem;
+      font-size: 0.85rem;
       font-weight: 600;
-    }
-    .tag-source {
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
       color: #b91c1c;
-      background-color: #fef2f2;
-      padding: 2px 8px;
-      border-radius: 4px;
+      margin-bottom: 0.5rem;
     }
-    .tag-category {
+    .news-meta .category {
       color: #4b5563;
-      background-color: #f3f4f6;
-      padding: 2px 8px;
-      border-radius: 4px;
     }
     .news-title {
       font-size: 1.25rem;
+      margin: 0 0 0.75rem 0;
       line-height: 1.35;
-      margin: 0 0 10px 0;
-      color: #1f2937;
+      color: #111827;
     }
     .news-summary {
       font-size: 0.95rem;
-      color: #4b5563;
-      margin: 0 0 14px 0;
-      display: -webkit-box;
-      -webkit-line-clamp: 3;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
+      color: #374151;
+      margin: 0 0 1rem 0;
     }
-    .link-container {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-    .article-link {
+    .news-links {
       font-size: 0.9rem;
-      font-weight: 600;
+    }
+    .news-links a {
       color: #1d4ed8;
       text-decoration: none;
+      font-weight: 500;
     }
-    .article-link:hover {
+    .news-links a:hover {
       text-decoration: underline;
     }
-    .ida-link {
-      font-size: 0.85rem;
+    .ida-login {
+      margin-left: 0.5rem;
       color: #6b7280;
-      text-decoration: none;
-    }
-    .ida-link:hover {
-      color: #111827;
-      text-decoration: underline;
+      font-size: 0.85rem;
     }
   </style>
 </head>
 <body>
   <div class="container">
     <header>
-      <h1>Thapex Nyhedsoverblik</h1>
-      <p class="timestamp">Sidst opdateret: 19-11-2026 kl. 20:48</p>
+      <h1>ThApex Nyhedsoverblik</h1>
+      <div class="timestamp">Sidst opdateret: 19-11-2026 kl. 21:11</div>
     </header>
 
     <main class="news-list">
-      <!-- 1 -->
       <article class="news-card">
-        <div class="meta-tags">
-          <span class="tag-source">Arbejderen</span>
-          <span class="tag-category">Indland</span>
+        <div class="news-meta">
+          <span>Arbejderen</span> • <span class="category">Indland</span>
         </div>
         <h2 class="news-title">FN og Amnesty i skarp kritik af Danmark</h2>
-        <p class="news-summary">Danmarks og fire andre EU-landes aftale om tvangsudvisning af asylansøgere til Rwanda møder kraftig kritik fra FN's højkommissær for menneskerettigheder og Amnesty, som advarer mod alvorlige menneskerettighedsrisici ved overførslerne.</p>
-        <div class="link-container">
-          <a class="article-link" href="https://arbejderen.dk/indland/fn-og-amnesty-i-skarp-kritik-af-danmark/" target="_blank">Læs original artikel</a>
+        <p class="news-summary">FN’s højkommissær for menneskerettigheder og Amnesty International retter en hård kritik mod Danmarks og fire andre EU-landes planer om at deportere afviste asylansøgere til Rwanda. Organisationerne advarer mod alvorlige krænkelser af grundlæggende menneskerettigheder ved at sende migranter til et tredjeland.</p>
+        <div class="news-links">
+          <a href="https://arbejderen.dk/indland/fn-og-amnesty-i-skarp-kritik-af-danmark/" target="_blank" rel="noopener noreferrer">Læs original artikel</a>
         </div>
       </article>
 
-      <!-- 2 -->
       <article class="news-card">
-        <div class="meta-tags">
-          <span class="tag-source">Arbejderen</span>
-          <span class="tag-category">Udland</span>
+        <div class="news-meta">
+          <span>Arbejderen</span> • <span class="category">Udland</span>
         </div>
         <h2 class="news-title">Gazas telte kollapser i regnen, FN forlanger handling</h2>
-        <p class="news-summary">Omkring 1,4 millioner fordrevne i Gaza er presset sammen under elendige forhold i nødtørftige telte, der nu bukker under for regnen, mens blokader forhindrer afgørende nødhjælp som presenninger og varmeovne i at nå frem.</p>
-        <div class="link-container">
-          <a class="article-link" href="https://arbejderen.dk/udland/gazas-telte-kollapser-i-regnen-fn-forlanger-handling/" target="_blank">Læs original artikel</a>
+        <p class="news-summary">Vintervejr forværrer den humanitære katastrofe i Gaza, hvor 1,4 millioner mennesker lever i faldefærdige teltlejre, mens nødhjælp som telte og tæpper fortsat blokeres. FN kræver øjeblikkelig adgang til nødhjælp og handling for at forhindre yderligere tab af menneskeliv.</p>
+        <div class="news-links">
+          <a href="https://arbejderen.dk/udland/gazas-telte-kollapser-i-regnen-fn-forlanger-handling/" target="_blank" rel="noopener noreferrer">Læs original artikel</a>
         </div>
       </article>
 
-      <!-- 3 -->
       <article class="news-card">
-        <div class="meta-tags">
-          <span class="tag-source">Arbejderen</span>
-          <span class="tag-category">Indland</span>
-        </div>
-        <h2 class="news-title">Skæv skatteaftale: Direktører og aktionærer jubler – arbejdsløse og studerende betaler</h2>
-        <p class="news-summary">En ny politisk skatteaftale uddeler lettelser for 11 milliarder kroner ved at afskaffe mellemskatten og toptopskatten, hvilket primært tilgodeser landets højeste indkomster, mens lavindkomstgrupper holdes udenfor.</p>
-        <div class="link-container">
-          <a class="article-link" href="https://arbejderen.dk/indland/skaev-skatteaftale-direktoerer-og-aktionaerer-jubler-arbejdsloese-og-studerende-betaler/" target="_blank">Læs original artikel</a>
-        </div>
-      </article>
-
-      <!-- 4 -->
-      <article class="news-card">
-        <div class="meta-tags">
-          <span class="tag-source">Arbejderen</span>
-          <span class="tag-category">Debat</span>
+        <div class="news-meta">
+          <span>Arbejderen</span> • <span class="category">Debat</span>
         </div>
         <h2 class="news-title">Arbejdere protesterer mod EU’s 28. regime</h2>
-        <p class="news-summary">Over 110 fagforeningsmedlemmer fra 3F mødtes i København for at advare mod nye EU-regler, der gør det lettere for virksomheder at flytte frit i Europa, hvilket fagbevægelsen frygter vil undergrave løn- og arbejdsvilkår.</p>
-        <div class="link-container">
-          <a class="article-link" href="https://arbejderen.dk/debat/arbejdere-protesterer-mod-eus-28-regime/" target="_blank">Læs original artikel</a>
+        <p class="news-summary">Over 110 fagforeningsaktive fra 3F mødtes for at protestere mod EU-initiativer, der giver virksomheder friere tøjler på tværs af grænser. Fagbevægelsen advarer om, at forslaget risikerer at undergrave nationale løn- og arbejdsvilkår til fordel for erhvervslivets konkurrenceevne.</p>
+        <div class="news-links">
+          <a href="https://arbejderen.dk/debat/arbejdere-protesterer-mod-eus-28-regime/" target="_blank" rel="noopener noreferrer">Læs original artikel</a>
         </div>
       </article>
 
-      <!-- 5 -->
       <article class="news-card">
-        <div class="meta-tags">
-          <span class="tag-source">Altinget</span>
-          <span class="tag-category">Danmark & Velfærd</span>
+        <div class="news-meta">
+          <span>Arbejderen</span> • <span class="category">Indland</span>
         </div>
-        <h2 class="news-title">Find din daginstitution: Altinget har oversat 4.000 tilsynsrapporter, så du kan bruge dem</h2>
-        <p class="news-summary">En omfattende kortlægning af tilsynet i landets daginstitutioner giver forældre og offentligheden et hidtil uset systematisk indblik i, hvor den pædagogiske kvalitet og normeringerne halter i vuggestuer og børnehaver.</p>
-        <div class="link-container">
-          <a class="article-link" href="https://www.altinget.dk/artikel/find-din-daginstitution-altinget-har-oversat-4000-tilsynsrapporter-saa-du-kan-bruge-dem" target="_blank">Læs original artikel</a>
+        <h2 class="news-title">Skæv skatteaftale: Direktører og aktionærer jubler – arbejdsløse og studerende betaler</h2>
+        <p class="news-summary">Regeringen har indgået en skatteaftale til 11 milliarder kroner, som ifølge kritikken primært gavner de højeste indkomster gennem lempelser i topskatten. Modellerne viser markante skattelettelser til vellønnede, mens lavindkomstgrupper, studerende og arbejdsløse lades i stikken.</p>
+        <div class="news-links">
+          <a href="https://arbejderen.dk/indland/skaev-skatteaftale-direktoerer-og-aktionaerer-jubler-arbejdsloese-og-studerende-betaler/" target="_blank" rel="noopener noreferrer">Læs original artikel</a>
         </div>
       </article>
 
-      <!-- 6 -->
       <article class="news-card">
-        <div class="meta-tags">
-          <span class="tag-source">Arbejderen</span>
-          <span class="tag-category">Klima & Miljø</span>
+        <div class="news-meta">
+          <span>Arbejderen</span> • <span class="category">Indland</span>
         </div>
         <h2 class="news-title">Greenpeace: Norsk oliedom bør få konsekvenser i Danmark</h2>
-        <p class="news-summary">Norges Højesteret har kendt tre store olie- og gasfelter i Nordsøen ulovlige, hvilket ifølge miljøorganisationer fastslår statens forpligtelse over for klimaet og bør få direkte juridisk betydning for dansk energipolitik.</p>
-        <div class="link-container">
-          <a class="article-link" href="https://arbejderen.dk/indland/greenpeace-norsk-oliedom-boer-faa-konsekvenser-i-danmark/" target="_blank">Læs original artikel</a>
+        <p class="news-summary">Norges Højesteret har underkendt godkendelsen af tre nye olie- og gasfelter i Nordsøen efter en retssag rejst af miljøbevægelsen. Greenpeace opfordrer til, at dommen også danner præcedens for dansk klimapolitik og sætter en stopper for udvinding af fossile brændsler.</p>
+        <div class="news-links">
+          <a href="https://arbejderen.dk/indland/greenpeace-norsk-oliedom-boer-faa-konsekvenser-i-danmark/" target="_blank" rel="noopener noreferrer">Læs original artikel</a>
         </div>
       </article>
 
-      <!-- 7 -->
       <article class="news-card">
-        <div class="meta-tags">
-          <span class="tag-source">Altinget</span>
-          <span class="tag-category">Forsvar & Politik</span>
-        </div>
-        <h2 class="news-title">"Alvorlig sag": Troels Lund orienterede ikke Folketinget, inden Forsvaret indgik kontrakt med Trump-venligt firma</h2>
-        <p class="news-summary">Uden om Folketingets Finansudvalg indgik Forsvaret en stor kontrakt om test af krigssoftware med en amerikansk leverandør, hvilket eksperter betegner som et klart og alvorligt brud på procedurereglerne.</p>
-        <div class="link-container">
-          <a class="article-link" href="https://www.altinget.dk/artikel/alvorlig-sag-troels-lund-orienterede-ikke-folketinget-inden-forsvaret-indgik-kontrakt-med-trump-venligt-firma" target="_blank">Læs original artikel</a>
-        </div>
-      </article>
-
-      <!-- 8 -->
-      <article class="news-card">
-        <div class="meta-tags">
-          <span class="tag-source">Version2 articles</span>
-          <span class="tag-category">Holdning</span>
-        </div>
-        <h2 class="news-title">Leder: Vi får daglige beviser på, at black box-økonomien er en bundløs sump. Nu skal vi grave os fri</h2>
-        <p class="news-summary">Afhængigheden af lukkede amerikanske og kinesiske techmonopoler og uigennemskuelige algoritmer udhuler det demokratiske råderum i offentlige institutioner og kalder på et opgør med techgiganternes kontrol.</p>
-        <div class="link-container">
-          <a class="article-link" href="https://www.version2.dk/holdning/vi-faar-daglige-beviser-paa-black-box-oekonomien-er-en-bundloes-sump-nu-skal-vi-grave-os-fri" target="_blank">Læs original artikel</a>
-          <a class="ida-link" href="https://www.version2.dk/user/login" target="_blank">(Log ind via IDA)</a>
-        </div>
-      </article>
-
-      <!-- 9 -->
-      <article class="news-card">
-        <div class="meta-tags">
-          <span class="tag-source">Arbejderen</span>
-          <span class="tag-category">Menneskerettigheder</span>
+        <div class="news-meta">
+          <span>Arbejderen</span> • <span class="category">Udland</span>
         </div>
         <h2 class="news-title">Palæstinensisk organisation: Bevar bevismaterialet, bryd straffrihedens cyklus</h2>
-        <p class="news-summary">Menneskerettighedsorganisationen Al-Haq understreger nødvendigheden af systematisk dokumentation af krigsforbrydelser i Gaza for at sikre, at internationale retsinstanser kan drage de ansvarlige til regnskab.</p>
-        <div class="link-container">
-          <a class="article-link" href="https://arbejderen.dk/udland/palaestinensisk-organisation-bevar-bevismaterialet-bryd-straffrihedens-cyklus/" target="_blank">Læs original artikel</a>
+        <p class="news-summary">Menneskerettighedsorganisationen Al-Haq opfordrer det internationale samfund til at sikre dokumentation for krigsforbrydelser i Gaza. Organisationen slår til lyd for juridisk retsforfølgelse for at bryde årtiers ustraffethed og beskytte civilbefolkningens fundamentale rettigheder.</p>
+        <div class="news-links">
+          <a href="https://arbejderen.dk/udland/palaestinensisk-organisation-bevar-bevismaterialet-bryd-straffrihedens-cyklus/" target="_blank" rel="noopener noreferrer">Læs original artikel</a>
         </div>
       </article>
 
-      <!-- 10 -->
       <article class="news-card">
-        <div class="meta-tags">
-          <span class="tag-source">Kort nyt | DR</span>
-          <span class="tag-category">Udland</span>
+        <div class="news-meta">
+          <span>Altinget</span> • <span class="category">Social</span>
         </div>
-        <h2 class="news-title">Mange savnet efter bådforlis ud for Senegal</h2>
-        <p class="news-summary">Et stort antal mennesker meldes savnet på havet efter et nyt forlis ud for Senegals kyst, hvilket understreger den fortsatte humanitære tragedie på de farlige migrationsruter.</p>
-        <div class="link-container">
-          <a class="article-link" href="https://www.dr.dk/nyheder/seneste/mange-savnet-efter-baadforlis-ud-senegal" target="_blank">Læs original artikel</a>
+        <h2 class="news-title">The Red Van: Sexarbejde er arbejde, når staten skal kontrollere, men ikke når den skal beskytte</h2>
+        <p class="news-summary">Organisationen The Red Van retter kritik mod systemets dobbeltmoral over for sexarbejdere, som opkræves skat, men nægtes arbejdsretlig beskyttelse, bankkonti og adgang til faglige fællesskaber. Debattørerne efterlyser rettigheder og tryghed for en udsat faggruppe.</p>
+        <div class="news-links">
+          <a href="https://www.altinget.dk/artikel/the-red-van-sexarbejde-er-arbejde-naar-staten-kontrollerer-men-sexarbejdere-svigtes-naar-de-soeger-hjaelp" target="_blank" rel="noopener noreferrer">Læs original artikel</a>
         </div>
       </article>
 
-      <!-- 11 -->
       <article class="news-card">
-        <div class="meta-tags">
-          <span class="tag-source">Videnskab.dk</span>
-          <span class="tag-category">Samfund & Forskning</span>
+        <div class="news-meta">
+          <span>Altinget</span> • <span class="category">Velfærd</span>
+        </div>
+        <h2 class="news-title">Når mennesker bliver en business case</h2>
+        <p class="news-summary">Udbredelsen af sociale effektinvesteringer, hvor velfærd gøres op i økonomiske afkast for kommunerne, møder kritik. Velfærdsindsatser for udsatte borgere bør drives af menneskelige hensyn og reel samfundsforandring frem for markedstænkning og spareøvelser.</p>
+        <div class="news-links">
+          <a href="https://www.altinget.dk/artikel/naar-mennesker-bliver-en-business-case" target="_blank" rel="noopener noreferrer">Læs original artikel</a>
+        </div>
+      </article>
+
+      <article class="news-card">
+        <div class="news-meta">
+          <span>Altinget</span> • <span class="category">Børn & Uddannelse</span>
+        </div>
+        <h2 class="news-title">Find din daginstitution: Altinget har oversat 4.000 tilsynsrapporter</h2>
+        <p class="news-summary">En ny kortlægning baseret på tusindvis af kommunale tilsyn giver forældre og offentligheden systematisk indsigt i kvaliteten og pædagogiske mangler i landets daginstitutioner, hvilket stiller skarpt på ressourcemanglen i børnehøjde.</p>
+        <div class="news-links">
+          <a href="https://www.altinget.dk/artikel/find-din-daginstitution-altinget-har-oversat-4000-tilsynsrapporter-saa-du-kan-bruge-dem" target="_blank" rel="noopener noreferrer">Læs original artikel</a>
+        </div>
+      </article>
+
+      <article class="news-card">
+        <div class="news-meta">
+          <span>Videnskab.dk</span> • <span class="category">Forskning & Samfund</span>
         </div>
         <h2 class="news-title">Midt i misinformations-krise: Videnskab.dk ramt af voldsom nedskæring</h2>
-        <p class="news-summary">Det uafhængige videnskabsmedie mister en fjerdedel af sin finanslovsbevilling for 2027, netop som behovet for gratis, forskningsbaseret viden og bekæmpelse af misinformation er på sit højeste.</p>
-        <div class="link-container">
-          <a class="article-link" href="https://videnskab.dk/om-videnskabdk/midt-i-misinformations-krise-videnskab-dk-ramt-af-voldsom-nedskaering/" target="_blank">Læs original artikel</a>
+        <p class="news-summary">Danmarks førende medie for videnskabsformidling har mistet en fjerdedel af sin finanslovsbevilling for 2027. Besparelsen vækker stor bekymring for befolkningens frie adgang til troværdig, evidensbaseret viden i en tid præget af stigende misinformation.</p>
+        <div class="news-links">
+          <a href="https://videnskab.dk/om-videnskabdk/midt-i-misinformations-krise-videnskab-dk-ramt-af-voldsom-nedskaering/" target="_blank" rel="noopener noreferrer">Læs original artikel</a>
         </div>
       </article>
 
-      <!-- 12 -->
       <article class="news-card">
-        <div class="meta-tags">
-          <span class="tag-source">Version2 articles</span>
-          <span class="tag-category">It & Stat</span>
+        <div class="news-meta">
+          <span>Version2</span> • <span class="category">Holdning / Tech</span>
         </div>
-        <h2 class="news-title">Er staten trådt til for at redde Novo-fonds kastanjer ud af ilden? Vi tog på jagt efter Gefion-forklaring</h2>
-        <p class="news-summary">Kritikere rejser spørgsmål ved, hvorfor statslige midler og offentlige it-leverandører involveres i redningen af den kommercielle Gefion-supercomputer, som forskningsmiljøerne hidtil har haft stærkt begrænset glæde af.</p>
-        <div class="link-container">
-          <a class="article-link" href="https://www.version2.dk/artikel/er-staten-traadt-til-redde-novo-fonds-kastanjer-ud-af-ilden-vi-tog-paa-jagt-efter-gefion-forklaring" target="_blank">Læs original artikel</a>
-          <a class="ida-link" href="https://www.version2.dk/user/login" target="_blank">(Log ind via IDA)</a>
+        <h2 class="news-title">Leder: Vi får daglige beviser på, at black box-økonomien er en bundløs sump</h2>
+        <p class="news-summary">Samfundet er blevet alt for afhængigt af uigennemskuelig proprietær software og magtfulde techmonopoler, som truer den demokratiske kontrol og stabilitet. Lederen opfordrer Europa til at bryde afhængigheden og investere i digital suverænitet.</p>
+        <div class="news-links">
+          <a href="https://www.version2.dk/holdning/vi-faar-daglige-beviser-paa-black-box-oekonomien-er-en-bundloes-sump-nu-skal-vi-grave-os-fri" target="_blank" rel="noopener noreferrer">Læs original artikel</a>
+          <a class="ida-login" href="https://www.version2.dk/user/login" target="_blank" rel="noopener noreferrer">(Log ind via IDA)</a>
         </div>
       </article>
 
-      <!-- 13 -->
       <article class="news-card">
-        <div class="meta-tags">
-          <span class="tag-source">Kort nyt | DR</span>
-          <span class="tag-category">Indland</span>
+        <div class="news-meta">
+          <span>Altinget</span> • <span class="category">Forsvar</span>
+        </div>
+        <h2 class="news-title">"Alvorlig sag": Troels Lund orienterede ikke Folketinget om kontrakt med Trump-venligt firma</h2>
+        <p class="news-summary">Forsvarsministeriet indgik en stor aftale om afprøvning af krigssoftware med det omstridte firma Palantir uden at orientere Finansudvalget. Forskere kalder det et klart brud på reglerne, og oppositionen kræver ministeransvar placeret.</p>
+        <div class="news-links">
+          <a href="https://www.altinget.dk/artikel/alvorlig-sag-troels-lund-orienterede-ikke-folketinget-inden-forsvaret-indgik-kontrakt-med-trump-venligt-firma" target="_blank" rel="noopener noreferrer">Læs original artikel</a>
+        </div>
+      </article>
+
+      <article class="news-card">
+        <div class="news-meta">
+          <span>Kort nyt | DR</span> • <span class="category">Indland / Samfund</span>
         </div>
         <h2 class="news-title">Virksomhed sigtet for overtrædelse af dyrevelfærdsloven: Måtte aflive 20 grise på stedet</h2>
-        <p class="news-summary">Myndighederne har rejst sigtelse mod en landbrugsvirksomhed efter et kontrolbesøg, hvor dyrenes tilstand var så forringet, at to dusin grise måtte aflives omgående på stedet.</p>
-        <div class="link-container">
-          <a class="article-link" href="https://www.dr.dk/nyheder/seneste/virksomhed-sigtet-overtraedelse-af-dyrevelfaerdsloven-maatte-aflive-20-grise-paa-stedet" target="_blank">Læs original artikel</a>
+        <p class="news-summary">Myndighederne har rejst sigtelse mod en virksomhed for grove brud på dyrevelfærdsloven, efter embedsdyrlæger konstaterede så kritiske forhold, at 20 grise måtte aflives akut på stedet.</p>
+        <div class="news-links">
+          <a href="https://www.dr.dk/nyheder/seneste/virksomhed-sigtet-overtraedelse-af-dyrevelfaerdsloven-maatte-aflive-20-grise-paa-stedet" target="_blank" rel="noopener noreferrer">Læs original artikel</a>
         </div>
       </article>
 
-      <!-- 14 -->
       <article class="news-card">
-        <div class="meta-tags">
-          <span class="tag-source">Version2 articles</span>
-          <span class="tag-category">Sikkerhed</span>
+        <div class="news-meta">
+          <span>Kort nyt | DR</span> • <span class="category">Udland</span>
         </div>
-        <h2 class="news-title">Danmarks største a-kasse ramt af hackerangreb - også Ikea og tv-kanaler blandt ofrene</h2>
-        <p class="news-summary">Ondsindet Javascript er blevet indsat på hjemmesider hos 178 organisationer og virksomheder internationalt, herunder Danmarks største a-kasse samt globale aktører som BBC og CNN.</p>
-        <div class="link-container">
-          <a class="article-link" href="https://www.version2.dk/artikel/danmarks-stoerste-kasse-ramt-af-hackerangreb-ogsaa-ikea-og-tv-kanaler-blandt-ofrene" target="_blank">Læs original artikel</a>
-          <a class="ida-link" href="https://www.version2.dk/user/login" target="_blank">(Log ind via IDA)</a>
+        <h2 class="news-title">Mange savnet efter bådforlis ud for Senegal</h2>
+        <p class="news-summary">En båd med migranter er forlist ud for Senegals kyst. Et stort antal mennesker frygtes druknet i et desperat forsøg på at krydse havet, hvilket understreger den fortsat desperate humanitære situation langs migrantruterne.</p>
+        <div class="news-links">
+          <a href="https://www.dr.dk/nyheder/seneste/mange-savnet-efter-baadforlis-ud-senegal" target="_blank" rel="noopener noreferrer">Læs original artikel</a>
         </div>
       </article>
 
-      <!-- 15 -->
       <article class="news-card">
-        <div class="meta-tags">
-          <span class="tag-source">Videnskab.dk</span>
-          <span class="tag-category">Teknologi & Rumfart</span>
+        <div class="news-meta">
+          <span>Version2</span> • <span class="category">Erhverv / Tech</span>
         </div>
-        <h2 class="news-title">Rumfarten er blevet afhængig af SpaceX: Vil give mangel på raketter og rumskibe</h2>
-        <p class="news-summary">Den globale rumfart har bundet sig til et enkelt privat monopolselskab. SpaceX' nye forretningsplaner udstiller den store sårbarhed, det medfører for både forskningsmissioner og adgangen til rummet.</p>
-        <div class="link-container">
-          <a class="article-link" href="https://videnskab.dk/rummet/rumfarten-er-blevet-afhaengig-af-spacex-vil-give-mangel-paa-raketter-og-rumskibe/" target="_blank">Læs original artikel</a>
+        <h2 class="news-title">Er staten trådt til for at redde Novo-fonds kastanjer ud af ilden?</h2>
+        <p class="news-summary">Kritikere rejser spørgsmål ved statens intervention og samarbejde med Netcompany om AI-supercomputeren Gefion. Sagen berører balancen mellem offentlige forskningsmidler og støtte til kommercielle interesser.</p>
+        <div class="news-links">
+          <a href="https://www.version2.dk/artikel/er-staten-traadt-til-redde-novo-fonds-kastanjer-ud-af-ilden-vi-tog-paa-jagt-efter-gefion-forklaring" target="_blank" rel="noopener noreferrer">Læs original artikel</a>
+          <a class="ida-login" href="https://www.version2.dk/user/login" target="_blank" rel="noopener noreferrer">(Log ind via IDA)</a>
         </div>
       </article>
     </main>
