@@ -1,0 +1,38 @@
+name: Opdater nyheder
+
+on:
+  schedule:
+    # Kører kl. 06:00, 11:00 og 17:00 UTC (svarer til kl. 07:00, 12:00 og 18:00 dansk normaltid)
+    - cron: '0 6,11,16,21 * * *'
+  workflow_dispatch: # Giver en "Run workflow"-knap, så du altid kan starte den manuelt
+
+permissions:
+  contents: write # Giver scriptet lov til at overskrive index.html i dit repository
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hent repository-filer
+        uses: actions/checkout@v4
+
+      - name: Klargør Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Installer nødvendige biblioteker
+        run: pip install feedparser google-genai
+
+      - name: Kør nyhedsscriptet
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python update_news.py
+
+      - name: Gem den nye index.html på GitHub
+        run: |
+          git config user.name "Thapex NyhedsBot"
+          git config user.email "bot@thapex.dk"
+          git add index.html
+          git commit -m "Automatisk nyhedsopdatering" || exit 0
+          git push
