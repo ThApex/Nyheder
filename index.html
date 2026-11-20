@@ -5,240 +5,324 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ThApex Nyhedsoverblik</title>
     <style>
+        :root {
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --accent: #dc2626;
+            --accent-hover: #b91c1c;
+            --border-color: #e2e8f0;
+            --tag-bg: #f1f5f9;
+        }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            color: #222222;
-            background-color: #f7f9fa;
+            background-color: var(--bg-color);
+            color: var(--text-main);
             margin: 0;
-            padding: 20px;
+            padding: 24px 16px;
+            line-height: 1.5;
         }
+
         .container {
             max-width: 800px;
             margin: 0 auto;
-            background-color: #ffffff;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
         }
+
         header {
-            border-bottom: 2px solid #eaeaea;
-            padding-bottom: 20px;
-            margin-bottom: 25px;
+            margin-bottom: 32px;
+            padding-bottom: 16px;
+            border-bottom: 2px solid var(--border-color);
         }
+
         h1 {
-            margin: 0 0 10px 0;
             font-size: 2rem;
-            color: #111111;
+            margin: 0 0 8px 0;
+            color: #0f172a;
+            letter-spacing: -0.02em;
         }
+
         .last-updated {
-            color: #666666;
             font-size: 0.95rem;
+            color: var(--text-muted);
             margin: 0;
+            font-weight: 500;
         }
-        article {
-            border-bottom: 1px solid #eaeaea;
-            padding: 20px 0;
+
+        .news-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
         }
-        article:last-of-type {
-            border-bottom: none;
+
+        .news-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
         }
-        .meta {
+
+        .meta-info {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            margin-bottom: 8px;
             font-size: 0.85rem;
-            color: #666666;
-            margin-bottom: 6px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
         }
-        .meta span {
-            color: #d9381e;
+
+        .badge {
+            background-color: var(--tag-bg);
+            color: #334155;
+            padding: 3px 8px;
+            border-radius: 4px;
             font-weight: 600;
         }
+
+        .badge-source {
+            color: #b91c1c;
+            background-color: #fee2e2;
+        }
+
         h2 {
             font-size: 1.25rem;
             margin: 0 0 10px 0;
             line-height: 1.35;
-            color: #111111;
+            color: #0f172a;
         }
-        p.summary {
-            margin: 0 0 12px 0;
-            color: #444444;
+
+        .summary {
             font-size: 0.95rem;
+            color: #334155;
+            margin: 0 0 14px 0;
         }
-        .links a {
-            color: #0056b3;
-            text-decoration: none;
-            font-weight: 500;
+
+        .links {
+            display: flex;
+            align-items: center;
+            gap: 8px;
             font-size: 0.9rem;
         }
-        .links a:hover {
+
+        .article-link {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .article-link:hover {
             text-decoration: underline;
         }
+
         .ida-login {
-            margin-left: 8px;
-            font-size: 0.85rem;
-            color: #777777;
+            font-size: 0.8rem;
+            color: #0284c7;
+            text-decoration: none;
+            background: #e0f2fe;
+            padding: 2px 6px;
+            border-radius: 4px;
         }
-        @media (max-width: 600px) {
-            body {
-                padding: 10px;
-            }
-            .container {
-                padding: 20px 15px;
-            }
-            h1 {
-                font-size: 1.6rem;
-            }
-            h2 {
-                font-size: 1.15rem;
-            }
+
+        .ida-login:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>ThApex Nyhedsoverblik</h1>
-            <p class="last-updated">Sidst opdateret: 20-11-2026 kl. 03:00</p>
-        </header>
 
-        <main>
-            <article>
-                <div class="meta">Kilde: <span>Arbejderen</span> | Kategori: Indland / Menneskerettigheder</div>
-                <h2>FN og Amnesty i skarp kritik af Danmarks Rwanda-plan</h2>
-                <p class="summary">Danmarks og fire andre EU-landes aftale om at tvangsoverføre afviste asylansøgere til et udrejsecenter i Rwanda møder kraftig fordømmelse fra FN’s højkommissær for menneskerettigheder samt Amnesty International. Kritikere advarer mod markante menneskerettighedsrisici og påpeger, at outsourcing af asylpolitik undergraver international ret.</p>
-                <div class="links">
-                    <a href="https://arbejderen.dk/indland/fn-og-amnesty-i-skarp-kritik-af-danmark/" target="_blank">Læs original artikel</a>
-                </div>
-            </article>
+<div class="container">
+    <header>
+        <h1>ThApex Nyhedsoverblik</h1>
+        <p class="last-updated">Sidst opdateret: 20-11-2026 kl. 15:50</p>
+    </header>
 
-            <article>
-                <div class="meta">Kilde: <span>Arbejderen</span> | Kategori: Udland / Humanitært</div>
-                <h2>Gazas telte kollapser i regnen: FN forlanger handling</h2>
-                <p class="summary">Omkring 1,4 millioner fordrevne palæstinensere i Gaza må søge ly under nødtørftige presenninger og telte, der nu bukker under for regnen. Nødhjælpsforsyninger med varmeovne og tæpper holdes tilbage af blokaden, mens FN kræver øjeblikkelig adgang til humanitær bistand for den kriseramte civilbefolkning.</p>
-                <div class="links">
-                    <a href="https://arbejderen.dk/udland/gazas-telte-kollapser-i-regnen-fn-forlanger-handling/" target="_blank">Læs original artikel</a>
-                </div>
-            </article>
+    <main class="news-list">
 
-            <article>
-                <div class="meta">Kilde: <span>Arbejderen</span> | Kategori: Økonomi / Velfærd</div>
-                <h2>Skæv skatteaftale: Uligheden øges med lettelser for 11 milliarder</h2>
-                <p class="summary">En ny politisk aftale afskaffer mellemskatten og toptopskatten fra 2027. Skattelettelserne gavner udelukkende borgere med månedslønninger over 58.000 kroner, hvilket ifølge kritikere forstærker den sociale ulighed på bekostning af velfærd, studerende og arbejdsløse.</p>
-                <div class="links">
-                    <a href="https://arbejderen.dk/indland/skaev-skatteaftale-direktoerer-og-aktionaerer-jubler-arbejdsloese-og-studerende-betaler/" target="_blank">Læs original artikel</a>
-                </div>
-            </article>
+        <article class="news-card">
+            <div class="meta-info">
+                <span class="badge badge-source">Arbejderen</span>
+                <span class="badge">Menneskerettigheder</span>
+            </div>
+            <h2>FN og Amnesty i skarp kritik af Danmark</h2>
+            <p class="summary">Danmarks og fire andre EU-landes planer om at overføre afviste asylansøgere til Rwanda møder voldsom kritik fra FN's højkommissær for menneskerettigheder og Amnesty International. Organisationerne advarer mod alvorlige risici for menneskerettighedskrænkelser ved at sende folk til et land uden reel tilknytning.</p>
+            <div class="links">
+                <a href="https://arbejderen.dk/indland/fn-og-amnesty-i-skarp-kritik-af-danmark/" class="article-link" target="_blank">Læs original artikel</a>
+            </div>
+        </article>
 
-            <article>
-                <div class="meta">Kilde: <span>Altinget</span> | Kategori: Børn & Uddannelse / Velfærd</div>
-                <h2>Kortlægning: Tilsynsrapporter afslører store forskelle på landets daginstitutioner</h2>
-                <p class="summary">En ny gennemgang af over 4.000 kommunale tilsynsrapporter foretaget af Altinget og Gravercentret giver forældre indsigt i de pædagogiske forhold og kvaliteten i landets børnehaver og vuggestuer, hvor flere institutioner viser sig at have alvorlige mangler.</p>
-                <div class="links">
-                    <a href="https://www.altinget.dk/artikel/find-din-daginstitution-altinget-har-oversat-4000-tilsynsrapporter-saa-du-kan-bruge-dem" target="_blank">Læs original artikel</a>
-                </div>
-            </article>
+        <article class="news-card">
+            <div class="meta-info">
+                <span class="badge badge-source">Altinget</span>
+                <span class="badge">Sundhed &amp; Psykiatri</span>
+            </div>
+            <h2>Markant ulighed: Kvinder udsættes for dobbelt så meget tvang i psykiatrien</h2>
+            <p class="summary">En ny kortlægning foretaget af Altinget afslører, at kvindelige patienter i den danske psykiatri udsættes for mere end dobbelt så meget hård tvang som mænd. Oplysningerne vækker stor forundring og bekymring blandt fagfolk og politikere, der i årevis har kæmpet for en generel nedbringelse af tvangsanvendelse.</p>
+            <div class="links">
+                <a href="https://www.altinget.dk/artikel/i-aarevis-har-politikerne-forsoegt-at-nedbringe-tvang-men-en-markant-forskel-mellem-maend-og-kvinder-er-gaaet-under-radaren" class="article-link" target="_blank">Læs original artikel</a>
+            </div>
+        </article>
 
-            <article>
-                <div class="meta">Kilde: <span>Arbejderen</span> | Kategori: Arbejdsmarked / EU</div>
-                <h2>Fagbevægelsen i protest mod EU's 28. regime</h2>
-                <p class="summary">Fagligt aktive fra 3F landet over protesterer mod et nyt EU-tiltag, der skal gøre det nemmere for virksomheder at operere på tværs af landegrænser. Tillidsfolk frygter, at dereguleringen vil undergrave den danske model, lønmodtagerrettigheder og fremme social dumping.</p>
-                <div class="links">
-                    <a href="https://arbejderen.dk/debat/arbejdere-protesterer-mod-eus-28-regime/" target="_blank">Læs original artikel</a>
-                </div>
-            </article>
+        <article class="news-card">
+            <div class="meta-info">
+                <span class="badge badge-source">Arbejderen</span>
+                <span class="badge">Arbejdsmarked</span>
+            </div>
+            <h2>Fagforeninger varsler protest mod EU-angreb på arbejderrettigheder</h2>
+            <p class="summary">Fagforeninger indkalder til demonstration den 1. december i protest mod EU-forslaget om det 28. regime. Fagbevægelsen advarer om, at forslaget skaber et parallelt regelsæt på tværs af de 27 medlemslande, som vil give virksomheder mulighed for at omgå nationale standarder for løn- og arbejdsforhold.</p>
+            <div class="links">
+                <a href="https://arbejderen.dk/fagligt/fagforeninger-demonstrerer-den-1-december-i-protest-mod-eu-angreb-paa-arbejderrettigheder/" class="article-link" target="_blank">Læs original artikel</a>
+            </div>
+        </article>
 
-            <article>
-                <div class="meta">Kilde: <span>Altinget</span> | Kategori: Politik & Forsvar</div>
-                <h2>Troels Lund orienterede ikke Folketinget om forsvarstest med Palantir</h2>
-                <p class="summary">Forsvarsministeriet indgik en stor kontrakt med det amerikanske it-selskab Palantir om test af krigssoftware uden først at orientere Finansudvalget. Eksperter og folketingspolitikere betegner undladelsen som et brud på procedurereglerne og kræver en redegørelse.</p>
-                <div class="links">
-                    <a href="https://www.altinget.dk/artikel/alvorlig-sag-troels-lund-orienterede-ikke-folketinget-inden-forsvaret-indgik-kontrakt-med-trump-venligt-firma" target="_blank">Læs original artikel</a>
-                </div>
-            </article>
+        <article class="news-card">
+            <div class="meta-info">
+                <span class="badge badge-source">Kort nyt | DR</span>
+                <span class="badge">Socialpolitik</span>
+            </div>
+            <h2>Over 28.000 familier har søgt julehjælp hos Blå Kors</h2>
+            <p class="summary">Et rekordstort antal udsatte familier kæmper med økonomien op til højtiden, og mere end 28.000 familier har allerede henvendt sig for at få hjælp til mad og gaver. Tallene vidner om et vedvarende og mærkbart pres på de svageste samfundsgrupper midt i en tid præget af høje leveomkostninger.</p>
+            <div class="links">
+                <a href="https://www.dr.dk/nyheder/seneste/over-28-000-familier-har-soegt-julehjaelp-hos-blaa-kors" class="article-link" target="_blank">Læs original artikel</a>
+            </div>
+        </article>
 
-            <article>
-                <div class="meta">Kilde: <span>Arbejderen</span> | Kategori: Klima & Miljø</div>
-                <h2>Greenpeace kræver stop for Nordsø-olie efter principiel norsk højesteretsdom</h2>
-                <p class="summary">Norges Højesteret har kendt udbygningen af tre olie- og gasfelter i Nordsøen ulovlig grundet manglende konsekvensberegninger af emissioner. Miljøorganisationer kræver, at dommen fører til øjeblikkeligt stop og får konsekvenser for dansk olieudvinding.</p>
-                <div class="links">
-                    <a href="https://arbejderen.dk/indland/greenpeace-norsk-oliedom-boer-faa-konsekvenser-i-danmark/" target="_blank">Læs original artikel</a>
-                </div>
-            </article>
+        <article class="news-card">
+            <div class="meta-info">
+                <span class="badge badge-source">Altinget</span>
+                <span class="badge">Politik &amp; Forsvar</span>
+            </div>
+            <h2>Forsvarsministeriet brød reglerne ved våbenkontrakt med amerikansk firma</h2>
+            <p class="summary">Folketingets Finansudvalg blev ikke orienteret forud for indgåelsen af en stor forsvarskontrakt om test af krigssoftware med et Trump-venligt it-firma. Juridiske eksperter vurderer forløbet som et klart brud på reglerne, og ordførere retter nu skarp kritik mod den daværende forsvarsminister Troels Lund Poulsen.</p>
+            <div class="links">
+                <a href="https://www.altinget.dk/artikel/alvorlig-sag-troels-lund-orienterede-ikke-folketinget-inden-forsvaret-indgik-kontrakt-med-trump-venligt-firma" class="article-link" target="_blank">Læs original artikel</a>
+            </div>
+        </article>
 
-            <article>
-                <div class="meta">Kilde: <span>Kort nyt | DR</span> | Kategori: Sikkerhedspolitik / IT</div>
-                <h2>EU-Kommissionen har været ramt af AI-cyberangreb</h2>
-                <p class="summary">EU-Kommissionen bekræfter, at organisationen har været udsat for et sofistikeret cyberangreb assisteret af kunstig intelligens. Angrebet sætter fornyet fokus på truslerne mod europæiske institutioner og den kritiske digitale infrastruktur.</p>
-                <div class="links">
-                    <a href="https://www.dr.dk/nyheder/seneste/eu-kommissionen-har-vaeret-ramt-af-ai-cyberangreb" target="_blank">Læs original artikel</a>
-                </div>
-            </article>
+        <article class="news-card">
+            <div class="meta-info">
+                <span class="badge badge-source">Arbejderen</span>
+                <span class="badge">Miljø &amp; Fred</span>
+            </div>
+            <h2>Fredsgrupper advarer mod våbenproduktion oven på 40.000 ton gift</h2>
+            <p class="summary">Fredsinitiativer retter en advarsel mod planer om at igangsætte våbenproduktion på den tidligere Cheminova-grund på Harboøre Tange. Grupperne stiller spørgsmålstegn ved sikkerheden og fornuften i at etablere militær produktion i et område, der i forvejen rummer enorme mængder deponeret miljøgift.</p>
+            <div class="links">
+                <a href="https://arbejderen.dk/indland/fredsgrupper-advarer-mod-vaabenproduktion-oven-paa-40-000-ton-gift/" class="article-link" target="_blank">Læs original artikel</a>
+            </div>
+        </article>
 
-            <article>
-                <div class="meta">Kilde: <span>Kort nyt | DR</span> | Kategori: Udland / Katastrofe</div>
-                <h2>Mange savnet efter tragisk bådforlis ud for Senegal</h2>
-                <p class="summary">Et fartøj med migranter og flygtninge er forlist ud for Senegals kyst. Et stort antal mennesker frygtes druknet, hvilket endnu en gang understreger de fatale konsekvenser af de farlige flugtruter mod Europa.</p>
-                <div class="links">
-                    <a href="https://www.dr.dk/nyheder/seneste/mange-savnet-efter-baadforlis-ud-senegal" target="_blank">Læs original artikel</a>
-                </div>
-            </article>
+        <article class="news-card">
+            <div class="meta-info">
+                <span class="badge badge-source">Arbejderen</span>
+                <span class="badge">Klima &amp; Miljø</span>
+            </div>
+            <h2>Greenpeace: Norsk oliedom bør få konsekvenser i Danmark</h2>
+            <p class="summary">Norges Højesteret har kendt tre olie- og gasfelter i Nordsøen ulovlige på baggrund af et søgsmål fra miljøorganisationer, da staten ikke har vurderet de samlede klimakonsekvenser. Greenpeace mener, at den skelsættende dom bør danne præcedens og føre til et øjeblikkeligt stop for nye fossile tilladelser i Danmark.</p>
+            <div class="links">
+                <a href="https://arbejderen.dk/indland/greenpeace-norsk-oliedom-boer-faa-konsekvenser-i-danmark/" class="article-link" target="_blank">Læs original artikel</a>
+            </div>
+        </article>
 
-            <article>
-                <div class="meta">Kilde: <span>Videnskab.dk</span> | Kategori: Samfund & Forskning</div>
-                <h2>Videnskab.dk ramt af voldsom nedskæring midt i misinformationskrise</h2>
-                <p class="summary">Danmarks nationale videnskabsmedie mister en fjerdedel af sin finanslovsbevilling for 2027. Besparelsen vækker bekymring for den offentlige adgang til uafhængig, evidensbaseret viden i en tid med stigende digital misinformation.</p>
-                <div class="links">
-                    <a href="https://videnskab.dk/om-videnskabdk/midt-i-misinformations-krise-videnskab-dk-ramt-af-voldsom-nedskaering/" target="_blank">Læs original artikel</a>
-                </div>
-            </article>
+        <article class="news-card">
+            <div class="meta-info">
+                <span class="badge badge-source">Videnskab.dk</span>
+                <span class="badge">Medier &amp; Demokrati</span>
+            </div>
+            <h2>Partier taler om kamp mod fake news, men skærer i Videnskab.dk</h2>
+            <p class="summary">Finansloven for 2027 byder på en nedskæring på en fjerdedel af bevillingen til Videnskab.dk, trods bred politisk enighed om at bekæmpe misinformation. Forskningsordførere lægger ansvaret over på ministerens oprindelige udkast, mens mediet advarer om konsekvenserne for den frie adgang til forskningsbaseret viden.</p>
+            <div class="links">
+                <a href="https://videnskab.dk/kultur-samfund/partier-fremhaever-kampen-mod-fake-news-men-skaerer-i-videnskab-dk/" class="article-link" target="_blank">Læs original artikel</a>
+            </div>
+        </article>
 
-            <article>
-                <div class="meta">Kilde: <span>Version2 articles</span> | Kategori: Teknologi & Samfund</div>
-                <h2>Kritik af techgiganternes kontrol: "Black box-økonomien er en sump"</h2>
-                <p class="summary">Vestens infrastruktur og samfundsinstitutioner er blevet faretruende afhængige af uigennemskuelige, proprietære systemer styret af amerikanske techkoncerner. Den manglende demokratiske kontrol udfordrer både den offentlige sektor og retssikkerheden.</p>
-                <div class="links">
-                    <a href="https://www.version2.dk/holdning/vi-faar-daglige-beviser-paa-black-box-oekonomien-er-en-bundloes-sump-nu-skal-vi-grave-os-fri" target="_blank">Læs original artikel</a>
-                    <a class="ida-login" href="https://www.version2.dk/user/login" target="_blank">(Log ind via IDA)</a>
-                </div>
-            </article>
+        <article class="news-card">
+            <div class="meta-info">
+                <span class="badge badge-source">Arbejderen</span>
+                <span class="badge">Uddannelse &amp; Fred</span>
+            </div>
+            <h2>Nye skolestrejker i Tyskland mod værnepligt og oprustning</h2>
+            <p class="summary">Tusindvis af tyske skoleelever gennemfører i dag strejker som del af en europæisk protestdag mod militarisering og genindførelse af værnepligt. Eleverne kritiserer, at der afsættes milliarder til oprustning på et tidspunkt, hvor det offentlige skolevæsen og uddannelsessektoren rammes af massive nedskæringer.</p>
+            <div class="links">
+                <a href="https://arbejderen.dk/udland/nye-skolestrejker-i-tyskland-mod-vaernepligt/" class="article-link" target="_blank">Læs original artikel</a>
+            </div>
+        </article>
 
-            <article>
-                <div class="meta">Kilde: <span>Kort nyt | DR</span> | Kategori: Dyrevelfærd / Fødevarer</div>
-                <h2>Virksomhed sigtet for overtrædelse af dyrevelfærdsloven: 20 grise aflivet</h2>
-                <p class="summary">Fødevaremyndighederne og politiet har sigtet en landbrugsvirksomhed efter fund af alvorligt misrøgtede dyr, hvor 20 grise måtte aflives akut på stedet på grund af dårlige forhold.</p>
-                <div class="links">
-                    <a href="https://www.dr.dk/nyheder/seneste/virksomhed-sigtet-overtraedelse-af-dyrevelfaerdsloven-maatte-aflive-20-grise-paa-stedet" target="_blank">Læs original artikel</a>
-                </div>
-            </article>
+        <article class="news-card">
+            <div class="meta-info">
+                <span class="badge badge-source">Altinget</span>
+                <span class="badge">Børn &amp; Velfærd</span>
+            </div>
+            <h2>Eksperter advarer om mørketal efter kortlægning af daginstitutioner</h2>
+            <p class="summary">En systematisk gennemgang af 4.000 kommunale tilsynsrapporter viser massive forskelle på, hvordan kommuner fører tilsyn med landets vuggestuer og børnehaver. Børneeksperter advarer om, at manglende standarder og varierende tilsynsmetoder dækker over store mørketal for pædagogisk kvalitet og børns trivsel.</p>
+            <div class="links">
+                <a href="https://www.altinget.dk/artikel/eksperter-advarer-om-moerketal-efter-kortlaegning-af-daginstitutioner" class="article-link" target="_blank">Læs original artikel</a>
+            </div>
+        </article>
 
-            <article>
-                <div class="meta">Kilde: <span>Version2 articles</span> | Kategori: Datasikkerhed</div>
-                <h2>Danmarks største a-kasse ramt i internationalt hackerangreb</h2>
-                <p class="summary">Ondsindet Javascript er blevet indskudt på 178 virksomheders hjemmesider globalt. Angrebet har ramt Danmarks største a-kasse samt internationale koncerner som BBC, Ikea og HSBC og udstiller sårbarheden i digitale forsyningskæder.</p>
-                <div class="links">
-                    <a href="https://www.version2.dk/artikel/danmarks-stoerste-kasse-ramt-af-hackerangreb-ogsaa-ikea-og-tv-kanaler-blandt-ofrene" target="_blank">Læs original artikel</a>
-                </div>
-            </article>
+        <article class="news-card">
+            <div class="meta-info">
+                <span class="badge badge-source">Videnskab.dk</span>
+                <span class="badge">Klima &amp; Energi</span>
+            </div>
+            <h2>Verdens grønne supermagt kører stadig på kul</h2>
+            <p class="summary">En ny gennemgang af Kinas klimaindsats viser det dobbelte billede af en nation, der på én gang investerer massivt i grøn omstilling og samtidig øger sin afhængighed af kulkraft. Udviklingen i Kinas energiforbrug understreger det globale dilemma mellem økonomisk vækst og nødvendige CO2-reduktioner.</p>
+            <div class="links">
+                <a href="https://videnskab.dk/naturvidenskab/verdens-groenne-supermagt-koerer-stadig-paa-kul-disse-grafer-afsloerer-kinas-klimaindsats/" class="article-link" target="_blank">Læs original artikel</a>
+            </div>
+        </article>
 
-            <article>
-                <div class="meta">Kilde: <span>Kort nyt | DR</span> | Kategori: Forbruger / Datasikkerhed</div>
-                <h2>Norwegian beder 5.000 kunder spærre betalingskort efter databrud</h2>
-                <p class="summary">Flyselskabet Norwegian opfordrer tusindvis af passagerer til straks at spærre deres betalingskort, efter et omfattende sikkerhedsbrud har kompromitteret følsomme kunde- og kortoplysninger.</p>
-                <div class="links">
-                    <a href="https://www.dr.dk/nyheder/seneste/norwegian-beder-5-000-kunder-spaerre-kort-efter-databrud" target="_blank">Læs original artikel</a>
-                </div>
-            </article>
+        <article class="news-card">
+            <div class="meta-info">
+                <span class="badge badge-source">Version2 articles</span>
+                <span class="badge">Teknologi &amp; Samfund</span>
+            </div>
+            <h2>Leder: Black box-økonomien er en bundløs sump for demokratiet</h2>
+            <p class="summary">Afhængigheden af amerikanske og kinesiske techgiganters lukkede algoritmer og servere underminerer det demokratiske fundament og den samfundsmæssige stabilitet. Når kritiske samfundsfunktioner lammes af private tech-nedbrud, må Europa erkende nødvendigheden af digital suverænitet og gennemsigtighed.</p>
+            <div class="links">
+                <a href="https://www.version2.dk/holdning/vi-faar-daglige-beviser-paa-black-box-oekonomien-er-en-bundloes-sump-nu-skal-vi-grave-os-fri" class="article-link" target="_blank">Læs original artikel</a>
+                <a href="https://www.version2.dk/user/login" class="ida-login" target="_blank">(Log ind via IDA)</a>
+            </div>
+        </article>
 
-            <article>
-                <div class="meta">Kilde: <span>Altinget</span> | Kategori: Socialpolitik / Menneskerettigheder</div>
-                <h2>Debat: Sexarbejdere kontrolleres af staten men lades i stikken ved vold</h2>
-                <p class="summary">Organisationen The Red Van påpeger det strukturelle paradoks i, at sexarbejdere afkræves skat på lige fod med andre, men formelt udelukkes fra basale arbejdstagerrettigheder, adgang til banksystemer og retsbeskyttelse ved anmeldelse af overgreb.</p>
-                <div class="links">
-                    <a href="https://www.altinget.dk/artikel/the-red-van-sexarbejde-er-arbejde-naar-staten-kontrollerer-men-sexarbejdere-svigtes-naar-de-soeger-hjaelp" target="_blank">Læs original artikel</a>
-                </div>
-            </article>
-        </main>
-    </div>
+        <article class="news-card">
+            <div class="meta-info">
+                <span class="badge badge-source">Arbejderen</span>
+                <span class="badge">Udenrigs &amp; Jura</span>
+            </div>
+            <h2>Palæstinensisk organisation opfordrer til sikring af bevismateriale</h2>
+            <p class="summary">Menneskerettighedsorganisationen Al-Haq opfordrer det internationale samfund til at sikre bevismateriale for krigsforbrydelser og overgreb mod palæstinensere i Gaza. Formålet er at bryde årtiers straffrihed og sikre retsforfølgelse af ansvarlige ved internationale domstole.</p>
+            <div class="links">
+                <a href="https://arbejderen.dk/udland/palaestinensisk-organisation-bevar-bevismaterialet-bryd-straffrihedens-cyklus/" class="article-link" target="_blank">Læs original artikel</a>
+            </div>
+        </article>
+
+        <article class="news-card">
+            <div class="meta-info">
+                <span class="badge badge-source">Videnskab.dk</span>
+                <span class="badge">Teknologi &amp; Rumfart</span>
+            </div>
+            <h2>Rumfarten er blevet faretruende afhængig af Elon Musks SpaceX</h2>
+            <p class="summary">Den globale rumfartssektor har gjort sig dybt afhængig af ét enkelt privat selskab. Nye analyser peger på, at SpaceX' omlægning af forretningsmodeller kan udløse udbredt mangel på raketter og transportkapacitet, hvilket udstiller sårbarheden i at overlade infrastruktur til private monopoler.</p>
+            <div class="links">
+                <a href="https://videnskab.dk/rummet/rumfarten-er-blevet-afhaengig-af-spacex-vil-give-mangel-paa-raketter-og-rumskibe/" class="article-link" target="_blank">Læs original artikel</a>
+            </div>
+        </article>
+
+        <article class="news-card">
+            <div class="meta-info">
+                <span class="badge badge-source">Version2 articles</span>
+                <span class="badge">Cybersikkerhed</span>
+            </div>
+            <h2>Danmarks største a-kasse ramt af internationalt cyberangreb</h2>
+            <p class="summary">Ondsindet JavaScript blev indsat på hjemmesider tilhørende knap 180 virksomheder og institutioner internationalt, herunder Danmarks største a-kasse samt globale koncerner. Angrebet viser endnu engang, hvordan sårbarheder i digitale forsyningskæder rammer både borgere og organisationer i bred forstand.</p>
+            <div class="links">
+                <a href="https://www.version2.dk/artikel/danmarks-stoerste-kasse-ramt-af-hackerangreb-ogsaa-ikea-og-tv-kanaler-blandt-ofrene" class="article-link" target="_blank">Læs original artikel</a>
+                <a href="https://www.version2.dk/user/login" class="ida-login" target="_blank">(Log ind via IDA)</a>
+            </div>
+        </article>
+
+    </main>
+</div>
+
 </body>
 </html>
