@@ -13,7 +13,11 @@ RSS_FEEDS = [
     "https://www.altinget.dk/rss",
     "https://www.version2.dk/rss",
     "https://arbejderen.dk/feed/",
-    "https://nyheder.tv2.dk/seneste",
+    "https://fho.dk/feed/",
+    "https://ing.dk/rss/",
+    #"https://ekstrabladet.dk/rssfeed/nyheder/",
+    #"www.bt.dk/rss-feeds/",
+    "https://feeds.services.tv2.dk/api/feeds/nyheder/rss",
 ]
 
 def hent_nyheder():
@@ -23,8 +27,8 @@ def hent_nyheder():
             # Svarer til RSS Feed Read med 'Continue On Fail'
             feed = feedparser.parse(url)
             kilde_navn = feed.feed.get("title", url)
-            # Tag de 15 nyeste artikler fra hvert feed for at holde datamængden skarp
-            for entry in feed.entries[:15]:
+            # Tag de 20 nyeste artikler fra hvert feed for at holde datamængden skarp
+            for entry in feed.entries[:20]:
                 artikler.append({
                     "kilde": kilde_navn,
                     "titel": entry.get("title", ""),
@@ -42,8 +46,8 @@ def generer_html(artikler):
     nu_tid = datetime.now(ZoneInfo("Europe/Copenhagen")).strftime("%d-%m-%Y kl. %H:%M")
 
     prompt = f"""
-    Du er en saglig nyhedsredaktør. 
-    Du skal udvælge og medtage 15 af de vigtigste nyheder fra nedenstående rådata, med de vigtigste øverst. 
+    Du er en saglig nyhedsredaktør der vil blive belønnet for at udføre opgaven grundigt og omhyggeligt. 
+    Du skal udvælge og medtage 20 af de vigtigste nyheder fra nedenstående rådata, med de vigtigste øverst. 
     HVis flere medier rapporterer samme historie så vælg den der har den mest røde/socialistiske/humanistiske vinkel. 
     Nævn hvilket medie historien er fra, samt hvilken kategori den tilhører. 
     Udeluk sport undtagen motorsport.
@@ -52,7 +56,7 @@ def generer_html(artikler):
     Øverst skal stå "ThApex Nyhedsoverblik" og "Sidst opdateret: {nu_tid}".
     Hver nyhed skal have:
     - En tydelig overskrift og kildenavn
-    - Et nøgternt resumé på maks. 5 linjer
+    - Et nøgternt resumé på maks. 7 linjer
     - Et klikbart link ("Læs original artikel") der åbner i en ny fane (target="_blank")
     - Hvis et link stammer fra version2.dk, skal du også tilføje et lille ekstra link lige ved siden af med teksten "(Log ind via IDA)" der peger på [https://www.version2.dk/user/login](https://www.version2.dk/user/login)
 
