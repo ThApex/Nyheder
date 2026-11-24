@@ -20,18 +20,23 @@ RSS_FEEDS = [
     "https://feeds.services.tv2.dk/api/feeds/nyheder/rss",
 ]
 
+# Gør at servere som TV 2, Arbejderen og FH ikke blokerer scriptet som en bot
+USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+
 def hent_nyheder():
     artikler = []
     for url in RSS_FEEDS:
         try:
-            feed = feedparser.parse(url)
+            feed = feedparser.parse(url, agent=USER_AGENT)
             kilde_navn = feed.feed.get("title", url)
-            # Tag de 20 nyeste artikler fra hvert feed
-            for entry in feed.entries[:20]:
+            entries = feed.entries[:15]
+            print(f"Hentede {len(entries)} artikler fra: {kilde_navn} ({url})")
+            
+            for entry in entries:
                 artikler.append({
                     "kilde": kilde_navn,
                     "titel": entry.get("title", ""),
-                    "beskrivelse": entry.get("summary", entry.get("description", ""))[:1200],
+                    "beskrivelse": entry.get("summary", entry.get("description", ""))[:1000],
                     "link": entry.get("link", ""),
                     "dato": entry.get("published", "")
                 })
@@ -48,6 +53,7 @@ def generer_html(artikler):
     Du SKAL udvælge og levere PRÆCIS 20 nyhedsartikler i hovedsektionen fra nedenstående rådata, rangeret med de vigtigste øverst. Gå ikke under 20 artikler – fyld op med mindre nyheder fra rådataene, hvis der er mange dubletter.
 
     Regler for udvælgelse og indhold:
+    - Sørg for en god spredning på tværs af alle de kilder, der findes i rådataene (inkl. TV 2, Arbejderen, FH, Ingeniøren, DR, Altinget m.fl., i det omfang de er til stede).
     - Hvis flere medier rapporterer samme historie, så vælg den, der har den mest røde/socialistiske/humanistiske vinkel.
     - Nævn tydeligt hvilket medie historien er fra, samt hvilken kategori den tilhører.
     - Udeluk al sport undtagen motorsport.
@@ -91,7 +97,7 @@ def generer_html(artikler):
 if __name__ == "__main__":
     print("Henter RSS-feeds...")
     nyhedsdata = hent_nyheder()
-    print(f"Fandt {len(nyhedsdata)} artikler. Genererer HTML via Gemini...")
+    print(f"Fandt i alt {len(nyhedsdata)} artikler. Genererer HTML via Gemini...")
     ny_html = generer_html(nyhedsdata)
     with open("index.html", "w", encoding="utf-8") as f:
         f.write(ny_html)
