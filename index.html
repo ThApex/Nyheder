@@ -11,12 +11,12 @@
             --text-main: #1f2937;
             --text-muted: #4b5563;
             --accent: #b91c1c;
-            --accent-hover: #991b1b;
-            --link: #1d4ed8;
+            --accent-soft: #fef2f2;
+            --border-color: #e5e7eb;
+            --tag-bg: #e5e7eb;
+            --tag-text: #374151;
+            --link-color: #1d4ed8;
             --link-hover: #1e40af;
-            --border: #e5e7eb;
-            --badge-bg: #fee2e2;
-            --badge-text: #991b1b;
         }
 
         body {
@@ -24,8 +24,8 @@
             background-color: var(--bg-color);
             color: var(--text-main);
             margin: 0;
-            padding: 20px 16px;
-            line-height: 1.5;
+            padding: 24px 16px;
+            line-height: 1.6;
         }
 
         .container {
@@ -34,15 +34,15 @@
         }
 
         header {
-            margin-bottom: 2rem;
-            padding-bottom: 1rem;
-            border-bottom: 2px solid var(--border);
+            margin-bottom: 28px;
+            padding-bottom: 16px;
+            border-bottom: 2px solid var(--border-color);
         }
 
-        h1 {
+        header h1 {
             font-size: 2rem;
-            margin: 0 0 0.25rem 0;
-            color: var(--text-main);
+            margin: 0 0 6px 0;
+            color: #111827;
             letter-spacing: -0.02em;
         }
 
@@ -52,141 +52,174 @@
             font-weight: 500;
         }
 
-        .news-list {
+        .news-grid {
             display: flex;
             flex-direction: column;
-            gap: 1.5rem;
+            gap: 18px;
         }
 
-        .news-item {
+        .news-card {
             background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
             border-radius: 8px;
-            padding: 1.25rem;
+            padding: 20px;
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-            border: 1px solid var(--border);
+            transition: box-shadow 0.2s ease;
         }
 
-        .meta-top {
+        .news-card:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .card-meta {
             display: flex;
             flex-wrap: wrap;
+            gap: 8px;
             align-items: center;
-            gap: 0.5rem;
-            margin-bottom: 0.5rem;
+            margin-bottom: 10px;
             font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
         }
 
-        .badge-kategori {
-            background-color: var(--badge-bg);
-            color: var(--badge-text);
-            font-weight: 600;
+        .badge-source {
+            background-color: var(--accent-soft);
+            color: var(--accent);
             padding: 2px 8px;
             border-radius: 4px;
-            text-transform: uppercase;
-            letter-spacing: 0.03em;
         }
 
-        .kilde {
-            color: var(--text-muted);
-            font-weight: 600;
+        .badge-category {
+            background-color: var(--tag-bg);
+            color: var(--tag-text);
+            padding: 2px 8px;
+            border-radius: 4px;
         }
 
-        .rank {
-            color: #9ca3af;
-            font-weight: bold;
-        }
-
-        .news-title {
+        .news-card h2 {
             font-size: 1.25rem;
-            font-weight: 700;
-            margin: 0 0 0.5rem 0;
+            margin: 0 0 10px 0;
             line-height: 1.35;
+            color: #111827;
         }
 
-        .summary {
-            color: var(--text-muted);
+        .news-summary {
             font-size: 0.95rem;
-            margin: 0 0 1rem 0;
+            color: var(--text-muted);
+            margin: 0 0 14px 0;
         }
 
-        .actions {
+        .links-container {
             display: flex;
             align-items: center;
-            gap: 0.75rem;
+            gap: 10px;
             font-size: 0.9rem;
         }
 
-        .btn-link {
-            color: var(--link);
+        .primary-link {
+            color: var(--link-color);
             text-decoration: none;
             font-weight: 600;
         }
 
-        .btn-link:hover {
+        .primary-link:hover {
             color: var(--link-hover);
             text-decoration: underline;
         }
 
         .ida-login {
-            font-size: 0.8rem;
             color: #d97706;
             text-decoration: none;
-            background: #fffbeb;
-            padding: 2px 6px;
-            border: 1px solid #fef3c7;
-            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 500;
         }
 
         .ida-login:hover {
-            background: #fef3c7;
             text-decoration: underline;
         }
 
-        details.rest-list {
-            margin-top: 2.5rem;
+        /* Fold-ud boks */
+        details {
+            margin-top: 36px;
             background: var(--card-bg);
-            border: 1px solid var(--border);
+            border: 1px solid var(--border-color);
             border-radius: 8px;
-            padding: 1rem;
+            padding: 16px;
         }
 
-        details.rest-list summary {
+        summary {
             font-weight: 600;
+            font-size: 1.05rem;
             cursor: pointer;
-            color: var(--text-main);
-            padding: 0.25rem 0;
+            color: #111827;
+            user-select: none;
+            outline: none;
         }
 
-        .compact-list {
+        summary:hover {
+            color: var(--link-color);
+        }
+
+        .archive-list {
             list-style: none;
-            padding: 0;
-            margin: 1rem 0 0 0;
+            padding-left: 0;
+            margin: 16px 0 0 0;
+            font-size: 0.9rem;
             display: flex;
             flex-direction: column;
-            gap: 0.5rem;
-            font-size: 0.9rem;
+            gap: 8px;
         }
 
-        .compact-list li {
+        .archive-item {
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
-            padding-bottom: 0.25rem;
-            border-bottom: 1px dashed var(--border);
+            padding: 4px 0;
+            border-bottom: 1px dashed var(--border-color);
         }
 
-        .compact-source {
+        .archive-item:last-child {
+            border-bottom: none;
+        }
+
+        .archive-source {
             font-weight: 600;
             color: var(--text-muted);
-            margin-right: 0.4rem;
+            margin-right: 6px;
         }
 
-        .compact-link {
-            color: var(--link);
+        .archive-item a {
+            color: var(--text-main);
             text-decoration: none;
         }
 
-        .compact-link:hover {
+        .archive-item a:hover {
+            color: var(--link-color);
             text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 16px 10px;
+            }
+
+            .news-card {
+                padding: 16px;
+            }
+
+            header h1 {
+                font-size: 1.6rem;
+            }
+
+            .news-card h2 {
+                font-size: 1.15rem;
+            }
+
+            .archive-item {
+                white-space: normal;
+                line-height: 1.4;
+            }
         }
     </style>
 </head>
@@ -194,350 +227,441 @@
     <div class="container">
         <header>
             <h1>ThApex Nyhedsoverblik</h1>
-            <div class="timestamp">Sidst opdateret: 24-11-2026 kl. 20:45</div>
+            <div class="timestamp">Sidst opdateret: 24-11-2026 kl. 20:58</div>
         </header>
 
-        <main class="news-list">
+        <main class="news-grid">
             <!-- Artikel 1 -->
-            <article class="news-item">
-                <div class="meta-top">
-                    <span class="rank">#1</span>
-                    <span class="badge-kategori">Humanitært / Sundhed</span>
-                    <span class="kilde">Kilde: DR</span>
+            <article class="news-card">
+                <div class="card-meta">
+                    <span class="badge-source">Kort nyt | DR</span>
+                    <span class="badge-category">Sundhedskrise &amp; Mellemøsten</span>
                 </div>
-                <h2 class="news-title">Gaza advarer om meningitis-epidemi</h2>
-                <p class="summary">Sundhedsmyndighederne i Gaza slår alarm over et truende udbrud af meningitis under de katastrofale humanitære forhold. Ødelagt infrastruktur, mangel på rent vand og overfyldte flygtningelejre gør befolkningen ekstremt sårbar over for smitsomme og potentielt dødelige sygdomme.</p>
-                <div class="actions">
-                    <a href="https://www.dr.dk/nyheder/seneste/gaza-advarer-om-meningitis-epidemi" target="_blank" class="btn-link">Læs original artikel</a>
+                <h2>Gaza advarer om meningitis-epidemi</h2>
+                <p class="news-summary">
+                    Sundhedsmyndighederne i Gaza slår alarm over en overhængende risiko for et omfattende udbrud af hjernehindebetændelse (meningitis). De katastrofale sanitære forhold, mangel på rent vand og et sønderbombet hospitalsvæsen forværrer smitterisikoen markant for civilbefolkningen, særligt de mange internt fordrevne børn.
+                </p>
+                <div class="links-container">
+                    <a href="https://www.dr.dk/nyheder/seneste/gaza-advarer-om-meningitis-epidemi" target="_blank" class="primary-link">Læs original artikel</a>
                 </div>
             </article>
 
             <!-- Artikel 2 -->
-            <article class="news-item">
-                <div class="meta-top">
-                    <span class="rank">#2</span>
-                    <span class="badge-kategori">Flygtninge / Menneskerettigheder</span>
-                    <span class="kilde">Kilde: DR</span>
+            <article class="news-card">
+                <div class="card-meta">
+                    <span class="badge-source">Kort nyt | DR</span>
+                    <span class="badge-category">Migration &amp; Humanitært</span>
                 </div>
-                <h2 class="news-title">Mindst 172 migranter meldes savnet</h2>
-                <p class="summary">En ny tragisk hændelse på havet har efterladt mindst 172 migranter savnet efter et forlis. Ulykken understreger den fortsatte humanitære krise og de ekstreme risici, desperate mennesker tvinges til at løbe i forsøget på at opnå beskyttelse og en tålelig tilværelse.</p>
-                <div class="actions">
-                    <a href="https://www.dr.dk/nyheder/seneste/mindst-172-migranter-meldes-savnede" target="_blank" class="btn-link">Læs original artikel</a>
+                <h2>Mindst 172 migranter meldes savnet</h2>
+                <p class="news-summary">
+                    En ny tragedie har ramt migrationsruterne, hvor mindst 172 mennesker meldes savnet efter et forlis. Ulykken understreger endnu en gang den desperate og livsfarlige situation, som flygtninge og migranter tvinges ud i, når de søger sikkerhed uden om lovlige og sikre rejseveje.
+                </p>
+                <div class="links-container">
+                    <a href="https://www.dr.dk/nyheder/seneste/mindst-172-migranter-meldes-savnede" target="_blank" class="primary-link">Læs original artikel</a>
                 </div>
             </article>
 
             <!-- Artikel 3 -->
-            <article class="news-item">
-                <div class="meta-top">
-                    <span class="rank">#3</span>
-                    <span class="badge-kategori">Udlændingepolitik & Rettigheder</span>
-                    <span class="kilde">Kilde: Arbejderen</span>
+            <article class="news-card">
+                <div class="card-meta">
+                    <span class="badge-source">Arbejderen</span>
+                    <span class="badge-category">Udlændingepolitik &amp; Menneskerettigheder</span>
                 </div>
-                <h2 class="news-title">Vil gøre Rwanda til deportationscentral</h2>
-                <p class="summary">Den danske regerings asylkurs møder hård kritik for kynisme og fralæggelse af grundlæggende menneskeretligt ansvar. Planerne om at tvangsforflytte afviste asylansøgere til et udrejsecenter i Rwanda fremstilles som en umenneskelig eksport af samfundsansvar til det globale syd.</p>
-                <div class="actions">
-                    <a href="https://arbejderen.dk/debat/vil-goere-rwanda-til-deportationscentral/" target="_blank" class="btn-link">Læs original artikel</a>
+                <h2>Vil gøre Rwanda til deportationscentral</h2>
+                <p class="news-summary">
+                    Regeringen møder skarp kritik for sin fortsatte kurs med at udlicitere Danmarks asylforpligtelser til tredjelande. Aftalen om at sende afviste asylansøgere til Rwanda stemples som udtryk for kynisme, hvor mennesker uden tilknytning til det østafrikanske land gøres til en eksportvare for at tækkes en stram udlændingedagsorden.
+                </p>
+                <div class="links-container">
+                    <a href="https://arbejderen.dk/debat/vil-goere-rwanda-til-deportationscentral/" target="_blank" class="primary-link">Læs original artikel</a>
                 </div>
             </article>
 
             <!-- Artikel 4 -->
-            <article class="news-item">
-                <div class="meta-top">
-                    <span class="rank">#4</span>
-                    <span class="badge-kategori">Fred & Aktivisme</span>
-                    <span class="kilde">Kilde: Arbejderen</span>
+            <article class="news-card">
+                <div class="card-meta">
+                    <span class="badge-source">Arbejderen</span>
+                    <span class="badge-category">Fred &amp; Aktivisme</span>
                 </div>
-                <h2 class="news-title">Ungdomsstrejke mod militarisering</h2>
-                <p class="summary">Elever og studerende i mindst seks danske byer nedlagde undervisningen og gik på gaden som led i en international protestbølge mod oprustning og samfundets voksende militarisering. De unge kræver, at offentlige milliarder prioriteres til velfærd, uddannelse og grøn omstilling frem for våben.</p>
-                <div class="actions">
-                    <a href="https://arbejderen.dk/indland/ungdomsstrejke-mod-militarisering/" target="_blank" class="btn-link">Læs original artikel</a>
+                <h2>Ungdomsstrejke mod militarisering</h2>
+                <p class="news-summary">
+                    I mindst seks danske byer forlod elever og studerende deres undervisningslokaler for at protestere mod oprustning og samfundets øgede militarisering. Aktionen var en del af Den Internationale Ungdomsstrejke på tværs af mere end 25 europæiske nationer under parolen om at kæmpe for velfærd, uddannelse og fred frem for våben.
+                </p>
+                <div class="links-container">
+                    <a href="https://arbejderen.dk/indland/ungdomsstrejke-mod-militarisering/" target="_blank" class="primary-link">Læs original artikel</a>
                 </div>
             </article>
 
             <!-- Artikel 5 -->
-            <article class="news-item">
-                <div class="meta-top">
-                    <span class="rank">#5</span>
-                    <span class="badge-kategori">Socialpolitik & Ulighed</span>
-                    <span class="kilde">Kilde: TV 2 Nyheder</span>
+            <article class="news-card">
+                <div class="card-meta">
+                    <span class="badge-source">Fagbevægelsens Hovedorganisation</span>
+                    <span class="badge-category">Arbejdsmarked &amp; Social tryghed</span>
                 </div>
-                <h2 class="news-title">Knap 20.000 familier har søgt om julehjælp</h2>
-                <p class="summary">Hele 19.620 trængte familier har i år henvendt sig til Dansk Folkehjælp for at få støtte til julen, hvilket er en markant stigning over de seneste fem år. De dystre tal vidner om en hastigt voksende fattigdom og en økonomisk sårbarhed, der rammer tusindvis af børnefamilier i Danmark.</p>
-                <div class="actions">
-                    <a href="https://nyheder.tv2.dk/samfund/2026-11-24-knap-20000-familier-har-soegt-om-julehjaelp" target="_blank" class="btn-link">Læs original artikel</a>
+                <h2>Nanna Højlund: Vi skal udvikle unges arbejdsevne – ikke afvikle deres økonomiske tryghed</h2>
+                <p class="news-summary">
+                    FH afviser arbejdsgivernes forsøg på at skære i unges ydelser for at presse dem i arbejde. Næstformand Nanna Højlund fastslår, at unge med nedsat funktionsevne eller sociale problemer ikke hjælpes tættere på arbejdsmarkedet gennem fattigdom, men derimod via reel støtte, rummelige arbejdspladser og værdige vilkår.
+                </p>
+                <div class="links-container">
+                    <a href="https://fho.dk/blog/2026/11/24/nanna-hoejlund-vi-skal-udvikle-unges-arbejdsevne-ikke-afvikle-deres-oekonomiske-tryghed/" target="_blank" class="primary-link">Læs original artikel</a>
                 </div>
             </article>
 
             <!-- Artikel 6 -->
-            <article class="news-item">
-                <div class="meta-top">
-                    <span class="rank">#6</span>
-                    <span class="badge-kategori">Arbejdsmarked & Trivsel</span>
-                    <span class="kilde">Kilde: Fagbevægelsens Hovedorganisation</span>
+            <article class="news-card">
+                <div class="card-meta">
+                    <span class="badge-source">Fagbevægelsens Hovedorganisation</span>
+                    <span class="badge-category">Arbejdsmiljø &amp; Tech-giganter</span>
                 </div>
-                <h2 class="news-title">Nanna Højlund: Vi skal udvikle unges arbejdsevne – ikke afvikle deres økonomiske tryghed</h2>
-                <p class="summary">FH advarer mod arbejdsgivernes forsøg på at forringe vilkårene for unge med nedsat arbejdsevne. Næstformand Nanna Højlund fastslår, at vejen til at inkludere flere unge på arbejdsmarkedet går gennem reel støtte og uddannelse – ikke ved at skubbe dem ud i økonomisk utryghed og fattigdom.</p>
-                <div class="actions">
-                    <a href="https://fho.dk/blog/2026/11/24/nanna-hoejlund-vi-skal-udvikle-unges-arbejdsevne-ikke-afvikle-deres-oekonomiske-tryghed/" target="_blank" class="btn-link">Læs original artikel</a>
+                <h2>Bagsiden af Black Friday: Frygt, digital overvågning og hårdt arbejdspres hos Amazon</h2>
+                <p class="news-summary">
+                    En ny rapport fra Europa-Parlamentet blotlægger de benhårde forhold på Amazons lagre forud for forbrugsfesten Black Friday. Medarbejdere beretter om konstant digital overvågning fra algoritmer, frygt for fyringer ved den mindste forsinkelse og et ekstremt arbejdspres, mens ledelsen fortsat afviser kritikken.
+                </p>
+                <div class="links-container">
+                    <a href="https://fho.dk/blog/2026/11/20/modstridende-forklaringer-saetter-spoergsmaalstegn-ved-forholdene-hos-amazon/" target="_blank" class="primary-link">Læs original artikel</a>
                 </div>
             </article>
 
             <!-- Artikel 7 -->
-            <article class="news-item">
-                <div class="meta-top">
-                    <span class="rank">#7</span>
-                    <span class="badge-kategori">Velfærd & Sundhed</span>
-                    <span class="kilde">Kilde: Fagbevægelsens Hovedorganisation</span>
+            <article class="news-card">
+                <div class="card-meta">
+                    <span class="badge-source">TV 2 Nyheder</span>
+                    <span class="badge-category">Social ulighed &amp; Velfærd</span>
                 </div>
-                <h2 class="news-title">FH med helhedsplan for bosteder: Pengene skal blive i velfærden</h2>
-                <p class="summary">Fagbevægelsen kræver et grundlæggende opgør med privat spekulation i socialområdet. En ny helhedsplan lægger op til et profitloft samt krav om, at alle nye bosteder for sårbare borgere skal drives på non-profit basis, så offentlige midler går ubeskåret til omsorg og faglig kvalitet.</p>
-                <div class="actions">
-                    <a href="https://fho.dk/blog/2026/11/19/fh-med-helhedsplan-for-bosteder-pengene-skal-blive-i-velfaerden/" target="_blank" class="btn-link">Læs original artikel</a>
+                <h2>Knap 20.000 familier har søgt om julehjælp</h2>
+                <p class="news-summary">
+                    Pres på privatøkonomien tvinger et rekordstort antal børnefamilier til at bede om hjælp til jul. Dansk Folkehjælp melder om 19.620 ansøgere, hvilket markerer en markant stigning på flere tusinde over de seneste fem år og udstiller den voksende børnefattigdom og ulighed i Danmark.
+                </p>
+                <div class="links-container">
+                    <a href="https://nyheder.tv2.dk/samfund/2026-11-24-knap-20000-familier-har-soegt-om-julehjaelp" target="_blank" class="primary-link">Læs original artikel</a>
                 </div>
             </article>
 
             <!-- Artikel 8 -->
-            <article class="news-item">
-                <div class="meta-top">
-                    <span class="rank">#8</span>
-                    <span class="badge-kategori">Arbejdsmiljø & Teknologi</span>
-                    <span class="kilde">Kilde: Fagbevægelsens Hovedorganisation</span>
+            <article class="news-card">
+                <div class="card-meta">
+                    <span class="badge-source">Altinget</span>
+                    <span class="badge-category">Dansk politik</span>
                 </div>
-                <h2 class="news-title">Bagsiden af Black Friday: Frygt, digital overvågning og hårdt arbejdspres hos Amazon</h2>
-                <p class="summary">En ny rapport fra Europa-Parlamentet blotlægger de barske vilkår for lagerarbejderne hos tech-giganten Amazon forud for Black Friday. Medarbejdere beretter om konstant digital overvågning, umenneskeligt tidspres og en frygtkultur drevet af algoritmer og automatiseret ledelse.</p>
-                <div class="actions">
-                    <a href="https://fho.dk/blog/2026/11/20/modstridende-forklaringer-saetter-spoergsmaalstegn-ved-forholdene-hos-amazon/" target="_blank" class="btn-link">Læs original artikel</a>
+                <h2>Dramatisk spørgetime: Mette Frederiksen balancerede på Enhedslistens røde linje</h2>
+                <p class="news-summary">
+                    Statsministerens opsigtsvækkende udtalelser om etnicitet og "befolkningsudskiftning" skabte højspænding i Folketingssalen. Enhedslisten krævede klar afstandtagen for fortsat at holde hånden under regeringen. Frederiksen forsøgte at glatte ud, men sagen truer fortsat det parlamentariske samarbejde på venstrefløjen.
+                </p>
+                <div class="links-container">
+                    <a href="https://www.altinget.dk/artikel/dramatisk-spoergetime-mette-frederiksen-balancerede-paa-enhedslistens-roede-linje" target="_blank" class="primary-link">Læs original artikel</a>
                 </div>
             </article>
 
             <!-- Artikel 9 -->
-            <article class="news-item">
-                <div class="meta-top">
-                    <span class="rank">#9</span>
-                    <span class="badge-kategori">Psykiatri & Rettigheder</span>
-                    <span class="kilde">Kilde: Altinget</span>
+            <article class="news-card">
+                <div class="card-meta">
+                    <span class="badge-source">Altinget</span>
+                    <span class="badge-category">Sundhed &amp; Ligestilling</span>
                 </div>
-                <h2 class="news-title">Journalist delte psykiatri-tal op i mænd og kvinder: “Jeg var sådan what the fuck”</h2>
-                <p class="summary">En systematisk kortlægning afslører dyb ulighed i psykiatrien: Indlagte kvinder udsættes for mere end dobbelt så meget hård fysisk tvang som mænd. Afsløringen vækker stor forargelse blandt eksperter og kaster lys over et mangeårigt svigt af sårbare, unge kvindelige patienter.</p>
-                <div class="actions">
-                    <a href="https://www.altinget.dk/artikel/i-aarevis-har-politikerne-forsoegt-at-nedbringe-tvang-men-en-markant-forskel-mellem-maend-og-kvinder-er-gaaet-under-radaren" target="_blank" class="btn-link">Læs original artikel</a>
+                <h2>Journalist delte psykiatri-tal op i mænd og kvinder: “Jeg var sådan what the fuck”</h2>
+                <p class="news-summary">
+                    En dybdegående kortlægning afdækker en voldsom kønsskævhed i det danske psykiatriske system: Kvinder udsættes for mere end dobbelt så meget hård tvang som mænd. Afsløringen vækker stor forargelse blandt eksperter og politikere, der kræver øjeblikkelig undersøgelse af magtanvendelsen over for sårbare piger og kvinder.
+                </p>
+                <div class="links-container">
+                    <a href="https://www.altinget.dk/artikel/i-aarevis-har-politikerne-forsoegt-at-nedbringe-tvang-men-en-markant-forskel-mellem-maend-og-kvinder-er-gaaet-under-radaren" target="_blank" class="primary-link">Læs original artikel</a>
                 </div>
             </article>
 
             <!-- Artikel 10 -->
-            <article class="news-item">
-                <div class="meta-top">
-                    <span class="rank">#10</span>
-                    <span class="badge-kategori">Børn & Daginstitutioner</span>
-                    <span class="kilde">Kilde: Altinget</span>
+            <article class="news-card">
+                <div class="card-meta">
+                    <span class="badge-source">TV 2 Nyheder</span>
+                    <span class="badge-category">International politik &amp; Krig</span>
                 </div>
-                <h2 class="news-title">Mie gik altid med ondt i maven. Da hun fandt sin datter på et koldt gulv, sagde hun stop</h2>
-                <p class="summary">Historien om en moders desperate beslutning om at tage sit barn ud af vuggestuen illustrerer de alvorlige konsekvenser af manglende pædagogiske ressourcer i landets daginstitutioner. Kommunale tilsyn bekræfter svigt, som eksperter frygter blot er toppen af isbjerget.</p>
-                <div class="actions">
-                    <a href="https://www.altinget.dk/artikel/mie-gik-altid-med-ondt-i-maven-da-hun-fandt-sin-datter-paa-et-koldt-gulv-sagde-hun-stop" target="_blank" class="btn-link">Læs original artikel</a>
+                <h2>- Det er fuldstændig vanvittigt, siger korrespondent om læk fra Rusland</h2>
+                <p class="news-summary">
+                    Lækkede dokumenter og nye dataanalyser indikerer enorme russiske tabstal i krigen i Ukraine, som overgår hidtidige estimater. Militære analytikere og seniorforskere peger på, at tabstallene vidner om en hensynsløs krigsførelse, hvor tusindvis af værnepligtige og soldater ofres uden hensyn ved frontlinjen.
+                </p>
+                <div class="links-container">
+                    <a href="https://nyheder.tv2.dk/udland/2026-11-24-laekkede-data-antyder-enormt-russisk-doedstal" target="_blank" class="primary-link">Læs original artikel</a>
                 </div>
             </article>
 
             <!-- Artikel 11 -->
-            <article class="news-item">
-                <div class="meta-top">
-                    <span class="rank">#11</span>
-                    <span class="badge-kategori">Internationale Forhold</span>
-                    <span class="kilde">Kilde: DR</span>
+            <article class="news-card">
+                <div class="card-meta">
+                    <span class="badge-source">Ingeniøren articles</span>
+                    <span class="badge-category">Miljø &amp; Grundvand</span>
                 </div>
-                <h2 class="news-title">Antallet af ofre for landminer er det højeste i fem år</h2>
-                <p class="summary">Globale opgørelser viser en voldsom stigning i antallet af civile, der lemlæstes eller dræbes af efterladte landminer og klyngebomber. Udviklingen vidner om de langvarige, umenneskelige konsekvenser af moderne krigsførelse for uskyldige lokalbefolkninger.</p>
-                <div class="actions">
-                    <a href="https://www.dr.dk/nyheder/seneste/antallet-af-ofre-landminer-er-det-hoejeste-i-fem-aar" target="_blank" class="btn-link">Læs original artikel</a>
+                <h2>Regnebommert forsinker sprøjteforbud: »Det er dybt frustrerende«</h2>
+                <p class="news-summary">
+                    En regnefejl fra Aarhus Universitet forsinker det lovede nationale sprøjteforbud, der skal beskytte danskernes drikkevandsboringer mod pesticider. Miljøministeren fastholder, at planen skal gennemføres, men forsinkelsen vækker skarp frustration hos miljøorganisationer, som frygter fortsat forurening af grundvandet.
+                </p>
+                <div class="links-container">
+                    <a href="https://ing.dk/artikel/regnebommert-forsinker-sproejteforbud-det-er-dybt-frustrerende" target="_blank" class="primary-link">Læs original artikel</a>
+                    <a href="https://ing.dk/user/login?destination=/" target="_blank" class="ida-login">(Log ind via IDA)</a>
                 </div>
             </article>
 
             <!-- Artikel 12 -->
-            <article class="news-item">
-                <div class="meta-top">
-                    <span class="rank">#12</span>
-                    <span class="badge-kategori">Klima & Miljø</span>
-                    <span class="kilde">Kilde: Altinget</span>
+            <article class="news-card">
+                <div class="card-meta">
+                    <span class="badge-source">Ingeniøren articles</span>
+                    <span class="badge-category">Miljøret &amp; Landbrug</span>
                 </div>
-                <h2 class="news-title">EU lader klimatopmøde falde: "Vi kan ikke støtte en beslutning, der greenwasher fossile brændstoffer"</h2>
-                <p class="summary">På COP31 har EU sat foden ned over for olieproducerende nationer og afvist en udvandet sluterklæring. Den danske klimaminister understreger, at ingen aftale er bedre end en aftale, der camouflerer fortsat udvinding af fossile brændsler på bekostning af planetens fremtid.</p>
-                <div class="actions">
-                    <a href="https://www.altinget.dk/artikel/eu-lader-klimatopmoede-falde-vi-kan-ikke-stoette-en-beslutning-der-greenwasher-fossile-braendstoffer" target="_blank" class="btn-link">Læs original artikel</a>
+                <h2>Fra 'forureneren betaler' til 'naboen bestemmer'</h2>
+                <p class="news-summary">
+                    Princippet om, at forureneren skal betale regningen, er under voldsomt pres i dansk miljøpolitik. Efter minksagens gigantiske erstatninger gentager et lignende mønster sig nu på drikkevandsområdet, hvor landbrugets interessenter tildeles stor indflydelse på kommissioner og erstatningsudmålinger for grundvandsbeskyttelse.
+                </p>
+                <div class="links-container">
+                    <a href="https://ing.dk/artikel/fra-forureneren-betaler-til-naboen-bestemmer" target="_blank" class="primary-link">Læs original artikel</a>
+                    <a href="https://ing.dk/user/login?destination=/" target="_blank" class="ida-login">(Log ind via IDA)</a>
                 </div>
             </article>
 
             <!-- Artikel 13 -->
-            <article class="news-item">
-                <div class="meta-top">
-                    <span class="rank">#13</span>
-                    <span class="badge-kategori">Klima & Teknologi</span>
-                    <span class="kilde">Kilde: Videnskab.dk</span>
+            <article class="news-card">
+                <div class="card-meta">
+                    <span class="badge-source">Videnskab.dk</span>
+                    <span class="badge-category">Klima &amp; Tech</span>
                 </div>
-                <h2 class="news-title">USA’s største datacentre udleder lige så meget CO2 som hele Danmark</h2>
-                <p class="summary">En ny videnskabelig undersøgelse fra Harvard University viser, at blot 403 hyperskala-datacentre i USA årligt udleder 25,7 millioner tons CO2. Det enorme energiforbrug til tech-sektorens servere lægger et massivt pres på klimaet og udstiller bagsiden af den ukritiske digitale ekspansion.</p>
-                <div class="actions">
-                    <a href="https://videnskab.dk/teknologi/usas-stoerste-datacentre-udleder-lige-saa-meget-co2-som-hele-danmark/" target="_blank" class="btn-link">Læs original artikel</a>
+                <h2>USA’s største datacentre udleder lige så meget CO2 som hele Danmark</h2>
+                <p class="news-summary">
+                    Et nyt studie ledet af forskere fra Harvard University viser, at blot 403 hyperskala-datacentre i USA udleder 25,7 millioner tons CO2 om året – svarende til Danmarks samlede nationale udledning. Undersøgelsen understreger den enorme klimabelastning, som kunstig intelligens og tech-industriens eksplosive vækst medfører.
+                </p>
+                <div class="links-container">
+                    <a href="https://videnskab.dk/teknologi/usas-stoerste-datacentre-udleder-lige-saa-meget-co2-som-hele-danmark/" target="_blank" class="primary-link">Læs original artikel</a>
                 </div>
             </article>
 
             <!-- Artikel 14 -->
-            <article class="news-item">
-                <div class="meta-top">
-                    <span class="rank">#14</span>
-                    <span class="badge-kategori">Forskning & Samfund</span>
-                    <span class="kilde">Kilde: Ingeniøren</span>
+            <article class="news-card">
+                <div class="card-meta">
+                    <span class="badge-source">Videnskab.dk</span>
+                    <span class="badge-category">Sundhedsvidenskab</span>
                 </div>
-                <h2 class="news-title">Magten kulegravet: Novo Nordisk Fonden og andre pengetanke udfordrer forskningsfriheden</h2>
-                <p class="summary">Private erhvervsfonde har opnået hidtil uset magt over den danske forskningsverden med milliardinvesteringer. En ny rapport advarer om, at universiteternes voksende afhængighed af private pengetanke risikerer at undergrave den frie, uafhængige grundforskning til fordel for snævre særinteresser.</p>
-                <div class="actions">
-                    <a href="https://ing.dk/artikel/magten-kulegravet-novo-nordisk-fonden-og-andre-pengetanke-udfordrer-forskningsfriheden" target="_blank" class="btn-link">Læs original artikel</a>
-                    <a href="https://ing.dk/user/login?destination=/" target="_blank" class="ida-login">(Log ind via IDA)</a>
+                <h2>Tobaksplante hjælper med at udvikle ny opskrift på kræftmedicin</h2>
+                <p class="news-summary">
+                    Forskere har opnået et videnskabeligt gennembrud ved at anvende en plante fra tobaksfamilien som bio-fabrik til fremstilling af kompleks kræftmedicin. Metoden lover markant lavere produktionsomkostninger, hvilket kan bane vejen for, at livsvigtig medicin bliver billigere og mere tilgængelig i sundhedsvæsenet.
+                </p>
+                <div class="links-container">
+                    <a href="https://videnskab.dk/krop-sundhed/tobaksplante-hjaelper-med-at-udvikle-ny-opskrift-paa-kraeftmedicin/" target="_blank" class="primary-link">Læs original artikel</a>
                 </div>
             </article>
 
             <!-- Artikel 15 -->
-            <article class="news-item">
-                <div class="meta-top">
-                    <span class="rank">#15</span>
-                    <span class="badge-kategori">Miljø & Forvaltning</span>
-                    <span class="kilde">Kilde: Ingeniøren</span>
+            <article class="news-card">
+                <div class="card-meta">
+                    <span class="badge-source">Version2 articles</span>
+                    <span class="badge-category">Teknologi &amp; Samfund</span>
                 </div>
-                <h2 class="news-title">Fra 'forureneren betaler' til 'naboen bestemmer'</h2>
-                <p class="summary">Erstatningsmodellerne i landbruget gentager uheldige mønstre fra minksagen, hvor erhvervsinteresser fik lov at sætte præcedens for egne godtgørelser. Nu handler striden om beskyttelsen af det fælles drikkevand, hvor princippet om at forureneren betaler tilsyneladende er sat ud af kraft.</p>
-                <div class="actions">
-                    <a href="https://ing.dk/artikel/fra-forureneren-betaler-til-naboen-bestemmer" target="_blank" class="btn-link">Læs original artikel</a>
-                    <a href="https://ing.dk/user/login?destination=/" target="_blank" class="ida-login">(Log ind via IDA)</a>
+                <h2>Hemmelige ejere og ukendte formål: Mørklagte datacentre er »meget bekymrende«</h2>
+                <p class="news-summary">
+                    Kommuner godkender store datacenterbyggerier uden at kende de reelle ejere eller formålet med anlæggene. Eksperter advarer om, at hemmelighedskræmmeriet fratager lokalsamfundene demokratisk kontrol og gør det umuligt at vurdere belastningen på Danmarks elnet og naturressourcer.
+                </p>
+                <div class="links-container">
+                    <a href="https://www.version2.dk/artikel/hemmelige-ejere-og-ukendte-formaal-moerklagte-datacentre-er-meget-bekymrende" target="_blank" class="primary-link">Læs original artikel</a>
+                    <a href="https://www.version2.dk/user/login?destination=/" target="_blank" class="ida-login">(Log ind via IDA)</a>
                 </div>
             </article>
 
             <!-- Artikel 16 -->
-            <article class="news-item">
-                <div class="meta-top">
-                    <span class="rank">#16</span>
-                    <span class="badge-kategori">Kollektiv Trafik</span>
-                    <span class="kilde">Kilde: Arbejderen</span>
+            <article class="news-card">
+                <div class="card-meta">
+                    <span class="badge-source">Fagbevægelsens Hovedorganisation</span>
+                    <span class="badge-category">Velfærd &amp; Socialpolitik</span>
                 </div>
-                <h2 class="news-title">Afprivatiser den kollektive transport!</h2>
-                <p class="summary">Ulicitering og privatisering af den kollektive trafik har medført social dumping, konkurser og et forringet arbejdsmiljø for chaufførerne. Der rejses nu et skarpt krav om at trække den offentlige transport tilbage under samfundsmæssig styring uden profitkrav.</p>
-                <div class="actions">
-                    <a href="https://arbejderen.dk/debat/afprivatiser-den-kollektive-transport/" target="_blank" class="btn-link">Læs original artikel</a>
+                <h2>FH med helhedsplan for bosteder: Pengene skal blive i velfærden</h2>
+                <p class="news-summary">
+                    Fagbevægelsen fremlægger et samlet udspil, der skal dæmme op for privatisering og profitmageri på socialområdet. FH foreslår, at nye bosteder udelukkende skal etableres som offentlige eller nonprofit-tilbud, samtidig med at der lægges loft over overskud for at beskytte sårbare beboere mod spekulation.
+                </p>
+                <div class="links-container">
+                    <a href="https://fho.dk/blog/2026/11/19/fh-med-helhedsplan-for-bosteder-pengene-skal-blive-i-velfaerden/" target="_blank" class="primary-link">Læs original artikel</a>
                 </div>
             </article>
 
             <!-- Artikel 17 -->
-            <article class="news-item">
-                <div class="meta-top">
-                    <span class="rank">#17</span>
-                    <span class="badge-kategori">Retssikkerhed & Offentlig Sektor</span>
-                    <span class="kilde">Kilde: Arbejderen</span>
+            <article class="news-card">
+                <div class="card-meta">
+                    <span class="badge-source">Fagbevægelsens Hovedorganisation</span>
+                    <span class="badge-category">Arbejdsmiljø &amp; Digitalisering</span>
                 </div>
-                <h2 class="news-title">Kommunal whistleblower skal i landsretten efter frifindelse i byretten</h2>
-                <p class="summary">Københavns Kommune fastholder sit retsopgør mod whistlebloweren Bitten Vivi Jensen i Østre Landsret på trods af en klar frifindelse i byretten. Sagen ses som et principielt angreb på ytringsfriheden og beskyttelsen af medarbejdere, der råber op om ulovligheder på jobcentre.</p>
-                <div class="actions">
-                    <a href="https://arbejderen.dk/indland/kommunal-whistleblower-skal-i-landsretten-efter-frifindelse-i-byretten/" target="_blank" class="btn-link">Læs original artikel</a>
+                <h2>Hvem passer på arbejdsmiljøet, når algoritmerne fordeler arbejdet?</h2>
+                <p class="news-summary">
+                    En undersøgelse viser, at to ud af tre medarbejdere kræver tillidsrepræsentanter inddraget, inden kunstig intelligens indføres på arbejdspladsen. FH fremsætter krav om nye retningslinjer mod digital stress for at undgå, at automatiseret overvågning og algoritmestyring undergraver lønmodtagernes mentale helbred.
+                </p>
+                <div class="links-container">
+                    <a href="https://fho.dk/blog/2026/11/24/hvem-passer-paa-arbejdsmiljoeet-naar-algoritmerne-fordeler-arbejdet/" target="_blank" class="primary-link">Læs original artikel</a>
                 </div>
             </article>
 
             <!-- Artikel 18 -->
-            <article class="news-item">
-                <div class="meta-top">
-                    <span class="rank">#18</span>
-                    <span class="badge-kategori">Økonomisk Demokrati</span>
-                    <span class="kilde">Kilde: Fagbevægelsens Hovedorganisation</span>
+            <article class="news-card">
+                <div class="card-meta">
+                    <span class="badge-source">Ingeniøren articles</span>
+                    <span class="badge-category">Sikkerhedspolitik</span>
                 </div>
-                <h2 class="news-title">FH: Sæt medarbejderejede virksomheder på finansloven</h2>
-                <p class="summary">Fagbevægelsen appellerer til politikerne om at afsætte konkrete midler på finansloven til at fremme medarbejderstifter og -ejerskab i danske virksomheder. Det fremhæves som en afgørende løftestang for at mindske økonomisk ulighed og demokratisere arbejdslivet.</p>
-                <div class="actions">
-                    <a href="https://fho.dk/blog/2026/11/23/fh-saet-medarbejderejede-virksomheder-paa-finansloven/" target="_blank" class="btn-link">Læs original artikel</a>
+                <h2>Tysk efterretningstjeneste advarer: Før nytår sender Rusland atomvåben ud i rummet</h2>
+                <p class="news-summary">
+                    Tyske efterretningskilder vurderer med stor alvor oplysninger om, at Rusland planlægger at opsende atomvåben i kredsløb inden årets udgang. Truslen om en potentiel anti-satellit-atomkapacitet i rummet udfordrer de internationale traktater og varsler et nyt, ustabilt våbenkapløb uden for Jordens atmosfære.
+                </p>
+                <div class="links-container">
+                    <a href="https://ing.dk/artikel/tysk-efterretningstjeneste-advarer-foer-nytaar-sender-rusland-atomvaaben-ud-i-rummet" target="_blank" class="primary-link">Læs original artikel</a>
+                    <a href="https://ing.dk/user/login?destination=/" target="_blank" class="ida-login">(Log ind via IDA)</a>
                 </div>
             </article>
 
             <!-- Artikel 19 -->
-            <article class="news-item">
-                <div class="meta-top">
-                    <span class="rank">#19</span>
-                    <span class="badge-kategori">Klima & Folkesundhed</span>
-                    <span class="kilde">Kilde: DR</span>
+            <article class="news-card">
+                <div class="card-meta">
+                    <span class="badge-source">Altinget</span>
+                    <span class="badge-category">Klimapolitik &amp; Internationalt</span>
                 </div>
-                <h2 class="news-title">Sommerens hedebølger kostede 5.258 personer livet i Storbritannien</h2>
-                <p class="summary">Nye officielle tal afslører over fem tusinde overdødsfald som direkte følge af sommerens ekstreme temperaturer i Storbritannien. Rapporten understreger, hvordan klimaforandringerne allerede koster menneskeliv i Europa og rammer de mest sårbare og ældre borgere hårdest.</p>
-                <div class="actions">
-                    <a href="https://www.dr.dk/nyheder/seneste/sommerens-hedeboelger-kostede-5-258-personer-livet-i-storbritannien" target="_blank" class="btn-link">Læs original artikel</a>
+                <h2>EU lader klimatopmøde falde: "Vi kan ikke støtte en beslutning, der greenwasher fossile brændstoffer"</h2>
+                <p class="news-summary">
+                    På COP31 i Tyrkiet satte EU foden ned og afviste en udvandet sluterklæring styret af olieproducerende lande. Den danske klimaminister understreger, at ingen aftale er bedre end en aftale, der tillader fortsat fossil udvinding under dække af utilstrækkelige klimaløfter.
+                </p>
+                <div class="links-container">
+                    <a href="https://www.altinget.dk/artikel/eu-lader-klimatopmoede-falde-vi-kan-ikke-stoette-en-beslutning-der-greenwasher-fossile-braendstoffer" target="_blank" class="primary-link">Læs original artikel</a>
                 </div>
             </article>
 
             <!-- Artikel 20 -->
-            <article class="news-item">
-                <div class="meta-top">
-                    <span class="rank">#20</span>
-                    <span class="badge-kategori">Dansk Politik & Fordeling</span>
-                    <span class="kilde">Kilde: Altinget</span>
+            <article class="news-card">
+                <div class="card-meta">
+                    <span class="badge-source">Kort nyt | DR</span>
+                    <span class="badge-category">Medier &amp; Demokrati</span>
                 </div>
-                <h2 class="news-title">Med skatteaftalen fik Løkke sit trofæ. Nu er det Pia Olsen Dyhr og Pelle Dragsteds tur til at levere</h2>
-                <p class="summary">Efter at regeringen har sikret skattelettelser til de mest velhavende, er presset vokset markant på venstrefløjens støttepartier. SF og Enhedslisten kæmper i de igangværende finanslovsforhandlinger for at sikre mærkbare investeringer i børneområdet og ældreplejen for at rette op på den sociale balance.</p>
-                <div class="actions">
-                    <a href="https://www.altinget.dk/artikel/med-skatteaftalen-fik-loekke-sit-trofae-nu-er-det-pia-olsen-dyhr-og-pelle-dragsteds-tur-til-at-levere" target="_blank" class="btn-link">Læs original artikel</a>
+                <h2>Mediehuse vil droppe betalingsmur for unge mellem 15 og 23 år</h2>
+                <p class="news-summary">
+                    Danske mediehuse forbereder et fælles initiativ til at give unge fri adgang til journalistisk indhold bag betalingsmure. Målet er at styrke unges demokratiske dannelse, modvirke misinformation på sociale medier og skabe et fundament for kritisk nyhedsforbrug uanset personlig økonomi.
+                </p>
+                <div class="links-container">
+                    <a href="https://www.dr.dk/nyheder/seneste/mediehuse-vil-droppe-betalingsmur-unge-mellem-15-og-23-aar" target="_blank" class="primary-link">Læs original artikel</a>
                 </div>
             </article>
         </main>
 
         <section>
-            <details class="rest-list">
+            <details>
                 <summary>Se alle øvrige hentede overskrifter</summary>
-                <ul class="compact-list">
-                    <li><span class="compact-source">[Kort nyt | DR]</span> <a class="compact-link" href="https://www.dr.dk/nyheder/seneste/over-2-000-uden-stroem-i-koebenhavns-nordhavn" target="_blank">Over 2.000 uden strøm i Københavns Nordhavn</a></li>
-                    <li><span class="compact-source">[Kort nyt | DR]</span> <a class="compact-link" href="https://www.dr.dk/nyheder/seneste/helikopterstyrt-i-tyrkiet-fem-soldater-meldes-draebt" target="_blank">Helikopterstyrt i Tyrkiet - fem soldater meldes dræbt</a></li>
-                    <li><span class="compact-source">[Kort nyt | DR]</span> <a class="compact-link" href="https://www.dr.dk/nyheder/seneste/gidseltagning-i-supermarked-i-colombia" target="_blank">Gidseltagning i supermarked i Colombia</a></li>
-                    <li><span class="compact-source">[Kort nyt | DR]</span> <a class="compact-link" href="https://www.dr.dk/nyheder/seneste/softwarevirksomhed-melder-om-cyberangreb" target="_blank">Softwarevirksomhed melder om cyberangreb</a></li>
-                    <li><span class="compact-source">[Kort nyt | DR]</span> <a class="compact-link" href="https://www.dr.dk/nyheder/seneste/mediehuse-vil-droppe-betalingsmur-unge-mellem-15-og-23-aar" target="_blank">Mediehuse vil droppe betalingsmur for unge mellem 15 og 23 år</a></li>
-                    <li><span class="compact-source">[Kort nyt | DR]</span> <a class="compact-link" href="https://www.dr.dk/nyheder/seneste/anthropic-aktien-falder-til-under-udbudskurs" target="_blank">Anthropic-aktien falder til under udbudskurs</a></li>
-                    <li><span class="compact-source">[Kort nyt | DR]</span> <a class="compact-link" href="https://www.dr.dk/nyheder/seneste/svenske-politikere-skal-paa-mandag-stemme-om-hvorvidt-kristersson-kan-fortsaette-som-statsminister" target="_blank">Svenske politikere skal på mandag stemme om, hvorvidt Kristersson kan fortsætte som statsminister</a></li>
-                    <li><span class="compact-source">[Kort nyt | DR]</span> <a class="compact-link" href="https://www.dr.dk/nyheder/seneste/spansk-par-faengslet-have-lange-fingre-i-lufthavnen" target="_blank">Spansk par fængslet for at have lange fingre i lufthavnen</a></li>
-                    <li><span class="compact-source">[Kort nyt | DR]</span> <a class="compact-link" href="https://www.dr.dk/nyheder/seneste/politiet-efterlyser-vidner-efter-mistaenkeligt-doedsfald-i-nakskov" target="_blank">Politiet efterlyser vidner efter 'mistænkeligt dødsfald' i Nakskov</a></li>
-                    <li><span class="compact-source">[Kort nyt | DR]</span> <a class="compact-link" href="https://www.dr.dk/nyheder/seneste/mand-doemt-besiddelse-af-over-38-kilo-kokain" target="_blank">Mand dømt for besiddelse af over 38 kilo kokain</a></li>
-                    <li><span class="compact-source">[Kort nyt | DR]</span> <a class="compact-link" href="https://www.dr.dk/nyheder/seneste/maend-anholdt-efter-indbrud-i-britisk-kronprinspars-feriebolig" target="_blank">To mænd anholdt efter indbrud i britisk kronprinspars feriebolig</a></li>
-                    <li><span class="compact-source">[Kort nyt | DR]</span> <a class="compact-link" href="https://www.dr.dk/nyheder/seneste/israels-militaer-har-draebt-hamas-leder-i-gaza" target="_blank">Israels militær har dræbt Hamas-leder i Gaza</a></li>
-                    <li><span class="compact-source">[Kort nyt | DR]</span> <a class="compact-link" href="https://www.dr.dk/nyheder/seneste/landsret-stadfaester-dom-overgreb-mod-mindreaarige" target="_blank">Landsret stadfæster dom for overgreb mod mindreårige</a></li>
-                    <li><span class="compact-source">[Kort nyt | DR]</span> <a class="compact-link" href="https://www.dr.dk/nyheder/seneste/eksplosion-draeber-seks-i-vietnam" target="_blank">Eksplosion dræber seks i Vietnam</a></li>
-                    <li><span class="compact-source">[Videnskab.dk]</span> <a class="compact-link" href="https://videnskab.dk/naturvidenskab/forskere-jagede-et-skibsvrag-men-fandt-i-stedet-noget-maerkvaerdigt-paa-havets-bund/" target="_blank">Forskere jagede et skibsvrag, men fandt i stedet noget mærkværdigt på havets bund</a></li>
-                    <li><span class="compact-source">[Videnskab.dk]</span> <a class="compact-link" href="https://videnskab.dk/teknologi/goer-vindmoeller-og-solceller-vores-elsystem-mere-saarbart/" target="_blank">Gør vindmøller og solceller vores elsystem mere sårbart?</a></li>
-                    <li><span class="compact-source">[Videnskab.dk]</span> <a class="compact-link" href="https://videnskab.dk/kultur-samfund/puslespil-er-du-soestaerk/" target="_blank">Puslespil: Er du søstærk?</a></li>
-                    <li><span class="compact-source">[Videnskab.dk]</span> <a class="compact-link" href="https://videnskab.dk/naturvidenskab/ny-forskning-mennesker-og-fugle-synger-og-taler-efter-de-samme-moenstre/" target="_blank">Ny forskning: Mennesker og fugle synger og taler efter de samme mønstre</a></li>
-                    <li><span class="compact-source">[Videnskab.dk]</span> <a class="compact-link" href="https://videnskab.dk/krop-sundhed/tobaksplante-hjaelper-med-at-udvikle-ny-opskrift-paa-kraeftmedicin/" target="_blank">Tobaksplante hjælper med at udvikle ny opskrift på kræftmedicin</a></li>
-                    <li><span class="compact-source">[Videnskab.dk]</span> <a class="compact-link" href="https://videnskab.dk/naturvidenskab/matematikkens-mest-beroemte-gaade-er-potentielt-loest-med-kunstig-intelligens/" target="_blank">Matematikkens mest berømte gåde er potentielt løst - med kunstig intelligens</a></li>
-                    <li><span class="compact-source">[Videnskab.dk]</span> <a class="compact-link" href="https://videnskab.dk/kultur-samfund/foeles-alt-dit-efteraarstoej-ogsaa-helt-forkert-derfor-faar-mange-toejkrise-naar-saesonen-skifter-og-det-kan-du-goere/" target="_blank">Føles alt dit efterårstøj også helt forkert? Derfor får mange tøjkrise, når sæsonen skifter - og det kan du gøre</a></li>
-                    <li><span class="compact-source">[Videnskab.dk]</span> <a class="compact-link" href="https://videnskab.dk/kultur-samfund/spyt-vold-og-ild-fredrik-fandt-oldgammel-egyptisk-magi-i-arkaeologisk-skraldespand/" target="_blank">Spyt, vold og ild: Fredrik fandt oldgammel egyptisk magi i arkæologisk skraldespand</a></li>
-                    <li><span class="compact-source">[Videnskab.dk]</span> <a class="compact-link" href="https://videnskab.dk/rummet/techgiganter-vil-sende-datacentre-ud-i-rummet-men-der-er-5-store-problemer/" target="_blank">Techgiganter vil sende datacentre ud i rummet. Men der er 5 store problemer</a></li>
-                    <li><span class="compact-source">[Videnskab.dk]</span> <a class="compact-link" href="https://videnskab.dk/naturvidenskab/3-overraskende-gevinster-ved-oprindelige-folks-viden/" target="_blank">3 overraskende gevinster ved oprindelige folks viden</a></li>
-                    <li><span class="compact-source">[Videnskab.dk]</span> <a class="compact-link" href="https://videnskab.dk/naturvidenskab/fortiden-gemmer-paa-klimaloesninger-til-et-varmere-europa/" target="_blank">Fortiden gemmer på klimaløsninger til et varmere Europa</a></li>
-                    <li><span class="compact-source">[Videnskab.dk]</span> <a class="compact-link" href="https://videnskab.dk/naturvidenskab/overlever-under-ekstreme-vilkaar-5-ting-forsker-ville-oenske-alle-vidste-om-saerlige-planter/" target="_blank">Overlever under ekstreme vilkår: 5 ting, forsker ville ønske, alle vidste om særlige planter</a></li>
-                    <li><span class="compact-source">[Videnskab.dk]</span> <a class="compact-link" href="https://videnskab.dk/krop-sundhed/kan-man-drikke-sukkerfri-sodavand-med-god-samvittighed/" target="_blank">Kan man drikke sukkerfri sodavand med god samvittighed?</a></li>
-                    <li><span class="compact-source">[Videnskab.dk]</span> <a class="compact-link" href="https://videnskab.dk/kultur-samfund/partier-fremhaever-kampen-mod-fake-news-men-skaerer-i-videnskab-dk/" target="_blank">Partier fremhæver kampen mod fake news, men skærer i Videnskab.dk</a></li>
-                    <li><span class="compact-source">[Videnskab.dk]</span> <a class="compact-link" href="https://videnskab.dk/kultur-samfund/weekendquizzen-kors-i-hytten-hvor-meget-ved-du-om-katolicisme/" target="_blank">Weekendquizzen: Kors i hytten! Hvor meget ved du om katolicisme?</a></li>
-                    <li><span class="compact-source">[Videnskab.dk]</span> <a class="compact-link" href="https://videnskab.dk/krop-sundhed/staaende-eller-siddende-nu-er-tissespoergsmaalet-maaske-endelig-blevet-loest/" target="_blank">Stående eller siddende? Nu er tissespørgsmålet måske endelig blevet løst</a></li>
-                    <li><span class="compact-source">[Videnskab.dk]</span> <a class="compact-link" href="https://videnskab.dk/naturvidenskab/verdens-groenne-supermagt-koerer-stadig-paa-kul-disse-grafer-afsloerer-kinas-klimaindsats/" target="_blank">Verdens grønne supermagt kører stadig på kul: Disse grafer afslører Kinas klimaindsats</a></li>
-                    <li><span class="compact-source">[Videnskab.dk]</span> <a class="compact-link" href="https://videnskab.dk/kultur-samfund/nazca-spaedbarn-blev-foedt-med-et-oeje-i-midten-af-ansigtet/" target="_blank">Nazca-spædbarn blev født med ét øje i midten af ansigtet</a></li>
-                    <li><span class="compact-source">[Altinget]</span> <a class="compact-link" href="https://www.altinget.dk/artikel/dramatisk-spoergetime-mette-frederiksen-balancerede-paa-enhedslistens-roede-linje" target="_blank">Dramatisk spørgetime: Mette Frederiksen balancerede på Enhedslistens røde linje</a></li>
-                    <li><span class="compact-source">[Altinget]</span> <a class="compact-link" href="https://www.altinget.dk/artikel/dkpol-taler-med-alex-vanopslagh" target="_blank">#dkpol taler med: Alex Vanopslagh</a></li>
-                    <li><span class="compact-source">[Altinget]</span> <a class="compact-link" href="https://www.altinget.dk/artikel/eu-chef-vil-skaere-mere-i-fremtidsbudget-men-stadig-ikke-nok-for-danmark-og-tyskland" target="_blank">EU-chef vil skære mere i fremtidsbudget, men stadig ikke nok for Danmark og Tyskland</a></li>
-                    <li><span class="compact-source">[Altinget]</span> <a class="compact-link" href="https://www.altinget.dk/artikel/holstein-statsministeren-tog-ugens-sejr-men-leverede-ogsaa-den-store-broeler" target="_blank">Holstein: Statsministeren tog ugens sejr – men leverede også den store brøler</a></li>
-                    <li><span class="compact-source">[Altinget]</span> <a class="compact-link" href="https://www.altinget.dk/artikel/danskerne-gaar-paa-museum-som-aldrig-foer-bare-ikke-paa-nationalmuseet" target="_blank">Efter ti år ved roret må Rane Willerslev stå på mål for Nationalmuseets dalende popularitet</a></li>
-                    <li><span class="compact-source">[Altinget]</span> <a class="compact-link" href="https://www.altinget.dk/artikel/forskningsredaktoer-om-ny-aftale-uden-df-jeg-har-aldrig-hoert-en-politiker-sige-det-saa-direkte-foer" target="_blank">Forskningsredaktør om ny aftale uden DF: ”Jeg har aldrig hørt en politiker sige det så direkte før”</a></li>
-                    <li><span class="compact-source">[Altinget]</span> <a class="compact-link" href="https://www.altinget.dk/artikel/dkpol-mette-frederiksen-kom-hjem-med-en-sejr-saa-koerte-hun-af-sporet" target="_blank">#dkpol: Mette Frederiksen kom hjem med en sejr. Så kørte hun af sporet</a></li>
-                    <li><span class="compact-source">[Altinget]</span> <a class="compact-link" href="https://www.altinget.dk/artikel/elefanten-i-antalya" target="_blank">Nu taler Europa om elefanten i rummet</a></li>
-                    <li><span class="compact-source">[Altinget]</span> <a class="compact-link" href="https://www.altinget.dk/artikel/premierminister-burnham-vil-goere-en-ende-paa-kejserens-nye-klaeder-i-britisk-europapolitik" target="_blank">Premierminister Burnham vil gøre en ende på kejserens nye klæder i britisk europapolitik</a></li>
-                    <li><span class="compact-source">[Altinget]</span> <a class="compact-link" href="https://www.altinget.dk/artikel/1700-tallets-koebenhavnere-soegte-retfaerdighed-hos-magistraten-de-fik-sagsbehandling-og-loesninger-paa-stedet" target="_blank">1700-tallets københavnere søgte retfærdighed hos Magistraten. De fik sagsbehandling og løsninger på stedet</a></li>
-                    <li><span class="compact-source">[Altinget]</span> <a class="compact-link" href="https://www.altinget.dk/artikel/eksperter-advarer-om-moerketal-efter-kortlaegning-af-daginstitutioner" target="_blank">Eksperter advarer om mørketal efter kortlægning af daginstitutioner</a></li>
-                    <li><span class="compact-source">[Altinget]</span> <a class="compact-link" href="https://www.altinget.dk/artikel/find-din-daginstitution-altinget-har-oversat-4000-tilsynsrapporter-saa-du-kan-bruge-dem" target="_blank">Find din daginstitution: Altinget har oversat 4.000 tilsynsrapporter, så du kan bruge dem</a></li>
-                    <li><span class="compact-source">[Version2]</span> <a class="compact-link" href="https://www.version2.dk/artikel/dyk-ned-i-danmarks-nye-datacentre-faa-hele-overblikket-her" target="_blank">Dyk ned i Danmarks nye datacentre: Få hele overblikket her</a> <a class="ida-login" href="https://www.version2.dk/user/login?destination=/" target="_blank">(Log ind via IDA)</a></li>
-                    <li><span class="compact-source">[Version2]</span> <a class="compact-link" href="https://www.version2.dk/holdning/itu-rektor-svarer-i-ai-debat-forskere-og-ledelser-paa-landets-universiteter-sidder-med-samme" target="_blank">Synspunkt: ITU-rektor svarer i AI-debat</a> <a class="ida-login" href="https://www.version2.dk/user/login?destination=/" target="_blank">(Log ind via IDA)</a></li>
-                    <li><span class="compact-source">[Version2]</span> <a class="compact-link" href="https://www.version2.dk/artikel/hoejere-loen-traekker-it-folk-til-det-private-men-pengene-goer-det-ikke-alene" target="_blank">Højere løn trækker it-folk til det private – men pengene gør det ikke alene</a> <a class="ida-login" href="https://www.version2.dk/user/login?destination=/" target="_blank">(Log ind via IDA)</a></li>
-                    <li><span class="compact-source">[Version2]</span> <a class="compact-link" href="https://www.version2.dk/artikel/datacenter-direktoer-forklarer-derfor-er-der-saa-meget-mystik-om-nye-projekter" target="_blank">Datacenter-direktør forklarer: Derfor er der så meget mystik om nye projekter</a> <a class="ida-login" href="https://www.version2.dk/user/login?destination=/" target="_blank">(Log ind via IDA)</a></li>
-                    <li><span class="compact-source">[Version2]</span> <a class="compact-link" href="https://www.version2.dk/artikel/nvidia-i-kovending-topchef-genindtraeder-med-oejeblikkelig-virkning" target="_blank">Nvidia i kovending: Topchef genindtræder med øjeblikkelig virkning</a> <a class="ida-login" href="https://www.version2.dk/user/login?destination=/" target="_blank">(Log ind via IDA)</a></li>
-                    <li><span class="compact-source">[Version2]</span> <a class="compact-link" href="https://www.version2.dk/artikel/krypteringsprofessor-afblaeser-panik-efter-knaekket-gaade-men-en-opdagelse-vil-faa-ham-op-af-stolen" target="_blank">Krypteringsprofessor afblæser panik efter knækket gåde: Men én opdagelse vil få ham op af stolen</a> <a class="ida-login" href="https://www.version2.dk/user/login?destination=/" target="_blank">(Log ind via IDA)</a></li>
-                    <li><span class="compact-source">[Version2]</span> <a class="compact-link" href="https://www.version2.dk/artikel/techgigant-topper-listen-saadan-er-den-blevet-danmarks-mest-attraktive-it-arbejdsplads" target="_blank">Techgigant topper listen: Sådan er den blevet Danmarks mest attraktive it-arbejdsplads</a> <a class="ida-login" href="https://www.version2.dk/user/login?destination=/" target="_blank">(Log ind via IDA)</a></li>
-                    <li><span class="compact-source">[Version2]</span> <a class="compact-link" href="https://www.version2.dk/artikel/elefanten-i-jensen-huangs-sovevaerelse" target="_blank">Elefanten i Jensen Huangs soveværelse</a> <a class="ida-login" href="https://www.version2.dk/user/login?destination=/" target="_blank">(Log ind via IDA)</a></li>
-                    <li><span class="compact-source">[Version2]</span> <a class="compact-link" href="https://www.version2.dk/artikel/ai-udregner-den-umulige-hvad-goer-vi-med-matematikken-naar-maskinen-bliver-den-klogeste" target="_blank">AI udregner den umulige: Hvad gør vi med matematikken, når maskinen bliver den klogeste?</a> <a class="ida-login" href="https://www.version2.dk/user/login?destination=/" target="_blank">(Log ind via IDA)</a></li>
-                    <li><span class="compact-source">[Version2]</span> <a class="compact-link" href="https://www.version2.dk/artikel/hemmelige-ejere-og-ukendte-formaal-moerklagte-datacentre-er-meget-bekymrende" target="_blank">Hemmelige ejere og ukendte formål: Mørklagte datacentre er »meget bekymrende«</a> <a class="ida-login" href="https://www.version2.dk/user/login?destination=/" target="_blank">(Log ind via IDA)</a></li>
-                    <li><span class="compact-source">[Version2]</span> <a class="compact-link" href="https://www.version2.dk/holdning/er-det-saa-nu-nu-0" target="_blank">Blogindlæg: Er det så "nu", nu ?</a> <a class="ida-login" href="https://www.version2.dk/user/login?destination=/" target="_blank">(Log ind via IDA)</a></li>
-                    <li><span class="compact-source">[Version2]</span> <a class="compact-link" href="https://www.version2.dk/artikel/se-listen-her-er-danmarks-mest-attraktive-it-arbejdspladser-2026" target="_blank">Se listen: Her er Danmarks mest attraktive it-arbejdspladser 2026</a> <a class="ida-login" href
+                <ul class="archive-list">
+                    <li class="archive-item">
+                        <span class="archive-source">[Kort nyt | DR]</span>
+                        <a href="https://www.dr.dk/nyheder/seneste/over-2-000-uden-stroem-i-koebenhavns-nordhavn" target="_blank">Over 2.000 uden strøm i Københavns Nordhavn</a>
+                    </li>
+                    <li class="archive-item">
+                        <span class="archive-source">[Kort nyt | DR]</span>
+                        <a href="https://www.dr.dk/nyheder/seneste/helikopterstyrt-i-tyrkiet-fem-soldater-meldes-draebt" target="_blank">Helikopterstyrt i Tyrkiet - fem soldater meldes dræbt</a>
+                    </li>
+                    <li class="archive-item">
+                        <span class="archive-source">[Kort nyt | DR]</span>
+                        <a href="https://www.dr.dk/nyheder/seneste/gidseltagning-i-supermarked-i-colombia" target="_blank">Gidseltagning i supermarked i Colombia</a>
+                    </li>
+                    <li class="archive-item">
+                        <span class="archive-source">[Kort nyt | DR]</span>
+                        <a href="https://www.dr.dk/nyheder/seneste/softwarevirksomhed-melder-om-cyberangreb" target="_blank">Softwarevirksomhed melder om cyberangreb</a>
+                    </li>
+                    <li class="archive-item">
+                        <span class="archive-source">[Kort nyt | DR]</span>
+                        <a href="https://www.dr.dk/nyheder/seneste/anthropic-aktien-falder-til-under-udbudskurs" target="_blank">Anthropic-aktien falder til under udbudskurs</a>
+                    </li>
+                    <li class="archive-item">
+                        <span class="archive-source">[Kort nyt | DR]</span>
+                        <a href="https://www.dr.dk/nyheder/seneste/svenske-politikere-skal-paa-mandag-stemme-om-hvorvidt-kristersson-kan-fortsaette-som-statsminister" target="_blank">Svenske politikere skal på mandag stemme om, hvorvidt Kristersson kan fortsætte som statsminister</a>
+                    </li>
+                    <li class="archive-item">
+                        <span class="archive-source">[Kort nyt | DR]</span>
+                        <a href="https://www.dr.dk/nyheder/seneste/spansk-par-faengslet-have-lange-fingre-i-lufthavnen" target="_blank">Spansk par fængslet for at have lange fingre i lufthavnen</a>
+                    </li>
+                    <li class="archive-item">
+                        <span class="archive-source">[Kort nyt | DR]</span>
+                        <a href="https://www.dr.dk/nyheder/seneste/politiet-efterlyser-vidner-efter-mistaenkeligt-doedsfald-i-nakskov" target="_blank">Politiet efterlyser vidner efter 'mistænkeligt dødsfald' i Nakskov</a>
+                    </li>
+                    <li class="archive-item">
+                        <span class="archive-source">[Kort nyt | DR]</span>
+                        <a href="https://www.dr.dk/nyheder/seneste/mand-doemt-besiddelse-af-over-38-kilo-kokain" target="_blank">Mand dømt for besiddelse af over 38 kilo kokain</a>
+                    </li>
+                    <li class="archive-item">
+                        <span class="archive-source">[Kort nyt | DR]</span>
+                        <a href="https://www.dr.dk/nyheder/seneste/maend-anholdt-efter-indbrud-i-britisk-kronprinspars-feriebolig" target="_blank">To mænd anholdt efter indbrud i britisk kronprinspars feriebolig</a>
+                    </li>
+                    <li class="archive-item">
+                        <span class="archive-source">[Kort nyt | DR]</span>
+                        <a href="https://www.dr.dk/nyheder/seneste/israels-militaer-har-draebt-hamas-leder-i-gaza" target="_blank">Israels militær har dræbt Hamas-leder i Gaza</a>
+                    </li>
+                    <li class="archive-item">
+                        <span class="archive-source">[Kort nyt | DR]</span>
+                        <a href="https://www.dr.dk/nyheder/seneste/landsret-stadfaester-dom-overgreb-mod-mindreaarige" target="_blank">Landsret stadfæster dom for overgreb mod mindreårige</a>
+                    </li>
+                    <li class="archive-item">
+                        <span class="archive-source">[Videnskab.dk]</span>
+                        <a href="https://videnskab.dk/naturvidenskab/forskere-jagede-et-skibsvrag-men-fandt-i-stedet-noget-maerkvaerdigt-paa-havets-bund/" target="_blank">Forskere jagede et skibsvrag, men fandt i stedet noget mærkværdigt på havets bund</a>
+                    </li>
+                    <li class="archive-item">
+                        <span class="archive-source">[Videnskab.dk]</span>
+                        <a href="https://videnskab.dk/teknologi/goer-vindmoeller-og-solceller-vores-elsystem-mere-saarbart/" target="_blank">Gør vindmøller og solceller vores elsystem mere sårbart?</a>
+                    </li>
+                    <li class="archive-item">
+                        <span class="archive-source">[Videnskab.dk]</span>
+                        <a href="https://videnskab.dk/kultur-samfund/puslespil-er-du-soestaerk/" target="_blank">Puslespil: Er du søstærk?</a>
+                    </li>
+                    <li class="archive-item">
+                        <span class="archive-source">[Videnskab.dk]</span>
+                        <a href="https://videnskab.dk/naturvidenskab/ny-forskning-mennesker-og-fugle-synger-og-taler-efter-de-samme-moenstre/" target="_blank">Ny forskning: Mennesker og fugle synger og taler efter de samme mønstre</a>
+                    </li>
+                    <li class="archive-item">
+                        <span class="archive-source">[Videnskab.dk]</span>
+                        <a href="https://videnskab.dk/naturvidenskab/matematikkens-mest-beroemte-gaade-er-potentielt-loest-med-kunstig-intelligens/" target="_blank">Matematikkens mest berømte gåde er potentielt løst - med kunstig intelligens</a>
+                    </li>
+                    <li class="archive-item">
+                        <span class="archive-source">[Videnskab.dk]</span>
+                        <a href="https://videnskab.dk/kultur-samfund/foeles-alt-dit-efteraarstoej-ogsaa-helt-forkert-derfor-faar-mange-toejkrise-naar-saesonen-skifter-og-det-kan-du-goere/" target="_blank">Føles alt dit efterårstøj også helt forkert? Derfor får mange tøjkrise, når sæsonen skifter - og det kan du gøre</a>
+                    </li>
+                    <li class="archive-item">
+                        <span class="archive-source">[Videnskab.dk]</span>
+                        <a href="https://videnskab.dk/kultur-samfund/spyt-vold-og-ild-fredrik-fandt-oldgammel-egyptisk-magi-i-arkaeologisk-skraldespand/" target="_blank">Spyt, vold og ild: Fredrik fandt oldgammel egyptisk magi i arkæologisk skraldespand</a>
+                    </li>
+                    <li class="archive-item">
+                        <span class="archive-source">[Videnskab.dk]</span>
+                        <a href="https://videnskab.dk/kultur-samfund/private-fonde-tegner-i-stigende-grad-de-store-linjer-i-dansk-forskning/" target="_blank">Private fonde tegner i stigende grad de store linjer i dansk forskning</a>
+                    </li>
+                    <li class="archive-item">
+                        <span class="archive-source">[Videnskab.dk]</span>
+                        <a href="https://videnskab.dk/rummet/techgiganter-vil-sende-datacentre-ud-i-rummet-men-der-er-5-store-problemer/" target="_blank">Techgiganter vil sende datacentre ud i rummet. Men der er 5 store problemer</a>
+                    </li>
+                    <li class="archive-item">
+                        <span class="archive-source">[Videnskab.dk]</span>
+                        <a href="https://videnskab.dk/naturvidenskab/3-overraskende-gevinster-ved-oprindelige-folks-viden/" target="_blank">3 overraskende gevinster ved oprindelige folks viden</a>
+                    </li>
+                    <li class="archive-item">
+                        <span class="archive-source">[Videnskab.dk]</span>
+                        <a href="https://videnskab.dk/naturvidenskab/fortiden-gemmer-paa-klimaloesninger-til-et-varmere-europa/" target="_blank">Fortiden gemmer på klimaløsninger til et varmere Europa</a>
+                    </li>
+                    <li class="archive-item">
+                        <span class="archive-source">[Videnskab.dk]</span>
+                        <a href="https://videnskab.dk/naturvidenskab/overlever-under-ekstreme-vilkaar-5-ting-forsker-ville-oenske-alle-vidste-om-saerlige-planter/" target="_blank">Overlever under ekstreme vilkår: 5 ting, forsker ville ønske, alle vidste om særlige planter</a>
+                    </li>
+                    <li class="archive-item">
+                        <span class="archive-source">[Videnskab.dk]</span>
+                        <a href="https://videnskab.dk/krop-sundhed/kan-man-drikke-sukkerfri-sodavand-med-god-samvittighed/" target="_blank">Kan man drikke sukkerfri sodavand med god samvittighed?</a>
+                    </li>
+                    <li class="archive-item">
+                        <span class="archive-source">[Altinget]</span>
+                        <a href="https://www.altinget.dk/artikel/med-skatteaftalen-fik-loekke-sit-trofae-nu-er-det-pia-olsen-dyhr-og-pelle-dragsteds-tur-til-at-levere" target="_blank">Med skatteaftalen fik Løkke sit trofæ. Nu er det Pia Olsen Dyhr og Pelle Dragsteds tur til at levere</a>
+                    </li>
+                    <li class="archive-item">
+                        <span class="archive-source">[Altinget]</span>
+                        <a href="https://www.altinget.dk/artikel/dkpol-taler-med-alex-vanopslagh" target="_blank">#dkpol taler med: Alex Vanopslagh</a>
+                    </li>
+                    <li class="archive-item">
+                        <span class="archive-source">[Altinget]</span>
+                        <a href="https://www.altinget.dk/artikel/eu-chef-vil-skaere-mere-i-fremtidsbudget-men-stadig-ikke-nok-for-danmark-og-tyskland" target="_blank">EU-chef vil skære mere i fremtidsbudget, men stadig ikke nok for Danmark og Tyskland</a>
+                    </li>
+                    <li class="archive-item">
+                        <span class="archive-source">[Altinget]</span>
+                        <a href="https://www.altinget.dk/artikel/mie-gik-altid-med-ondt-i-maven-da-hun-fandt-sin-datter-paa-et-koldt-gulv-sagde-hun-stop" target="_blank">Mie gik altid med ondt i maven. Da hun fandt sin datter på et koldt gulv, sagde hun stop</a>
+                    </li>
+                    <li class="archive-item">
+                        <span class="archive-source">[Altinget]</span>
+                        <a href="https://www.altinget.dk/artikel/holstein-statsministeren-tog-ugens-sejr-men-leverede-ogsaa-den-store-broeler" target="_blank">Holstein: Statsministeren tog ugens sejr – men leverede også den store brøler</a>
+                    </li>
+                    <li class="archive-item">
+                        <span class="archive-source">[Altinget]</span>
+                        <a href="https://www.altinget.dk/artikel/danskerne-gaar-paa-museum-som-aldrig-foer-bare-ikke-paa-nationalmuseet" target="_blank">Efter ti år ved roret må Rane Willerslev stå på mål for Nationalmuseets dalende popularitet</a>
+                    </li>
+                    <li class="archive-item">
