@@ -6,146 +6,121 @@
     <title>ThApex Nyhedsoverblik</title>
     <style>
         :root {
-            --bg-color: #f4f6f8;
+            --bg-color: #f8f9fa;
             --card-bg: #ffffff;
-            --text-main: #1f2937;
-            --text-muted: #4b5563;
-            --accent: #b91c1c;
-            --accent-hover: #991b1b;
-            --border-color: #e5e7eb;
-            --tag-bg: #f3f4f6;
+            --text-main: #212529;
+            --text-muted: #6c757d;
+            --primary: #c92a2a;
+            --link: #1864ab;
+            --border: #e9ecef;
         }
-
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             background-color: var(--bg-color);
             color: var(--text-main);
             line-height: 1.6;
             margin: 0;
-            padding: 24px 16px;
+            padding: 20px 15px;
         }
-
         .container {
             max-width: 800px;
             margin: 0 auto;
         }
-
         header {
-            margin-bottom: 32px;
-            padding-bottom: 20px;
-            border-bottom: 2px solid var(--border-color);
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 15px;
+            margin-bottom: 25px;
         }
-
         h1 {
+            margin: 0 0 5px 0;
             font-size: 2rem;
-            margin: 0 0 8px 0;
-            color: #111827;
-            letter-spacing: -0.025em;
+            color: #1a1a1a;
+            letter-spacing: -0.5px;
         }
-
         .timestamp {
-            font-size: 0.95rem;
             color: var(--text-muted);
+            font-size: 0.95rem;
             margin: 0;
+            font-weight: 500;
         }
-
         .news-list {
             display: flex;
             flex-direction: column;
             gap: 20px;
         }
-
         .news-card {
             background-color: var(--card-bg);
+            border: 1px solid var(--border);
             border-radius: 8px;
-            padding: 20px 24px;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-            border: 1px solid var(--border-color);
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+            transition: box-shadow 0.2s ease;
         }
-
-        .meta {
+        .news-card:hover {
+            box-shadow: 0 4px 8px rgba(0,0,0,0.06);
+        }
+        .news-meta {
             display: flex;
             flex-wrap: wrap;
+            gap: 10px;
             align-items: center;
-            gap: 8px;
-            margin-bottom: 10px;
             font-size: 0.85rem;
+            margin-bottom: 8px;
         }
-
-        .source {
+        .news-source {
             font-weight: 700;
-            color: var(--accent);
+            color: var(--primary);
             text-transform: uppercase;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.5px;
         }
-
-        .meta-divider {
-            color: #9ca3af;
-        }
-
-        .category {
-            background-color: var(--tag-bg);
-            color: var(--text-muted);
+        .news-category {
+            background-color: #f1f3f5;
+            color: #495057;
             padding: 2px 8px;
             border-radius: 4px;
-            font-weight: 500;
         }
-
         .news-title {
+            margin: 0 0 10px 0;
             font-size: 1.25rem;
-            margin: 0 0 12px 0;
             line-height: 1.35;
-            color: #111827;
         }
-
-        .summary {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-            margin: 0 0 16px 0;
+        .news-summary {
+            margin: 0 0 14px 0;
+            color: #343a40;
+            font-size: 0.98rem;
         }
-
-        .links {
-            display: flex;
-            align-items: center;
-            gap: 12px;
+        .news-actions {
             font-size: 0.9rem;
         }
-
-        .primary-link {
-            color: var(--accent);
+        .news-actions a {
+            color: var(--link);
+            text-decoration: none;
             font-weight: 600;
-            text-decoration: none;
         }
-
-        .primary-link:hover {
-            color: var(--accent-hover);
+        .news-actions a:hover {
             text-decoration: underline;
         }
-
-        .ida-link {
-            color: #6b7280;
-            text-decoration: none;
+        .ida-login {
             font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-left: 8px;
         }
-
-        .ida-link:hover {
-            color: #111827;
-            text-decoration: underline;
+        .ida-login a {
+            color: var(--text-muted);
+            font-weight: normal;
         }
-
-        @media (max-width: 600px) {
-            body {
-                padding: 16px 12px;
-            }
-            .news-card {
-                padding: 16px 18px;
-            }
-            h1 {
-                font-size: 1.6rem;
-            }
-            .news-title {
-                font-size: 1.15rem;
-            }
+        .rank {
+            display: inline-block;
+            background: #dee2e6;
+            color: #495057;
+            border-radius: 50%;
+            width: 22px;
+            height: 22px;
+            text-align: center;
+            line-height: 22px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            margin-right: 5px;
         }
     </style>
 </head>
@@ -153,291 +128,292 @@
     <div class="container">
         <header>
             <h1>ThApex Nyhedsoverblik</h1>
-            <p class="timestamp">Sidst opdateret: 27-11-2026 kl. 17:04</p>
+            <p class="timestamp">Sidst opdateret: 28-11-2026 kl. 04:03</p>
         </header>
 
         <main class="news-list">
-            <!-- 1. DR: Hungersnød -->
+            <!-- 1 -->
             <article class="news-card">
-                <div class="meta">
-                    <span class="source">DR</span>
-                    <span class="meta-divider">•</span>
-                    <span class="category">Verden</span>
-                </div>
-                <h2 class="news-title">FN advarer: Sult og hungersnød truer 16 områder i verden</h2>
-                <p class="summary">FN udsender en alvorlig global advarsel om, at akut sult og hungersnød nu truer befolkningerne i 16 udsatte brændpunkter rundt om i verden. Konflikter, klimaforandringer og økonomisk ulighed forværrer situationen for millioner af mennesker.</p>
-                <div class="links">
-                    <a class="primary-link" href="https://www.dr.dk/nyheder/seneste/fn-advarer-sult-og-hungersnoed-truer-16-omraader-i-verden" target="_blank">Læs original artikel</a>
-                </div>
-            </article>
-
-            <!-- 2. Arbejderen: COP31 fiasko -->
-            <article class="news-card">
-                <div class="meta">
-                    <span class="source">Arbejderen</span>
-                    <span class="meta-divider">•</span>
-                    <span class="category">Klima &amp; Miljø</span>
+                <div class="news-meta">
+                    <span class="rank">1</span>
+                    <span class="news-source">Arbejderen</span>
+                    <span class="news-category">Klima &amp; Global Politik</span>
                 </div>
                 <h2 class="news-title">COP31-fiaskoen udstiller, at kapitalismen umuliggør klimahandling</h2>
-                <p class="summary">Klimatopmødet COP31 er afsluttet helt uden bindende aftaler trods FN-rapporter, der fastslår, at 1,5 graders-målet er tabt. Sammenbruddet ses som et strukturelt bevis på, at markedskræfter og profithensyn forhindrer den nødvendige globale grønne omstilling.</p>
-                <div class="links">
-                    <a class="primary-link" href="https://arbejderen.dk/leder/cop31-fiaskoen-udstiller-kapitalismens-umuliggoeren-af-klimahandling/" target="_blank">Læs original artikel</a>
+                <p class="news-summary">Årets globale klimatopmøde er endt i et historisk sammenbrud uden nogen bindende aftaler. Dette sker på trods af en alarmerende rapport fra FN’s Klimapanel, der fastslår, at målet om at begrænse temperaturstigningen til 1,5 grader reelt er tabt. Resultatet udstiller de systemiske begrænsninger, hvor kortsigtede markedsinteresser spænder ben for den nødvendige grønne omstilling.</p>
+                <div class="news-actions">
+                    <a href="https://arbejderen.dk/leder/cop31-fiaskoen-udstiller-kapitalismens-umuliggoeren-af-klimahandling/" target="_blank">Læs original artikel</a>
                 </div>
             </article>
 
-            <!-- 3. Altinget: EU-budget sammenbrud -->
+            <!-- 2 -->
             <article class="news-card">
-                <div class="meta">
-                    <span class="source">Altinget</span>
-                    <span class="meta-divider">•</span>
-                    <span class="category">EU &amp; Politik</span>
+                <div class="news-meta">
+                    <span class="rank">2</span>
+                    <span class="news-source">Kort nyt | DR</span>
+                    <span class="news-category">Humanitære Forhold &amp; Udland</span>
                 </div>
-                <h2 class="news-title">Dramatisk oprør fra Danmark og andre sparelande får EU’s milliardforhandling til at bryde sammen</h2>
-                <p class="summary">Forhandlingerne om EU's langsigtede fremtidsbudget kollapsede efter modstand anført af Danmark, Tyskland og de øvrige nordiske sparelande. Mette Frederiksen udeblev demonstrativt fra mæglingsmøder, og regeringslederne må nu mødes igen til december for at forhandle.</p>
-                <div class="links">
-                    <a class="primary-link" href="https://www.altinget.dk/artikel/dramatisk-oproer-fra-danmark-og-andre-sparelande-faar-eus-milliardforhandling-til-at-bryde-sammen" target="_blank">Læs original artikel</a>
+                <h2 class="news-title">Otte migranter døde i forsøget på at nå Europa</h2>
+                <p class="news-summary">Mindst otte migranter har mistet livet under endnu en tragisk hændelse på de farefulde migrationsruter mod det europæiske kontinent. Tragedien understreger den fortsatte humanitære krise ved Europas ydre grænser, hvor desperate mennesker fortsat tvinges ud på livsfarlige ruter som følge af manglen på sikre og lovlige adgangsveje.</p>
+                <div class="news-actions">
+                    <a href="https://www.dr.dk/nyheder/seneste/otte-migranter-doede-i-forsoeget-paa-naa-europa" target="_blank">Læs original artikel</a>
                 </div>
             </article>
 
-            <!-- 4. Arbejderen: Det 28. regime -->
+            <!-- 3 -->
             <article class="news-card">
-                <div class="meta">
-                    <span class="source">Arbejderen</span>
-                    <span class="meta-divider">•</span>
-                    <span class="category">Fagligt</span>
-                </div>
-                <h2 class="news-title">Mobilisering til demonstration mod det 28. regime er i gang: “Det er for vigtigt til ikke at være drastisk”</h2>
-                <p class="summary">Den danske fagbevægelse forbereder en stor demonstration i København den 1. december mod EU's kommende 28. selskabsregime. Tillidsfolk frygter, at EU-tiltaget vil undergrave overenskomster, løn- og arbejdsforhold samt gennembryde den danske arbejdsmarkedsmodel.</p>
-                <div class="links">
-                    <a class="primary-link" href="https://arbejderen.dk/fagligt/mobilisering-til-demonstration-mod-det-28-regime-er-i-gang-det-er-for-vigtigt-til-ikke-at-vaere-drastisk/" target="_blank">Læs original artikel</a>
-                </div>
-            </article>
-
-            <!-- 5. FH: Kriminel rovdrift på velfærden -->
-            <article class="news-card">
-                <div class="meta">
-                    <span class="source">Fagbevægelsens Hovedorganisation</span>
-                    <span class="meta-divider">•</span>
-                    <span class="category">Velfærd &amp; Arbejdsmarked</span>
-                </div>
-                <h2 class="news-title">KL og FH i fælles opråb til Christiansborg: Vi skal ikke acceptere, at kriminelle driver rovdrift på vores velfærdssamfund</h2>
-                <p class="summary">Formændene for KL og FH advarer i en fælles appel regeringen mod organiseret misbrug af offentlige midler. De understreger, at kriminelle aktørers udnyttelse af systemet går direkte ud over de mest sårbare borgere og nedbryder tilliden til velfærdsinstitutionerne.</p>
-                <div class="links">
-                    <a class="primary-link" href="https://fho.dk/blog/2026/11/25/kl-og-fh-i-faelles-opraab-til-christiansborg-vi-skal-ikke-acceptere-at-kriminelle-driver-rovdrift-paa-vores-velfaerdssamfund/" target="_blank">Læs original artikel</a>
-                </div>
-            </article>
-
-            <!-- 6. Arbejderen: Almen Modstand / Ghettolov -->
-            <article class="news-card">
-                <div class="meta">
-                    <span class="source">Arbejderen</span>
-                    <span class="meta-divider">•</span>
-                    <span class="category">Indland &amp; Bolig</span>
+                <div class="news-meta">
+                    <span class="rank">3</span>
+                    <span class="news-source">Arbejderen</span>
+                    <span class="news-category">Indland &amp; Boligpolitik</span>
                 </div>
                 <h2 class="news-title">Almen Modstand: Uforståelig dom</h2>
-                <p class="summary">Bevægelsen Almen Modstand retter skarp kritik mod Højesterets afgørelse om opsigelser i boligområdet Nøjsomhed i Helsingør. Organisationen finder det uforståeligt, at domstolen ikke fandt direkte forskelsbehandling sted, og mener, at beboernes retssikkerhed er svigtet.</p>
-                <div class="links">
-                    <a class="primary-link" href="https://arbejderen.dk/indland/almen-modstand-uforstaaelig-dom/" target="_blank">Læs original artikel</a>
+                <p class="news-summary">Beboernetværket Almen Modstand retter en skarp kritik mod Højesteret, der har afvist, at der var tale om ulovlig forskelsbehandling ved masseopsigelser af beboere i Nøjsomhed i Helsingør. Organisationen advarer om, at dommen svækker retssikkerheden for tusindvis af lejere i almene boliger og legitimerer en uretfærdig praksis, som rammer ressourcesvage borgere.</p>
+                <div class="news-actions">
+                    <a href="https://arbejderen.dk/indland/almen-modstand-uforstaaelig-dom/" target="_blank">Læs original artikel</a>
                 </div>
             </article>
 
-            <!-- 7. Altinget: Spaniens valg -->
+            <!-- 4 -->
             <article class="news-card">
-                <div class="meta">
-                    <span class="source">Altinget</span>
-                    <span class="meta-divider">•</span>
-                    <span class="category">International Politik</span>
-                </div>
-                <h2 class="news-title">Spaniens valg: Europas sidste store røde bastion står til at falde</h2>
-                <p class="summary">Det forestående parlamentsvalg i Spanien truer premierminister Pedro Sánchez' position som EU's mest venstreorienterede regeringsleder. Nederlag kan markere enden på en markant progressiv stemme i det europæiske samarbejde og svække den sociale fløj markant.</p>
-                <div class="links">
-                    <a class="primary-link" href="https://www.altinget.dk/artikel/spaniens-valg-europas-sidste-store-roede-bastion-staar-til-at-falde" target="_blank">Læs original artikel</a>
-                </div>
-            </article>
-
-            <!-- 8. Arbejderen: Had mod muslimer -->
-            <article class="news-card">
-                <div class="meta">
-                    <span class="source">Arbejderen</span>
-                    <span class="meta-divider">•</span>
-                    <span class="category">Menneskerettigheder</span>
+                <div class="news-meta">
+                    <span class="rank">4</span>
+                    <span class="news-source">Arbejderen</span>
+                    <span class="news-category">Menneskerettigheder &amp; Samfund</span>
                 </div>
                 <h2 class="news-title">Europarådet kræver dansk handlingsplan mod had mod muslimer</h2>
-                <p class="summary">Europarådets racismekommission (ECRI) pålægger den danske regering at udarbejde en målrettet handlingsplan mod hadforbrydelser og diskriminerende retorik rettet mod muslimer, som vurderes at udgøre en af landets mest presserende menneskeretlige udfordringer.</p>
-                <div class="links">
-                    <a class="primary-link" href="https://arbejderen.dk/indland/europaraadet-kraever-dansk-handlingsplan-om-had-mod-muslimer/" target="_blank">Læs original artikel</a>
+                <p class="news-summary">Europarådets Kommission mod Racisme og Intolerance (ECRI) retter skarp kritik mod Danmark og kræver en national handlingsplan mod den voksende mængde af hadefuld tale og hadforbrydelser rettet mod muslimer. Rapporten peger på, at diskrimination og hetz mod religiøse minoriteter er blandt de mest presserende menneskerettighedsudfordringer herhjemme.</p>
+                <div class="news-actions">
+                    <a href="https://arbejderen.dk/indland/europaraadet-kraever-dansk-handlingsplan-om-had-mod-muslimer/" target="_blank">Læs original artikel</a>
                 </div>
             </article>
 
-            <!-- 9. Version2: Patientdata til Microsoft -->
+            <!-- 5 -->
             <article class="news-card">
-                <div class="meta">
-                    <span class="source">Version2</span>
-                    <span class="meta-divider">•</span>
-                    <span class="category">Datasikkerhed</span>
+                <div class="news-meta">
+                    <span class="rank">5</span>
+                    <span class="news-source">Arbejderen</span>
+                    <span class="news-category">Arbejdsmarked &amp; EU</span>
                 </div>
-                <h2 class="news-title">Hospital delte Anne-Maries dybt private data med Microsoft uden samtykke: »Det gør mig rigtig vred«</h2>
-                <p class="summary">Region Hovedstaden har videregivet ikke-anonymiserede patientoplysninger til tech-giganten Microsoft i forbindelse med implementering af AI-værktøjer. Berørte borgere protesterer over manglende samtykke og fraværet af klare svar på, hvem der har haft adgang til sundhedsdataene.</p>
-                <div class="links">
-                    <a class="primary-link" href="https://www.version2.dk/artikel/hospital-delte-anne-maries-dybt-private-data-med-microsoft-uden-samtykke-det-goer-mig-rigtig-vred" target="_blank">Læs original artikel</a>
-                    <a class="ida-link" href="https://www.version2.dk/user/login?destination=/" target="_blank">(Log ind via IDA)</a>
+                <h2 class="news-title">Mobilisering til demonstration mod det 28. regime er i gang</h2>
+                <p class="news-summary">Den danske fagbevægelse forbereder store protester i København mod EU's bebudede "28. regime". Fagforeningerne frygter, at regelsættet vil fungere som et parallelsystem, der undergraver den danske model for overenskomster, løndannelse og arbejdstagerrettigheder. Tillidsfolk kalder sagen afgørende for fremtidens tryghed på arbejdsmarkedet.</p>
+                <div class="news-actions">
+                    <a href="https://arbejderen.dk/fagligt/mobilisering-til-demonstration-mod-det-28-regime-er-i-gang-det-er-for-vigtigt-til-ikke-at-vaere-drastisk/" target="_blank">Læs original artikel</a>
                 </div>
             </article>
 
-            <!-- 10. Ingeniøren: Fregatter og droner -->
+            <!-- 6 -->
             <article class="news-card">
-                <div class="meta">
-                    <span class="source">Ingeniøren</span>
-                    <span class="meta-divider">•</span>
-                    <span class="category">Forsvar &amp; Teknologi</span>
+                <div class="news-meta">
+                    <span class="rank">6</span>
+                    <span class="news-source">Altinget</span>
+                    <span class="news-category">EU &amp; Statsfinanser</span>
                 </div>
-                <h2 class="news-title">Milliarddyre fregatter genovervejes efter droneangreb: »Måske kan vi klare os med færre«</h2>
-                <p class="summary">Erfaringer med effektive droneangreb mod flådeenheder i Østersøen får nu flere folketingspartier til at genoverveje milliardindkøbet af nye danske krigsskibe. Politikere og militære analytikere peger på, at fremtidens trusselsbillede fordrer mere fleksible og mindre sårbare investeringer.</p>
-                <div class="links">
-                    <a class="primary-link" href="https://ing.dk/artikel/milliarddyre-fregatter-genovervejes-efter-droneangreb-maaske-kan-vi-klare-os-med-faerre" target="_blank">Læs original artikel</a>
-                    <a class="ida-link" href="https://ing.dk/user/login?destination=/" target="_blank">(Log ind via IDA)</a>
+                <h2 class="news-title">Dramatisk oprør fra Danmark og sparelande får EU’s budgetforhandling til at bryde sammen</h2>
+                <p class="news-summary">Forhandlingerne om EU's langsigtede milliardbudget er brudt sammen efter intens modstand fra en koalition af sparelande, anført af Danmark, Tyskland og de øvrige nordiske lande. Utilfredshed med det samlede udgiftsniveau og fordelingen af midlerne førte til en blokade natten til fredag, og unionens ledere må nu samles på ny i december for at nå til enighed.</p>
+                <div class="news-actions">
+                    <a href="https://www.altinget.dk/artikel/dramatisk-oproer-fra-danmark-og-andre-sparelande-faar-eus-milliardforhandling-til-at-bryde-sammen" target="_blank">Læs original artikel</a>
                 </div>
             </article>
 
-            <!-- 11. Ingeniøren: Limfjordsmotorvej -->
+            <!-- 7 -->
             <article class="news-card">
-                <div class="meta">
-                    <span class="source">Ingeniøren</span>
-                    <span class="meta-divider">•</span>
-                    <span class="category">Infrastruktur</span>
+                <div class="news-meta">
+                    <span class="rank">7</span>
+                    <span class="news-source">Fagbevægelsens Hovedorganisation</span>
+                    <span class="news-category">Velfærd &amp; Tryghed</span>
                 </div>
-                <h2 class="news-title">Christiansborg afviser at droppe motorvej trods milliardtab: »Vi trækker ikke stikket på det her«</h2>
-                <p class="summary">Trods opråb fra økonomer og professorer om et massivt samfundsøkonomisk milliardunderskud fastholder et politisk flertal etableringen af 3. Limfjordsforbindelse. Projektet fastholdes, selvom dyre jordbundsforhold og uforudsete regninger belaster statskassen markant.</p>
-                <div class="links">
-                    <a class="primary-link" href="https://ing.dk/artikel/christiansborg-afviser-droppe-motorvej-trods-milliardtab-vi-traekker-ikke-stikket-paa-det-her" target="_blank">Læs original artikel</a>
-                    <a class="ida-link" href="https://ing.dk/user/login?destination=/" target="_blank">(Log ind via IDA)</a>
+                <h2 class="news-title">KL og FH i fælles opråb: Kriminelle må ikke drive rovdrift på velfærden</h2>
+                <p class="news-summary">Kommunernes Landsforening og Fagbevægelsens Hovedorganisation går sammen i et kraftigt opråb til Christiansborg. Formændene advarer mod organiserede kriminelle, der udnytter offentlige velfærdsydelser, og kræver strammere kontrol og målrettede tiltag, så de svageste borgere og kernevelfærden beskyttes mod misbrug.</p>
+                <div class="news-actions">
+                    <a href="https://fho.dk/blog/2026/11/25/kl-og-fh-i-faelles-opraab-til-christiansborg-vi-skal-ikke-acceptere-at-kriminelle-driver-rovdrift-paa-vores-velfaerdssamfund/" target="_blank">Læs original artikel</a>
                 </div>
             </article>
 
-            <!-- 12. FH: Nanna Højlund om unge og førtidspension -->
+            <!-- 8 -->
             <article class="news-card">
-                <div class="meta">
-                    <span class="source">Fagbevægelsens Hovedorganisation</span>
-                    <span class="meta-divider">•</span>
-                    <span class="category">Socialpolitik</span>
+                <div class="news-meta">
+                    <span class="rank">8</span>
+                    <span class="news-source">Version2 articles</span>
+                    <span class="news-category">Datasikkerhed &amp; Sundhed</span>
                 </div>
-                <h2 class="news-title">Nanna Højlund: Vi skal udvikle unges arbejdsevne – ikke afvikle deres økonomiske tryghed</h2>
-                <p class="summary">FH advarer mod forslag om at begrænse unges adgang til førtidspension via økonomisk forringelse. Næstformand Nanna Højlund understreger, at udsatte unge med nedsat arbejdsevne ikke hjælpes mod beskæftigelse ved at fratage dem økonomisk grundtryghed og presse dem ud i fattigdom.</p>
-                <div class="links">
-                    <a class="primary-link" href="https://fho.dk/blog/2026/11/24/nanna-hoejlund-vi-skal-udvikle-unges-arbejdsevne-ikke-afvikle-deres-oekonomiske-tryghed/" target="_blank">Læs original artikel</a>
+                <h2 class="news-title">Hospital delte Anne-Maries dybt private data med Microsoft uden samtykke</h2>
+                <p class="news-summary">Ikke-anonymiserede helbredsoplysninger om en patient er via et regionalt AI-system blevet overført direkte til tech-giganten Microsoft af Region Hovedstaden uden samtykke. Regionen har hidtil afvist at give fuld indsigt i, hvilke parter der har haft adgang til dataene, hvilket udløser skarp kritik fra datasikkerhedseksperter.</p>
+                <div class="news-actions">
+                    <a href="https://www.version2.dk/artikel/hospital-delte-anne-maries-dybt-private-data-med-microsoft-uden-samtykke-det-goer-mig-rigtig-vred" target="_blank">Læs original artikel</a>
+                    <span class="ida-login">(<a href="https://www.version2.dk/user/login?destination=/" target="_blank">Log ind via IDA</a>)</span>
                 </div>
             </article>
 
-            <!-- 13. TV 2: Iran ulighed og undertrykkelse -->
+            <!-- 9 -->
             <article class="news-card">
-                <div class="meta">
-                    <span class="source">TV 2 Nyheder</span>
-                    <span class="meta-divider">•</span>
-                    <span class="category">Udland</span>
+                <div class="news-meta">
+                    <span class="rank">9</span>
+                    <span class="news-source">TV 2 Nyheder</span>
+                    <span class="news-category">Forbrugerrettigheder &amp; Erhverv</span>
                 </div>
-                <h2 class="news-title">74 piskeslag for manglende hijab, mens elitens børn popper champagne i poolen</h2>
-                <p class="summary">Mens almindelige borgere og kvinder straffes hårdt med piskeslag for overtrædelser af præstestyrets moralregler, lever eliten i luksus uden konsekvenser. De voksende klasseskel og regimets dobbeltmoral skaber tiltagende vrede og ustabilitet i den iranske befolkning.</p>
-                <div class="links">
-                    <a class="primary-link" href="https://nyheder.tv2.dk/2026-11-24-74-piskeslag-for-manglende-hijab-mens-elitens-boern-popper-champagne-i-poolen" target="_blank">Læs original artikel</a>
+                <h2 class="news-title">Elselskab skyldte elkunder 292 millioner ved konkurs – kuratorer har orienteret politiet</h2>
+                <p class="news-summary">Efter elselskabet Velkommens konkurs viser en opgørelse, at selskabet skyldte over 42.000 kunder knap 300 millioner kroner i udestående tilgodehavender. Kuratorerne har fundet så mistænkelige forhold i selskabets regnskabsmateriale, at sagen nu er overdraget til politiets efterforskere.</p>
+                <div class="news-actions">
+                    <a href="https://nyheder.tv2.dk/business/2026-11-27-elselskab-skyldte-elkunder-292-millioner-ved-konkurs-kuratorer-har-nu-orienteret-politiet" target="_blank">Læs original artikel</a>
                 </div>
             </article>
 
-            <!-- 14. TV 2: Datalæk gymnasieelever -->
+            <!-- 10 -->
             <article class="news-card">
-                <div class="meta">
-                    <span class="source">TV 2 Nyheder</span>
-                    <span class="meta-divider">•</span>
-                    <span class="category">Samfund &amp; IT</span>
+                <div class="news-meta">
+                    <span class="rank">10</span>
+                    <span class="news-source">Ingeniøren articles</span>
+                    <span class="news-category">Infrastruktur &amp; Samfundsøkonomi</span>
                 </div>
-                <h2 class="news-title">Over 15.000 gymnasieelevers telefonnumre lækket</h2>
-                <p class="summary">Et alvorligt sikkerhedsbrud hos en leverandør til Gymnasiefællesskabet har resulteret i læk af private telefonnumre tilhørende mere end 15.000 elever på tværs af 23 gymnasier. Sagen rejser fornyet bekymring for unges datasikkerhed i uddannelsessektoren.</p>
-                <div class="links">
-                    <a class="primary-link" href="https://nyheder.tv2.dk/samfund/2026-11-27-over-15000-gymnasieelevers-telefonnumre-laekket" target="_blank">Læs original artikel</a>
+                <h2 class="news-title">Christiansborg afviser at droppe motorvej trods milliardtab</h2>
+                <p class="news-summary">Et politisk flertal på Christiansborg fastholder planerne om 3. Limfjordsforbindelse, selvom økonomiske beregninger og advarsler fra to uafhængige professorer peger på et massivt samfundsøkonomisk milliardunderskud. Politikerne afviser at genoverveje anlægsprojektet på trods af de voldsomt stigende udgifter.</p>
+                <div class="news-actions">
+                    <a href="https://ing.dk/artikel/christiansborg-afviser-droppe-motorvej-trods-milliardtab-vi-traekker-ikke-stikket-paa-det-her" target="_blank">Læs original artikel</a>
+                    <span class="ida-login">(<a href="https://ing.dk/user/login?destination=/" target="_blank">Log ind via IDA</a>)</span>
                 </div>
             </article>
 
-            <!-- 15. Videnskab.dk: Nedskæringsprotest -->
+            <!-- 11 -->
             <article class="news-card">
-                <div class="meta">
-                    <span class="source">Videnskab.dk</span>
-                    <span class="meta-divider">•</span>
-                    <span class="category">Forskning &amp; Samfund</span>
+                <div class="news-meta">
+                    <span class="rank">11</span>
+                    <span class="news-source">TV 2 Nyheder</span>
+                    <span class="news-category">Samfund &amp; Retssikkerhed</span>
                 </div>
-                <h2 class="news-title">Tusindvis af danskere protesterer over nedskæring af Videnskab.dk: »I skubber jo folk i retning af fordummende sociale medier«</h2>
-                <p class="summary">Over 7.000 borgere, fagfolk og forskere protesterer mod regeringens beskæring af statstilskuddet til det uafhængige videnskabsmedie. Kritikere advarer om, at svækkelsen af saglig, faktatjekket formidling svækker oplysningen og baner vej for misinformation på digitale platforme.</p>
-                <div class="links">
-                    <a class="primary-link" href="https://videnskab.dk/om-videnskabdk/tusindvis-af-danskere-protesterer-over-nedskaering-af-videnskab-dk-i-skubber-jo-folk-i-retning-af-fordummende-sociale-medier/" target="_blank">Læs original artikel</a>
+                <h2 class="news-title">Jurastuderendes drøm om at blive anklager ”er knust”</h2>
+                <p class="news-summary">Nye administrative retningslinjer for anklagemyndigheden stiller krav om streng politisk og religiøs neutralitet i fremtoning, hvilket i praksis udelukker kvinder, der bærer tørklæde, fra at procedere som anklagere. Det har udløst en bred juridisk og etisk debat om mangfoldighed og diskrimination inden for retssystemet.</p>
+                <div class="news-actions">
+                    <a href="https://nyheder.tv2.dk/samfund/2026-11-27-jurastuderendes-droem-om-at-blive-anklager-er-knust" target="_blank">Læs original artikel</a>
                 </div>
             </article>
 
-            <!-- 16. FH: Stresshåndtering -->
+            <!-- 12 -->
             <article class="news-card">
-                <div class="meta">
-                    <span class="source">Fagbevægelsens Hovedorganisation</span>
-                    <span class="meta-divider">•</span>
-                    <span class="category">Arbejdsmiljø</span>
+                <div class="news-meta">
+                    <span class="rank">12</span>
+                    <span class="news-source">Fagbevægelsens Hovedorganisation</span>
+                    <span class="news-category">Arbejdsmiljø &amp; Folkesundhed</span>
                 </div>
                 <h2 class="news-title">Efter stress: Færre timer nu kan give flere arbejdstimer på sigt</h2>
-                <p class="summary">En gradvis tilbagevenden til arbejdsmarkedet efter en stresssygemelding halverer risikoen for permanent udstødelse, dokumenterer undersøgelser. Alligevel afviser mange arbejdsgivere ordningen, hvorfor FH foreslår at styrke arbejdsgivernes juridiske fastholdelsesansvar.</p>
-                <div class="links">
-                    <a class="primary-link" href="https://fho.dk/blog/2026/11/25/efter-stress-faerre-timer-nu-kan-give-flere-arbejdstimer-paa-sigt/" target="_blank">Læs original artikel</a>
+                <p class="news-summary">En gradvis tilbagevenden til jobbet halverer risikoen for, at stressramte lønmodtagere ender permanent uden for arbejdsmarkedet. Alligevel oplever fire ud af ti sygemeldte at få afslag på en skånsom opstart fra arbejdsgiveren. FH lancerer en ny stresspolitik, der skal placere et større fastholdelsesansvar hos virksomhederne.</p>
+                <div class="news-actions">
+                    <a href="https://fho.dk/blog/2026/11/25/efter-stress-faerre-timer-nu-kan-give-flere-arbejdstimer-paa-sigt/" target="_blank">Læs original artikel</a>
                 </div>
             </article>
 
-            <!-- 17. Altinget: Folkeskolereform -->
+            <!-- 13 -->
             <article class="news-card">
-                <div class="meta">
-                    <span class="source">Altinget</span>
-                    <span class="meta-divider">•</span>
-                    <span class="category">Uddannelse</span>
+                <div class="news-meta">
+                    <span class="rank">13</span>
+                    <span class="news-source">Kort nyt | DR</span>
+                    <span class="news-category">Udenrigspolitik &amp; Mellemøsten</span>
                 </div>
-                <h2 class="news-title">Lektor: Politikerne vil reformere folkeskolen, men glemmer de forandringer, der allerede er sat i gang</h2>
-                <p class="summary">I et debatindlæg argumenteres der for, at folkeskolen allerede har indledt et nødvendigt opgør med årtiers politisk kontrol og New Public Management. Politikerne opfordres til at understøtte lærernes eksisterende pædagogiske råderum frem for at påtvinge nye topstyrede reformer.</p>
-                <div class="links">
-                    <a class="primary-link" href="https://www.altinget.dk/artikel/lektor-politikerne-vil-reformere-folkeskolen-men-glemmer-de-forandringer-der-allerede-er-sat-i-gang" target="_blank">Læs original artikel</a>
+                <h2 class="news-title">USA angriber fartøj i Omanbugten</h2>
+                <p class="news-summary">Amerikanske styrker har gennemført et militært angreb mod et fartøj i Omanbugten, bekræfter myndighederne. Aktionen finder sted midt i en periode med stærkt forhøjede spændinger på de strategisk afgørende skibsruter i regionen, og hændelsen følges tæt af det internationale samfund af frygt for eskalering.</p>
+                <div class="news-actions">
+                    <a href="https://www.dr.dk/nyheder/seneste/usa-angriber-fartoej-i-omanbugten" target="_blank">Læs original artikel</a>
                 </div>
             </article>
 
-            <!-- 18. Version2: Datacentre -->
+            <!-- 14 -->
             <article class="news-card">
-                <div class="meta">
-                    <span class="source">Version2</span>
-                    <span class="meta-divider">•</span>
-                    <span class="category">Teknologi &amp; Samfund</span>
+                <div class="news-meta">
+                    <span class="rank">14</span>
+                    <span class="news-source">RESPONSYS - Forside GENERELT</span>
+                    <span class="news-category">International Sikkerhed &amp; Forsvar</span>
                 </div>
-                <h2 class="news-title">Synspunkt: Fantasifulde tal, løse påstande og mørklagte ejere mudrer debatten om datacentre</h2>
-                <p class="summary">Planer om enorme datacentre ved Kalundborg og andre kommuner præges af uigennemskuelige ejerkonstruktioner og tvivlsomme beregninger, advarer brancheiagttagere. Der efterlyses åbenhed, kritisk samfundskontrol og reel prioritering af energiforbrug før godkendelse.</p>
-                <div class="links">
-                    <a class="primary-link" href="https://www.version2.dk/holdning/fantasifulde-tal-loese-paastande-og-moerklagte-ejere-mudrer-debatten-om-datacentre" target="_blank">Læs original artikel</a>
-                    <a class="ida-link" href="https://www.version2.dk/user/login?destination=/" target="_blank">(Log ind via IDA)</a>
+                <h2 class="news-title">Ukraine nedskyder for første gang russisk drone med lasersystem</h2>
+                <p class="news-summary">Det ukrainske forsvar har for første gang med succes anvendt et avanceret lasersystem til at nedskyde en jetdrevet russisk angrebsdrone. Udviklingen markerer et nyt teknologisk kapitel i krigen, hvor nye forsvarsmidler tages i brug for at imødegå konstante luftangreb mod civil og militær infrastruktur.</p>
+                <div class="news-actions">
+                    <a href="https://avisendanmark.dk/udland/ukraine-nedskyder-for-foerste-gang-russisk-drone-med-lasersystem?rss" target="_blank">Læs original artikel</a>
                 </div>
             </article>
 
-            <!-- 19. DR: LTF bandeindsats -->
+            <!-- 15 -->
             <article class="news-card">
-                <div class="meta">
-                    <span class="source">DR</span>
-                    <span class="meta-divider">•</span>
-                    <span class="category">Krimi &amp; Retfærdighed</span>
+                <div class="news-meta">
+                    <span class="rank">15</span>
+                    <span class="news-source">Ingeniøren articles</span>
+                    <span class="news-category">Forsvarspolitik &amp; Sikkerhed</span>
                 </div>
-                <h2 class="news-title">Politikreds skruer bissen på overfor LTF</h2>
-                <p class="summary">Politiet intensiverer den målrettede indsats over for den forbudte bandegruppering Loyal to Familia (LTF). Med skærpede kontroller og øget efterforskning forsøger myndighederne at dæmme op for grupperingens fortsatte aktiviteter og rekruttering.</p>
-                <div class="links">
-                    <a class="primary-link" href="https://www.dr.dk/nyheder/seneste/politikreds-skruer-bissen-paa-overfor-ltf" target="_blank">Læs original artikel</a>
+                <h2 class="news-title">Milliarddyre fregatter genovervejes efter droneangreb</h2>
+                <p class="news-summary">De planlagte flådeindkøb til mange milliarder kroner møder fornyet debat på Christiansborg. Flere forsvarspolitiske ordførere foreslår nu at skære ned på antallet af nye fregatter, da moderne trusselsbilleder og droneangreb i Østersøen rejser tvivl om, hvorvidt store, traditionelle krigsskibe er tidssvarende.</p>
+                <div class="news-actions">
+                    <a href="https://ing.dk/artikel/milliarddyre-fregatter-genovervejes-efter-droneangreb-maaske-kan-vi-klare-os-med-faerre" target="_blank">Læs original artikel</a>
+                    <span class="ida-login">(<a href="https://ing.dk/user/login?destination=/" target="_blank">Log ind via IDA</a>)</span>
                 </div>
             </article>
 
-            <!-- 20. Avisen Danmark: Jørn Hjorting -->
+            <!-- 16 -->
             <article class="news-card">
-                <div class="meta">
-                    <span class="source">Avisen Danmark</span>
-                    <span class="meta-divider">•</span>
-                    <span class="category">Navne &amp; Kultur</span>
+                <div class="news-meta">
+                    <span class="rank">16</span>
+                    <span class="news-source">Altinget</span>
+                    <span class="news-category">International Politik</span>
                 </div>
-                <h2 class="news-title">Radiovært Jørn Hjorting er død - 95 år</h2>
-                <p class="summary">En af Danmarks mest kendte og folkelige radiostemmer, Jørn Hjorting, er afgået ved døden i en alder af 95 år. Gennem programmer som 'De ringer, vi spiller' samlede han gennem generationer danskerne om radioen og skabte et unikt fællesskab i æteren.</p>
-                <div class="links">
-                    <a class="primary-link" href="https://avisendanmark.dk/danmark/radiovaert-joern-hjorting-er-doed-95-aar?rss" target="_blank">Læs original artikel</a>
+                <h2 class="news-title">Spaniens valg: Europas sidste store røde bastion står til at falde</h2>
+                <p class="news-summary">Det spanske parlamentsvalg kan bringe en afslutning på Pedro Sánchez’ embedsperiode som en af de mest markante venstreorienterede regeringsledere i EU. Valgresultatet ventes at få vidtrækkende konsekvenser for den politiske magtbalance i Bruxelles og understreger en generel krise for det europæiske socialdemokrati.</p>
+                <div class="news-actions">
+                    <a href="https://www.altinget.dk/artikel/spaniens-valg-europas-sidste-store-roede-bastion-staar-til-at-falde" target="_blank">Læs original artikel</a>
+                </div>
+            </article>
+
+            <!-- 17 -->
+            <article class="news-card">
+                <div class="news-meta">
+                    <span class="rank">17</span>
+                    <span class="news-source">Version2 articles</span>
+                    <span class="news-category">It &amp; Overvågning</span>
+                </div>
+                <h2 class="news-title">Politi dropper Palantir: Køber ukendt tysk dataplatform</h2>
+                <p class="news-summary">Politiledelsen i Tysklands mest folkerige delstat, Nordrhein-Westfalen, har besluttet at opsige samarbejdet med den amerikanske tech-leverandør Palantir. Delstaten skifter i stedet til en tyskudviklet dataplatform, hvilket afspejler et voksende ønske om digital suverænitet og strengere overholdelse af europæiske databeskyttelseskrav.</p>
+                <div class="news-actions">
+                    <a href="https://www.version2.dk/artikel/politi-dropper-palantir-koeber-ukendt-tysk-dataplatform" target="_blank">Læs original artikel</a>
+                    <span class="ida-login">(<a href="https://www.version2.dk/user/login?destination=/" target="_blank">Log ind via IDA</a>)</span>
+                </div>
+            </article>
+
+            <!-- 18 -->
+            <article class="news-card">
+                <div class="news-meta">
+                    <span class="rank">18</span>
+                    <span class="news-source">Videnskab.dk</span>
+                    <span class="news-category">Videnskab &amp; Kultur</span>
+                </div>
+                <h2 class="news-title">Tusindvis protesterer over nedskæring på Videnskab.dk</h2>
+                <p class="news-summary">Over 7.000 borgere, herunder både forskere og faglærte, har skrevet under på en appel til politikerne, efter at Videnskab.dk har fået beskåret en fjerdedel af sit offentlige tilskud. Kritikere advarer om, at forringelsen af uafhængig videnskabsjournalistik vil overlade mere terræn til misinformation på sociale platforme.</p>
+                <div class="news-actions">
+                    <a href="https://videnskab.dk/om-videnskabdk/tusindvis-af-danskere-protesterer-over-nedskaering-af-videnskab-dk-i-skubber-jo-folk-i-retning-af-fordummende-sociale-medier/" target="_blank">Læs original artikel</a>
+                </div>
+            </article>
+
+            <!-- 19 -->
+            <article class="news-card">
+                <div class="news-meta">
+                    <span class="rank">19</span>
+                    <span class="news-source">Ingeniøren articles</span>
+                    <span class="news-category">Sundhedsteknologi &amp; AI</span>
+                </div>
+                <h2 class="news-title">Trænet på data fra Danmark: Ny AI forudser tidlig død ud fra ét enkelt billede</h2>
+                <p class="news-summary">Et forskningssamarbejde med dansk deltagelse har udviklet en algoritme, der på baggrund af ét enkelt billede kan forudsige patienters risiko for tidlig død med større præcision end hidtidige metoder. Det medicinske gennembrud åbner nye muligheder for tidlig opsporing, men rejser samtidig vigtige etiske overvejelser.</p>
+                <div class="news-actions">
+                    <a href="https://ing.dk/artikel/traenet-paa-data-fra-danmark-ny-ai-forudser-tidlig-doed-ud-fra-et-enkelt-billede" target="_blank">Læs original artikel</a>
+                    <span class="ida-login">(<a href="https://ing.dk/user/login?destination=/" target="_blank">Log ind via IDA</a>)</span>
+                </div>
+            </article>
+
+            <!-- 20 -->
+            <article class="news-card">
+                <div class="news-meta">
+                    <span class="rank">20</span>
+                    <span class="news-source">Fagbevægelsens Hovedorganisation</span>
+                    <span class="news-category">Digitalisering &amp; Arbejdsret</span>
+                </div>
+                <h2 class="news-title">Kamera, GPS og adgangskort: Ved du, hvad din arbejdsplads registrerer?</h2>
+                <p class="news-summary">En ny undersøgelse viser, at knap halvdelen af de adspurgte lønmodtagere er uvidende om, i hvilket omfang deres arbejde monitoreres digitalt, mens en tredjedel måles direkte på tempo. Fagbevægelsen sætter nu fokus på problemet og opfordrer medarbejdere til at tage kontrollen over overvågning op med deres tillidsrepræsentanter.</p>
+                <div class="news-actions">
+                    <a href="https://fho.dk/blog/2026/11/26/kamera-gps-og-adgangskort-ved-du-hvad-din-arbejdsplads-registrerer/" target="_blank">Læs original artikel</a>
                 </div>
             </article>
         </main>
@@ -447,7 +423,7 @@
       <details style="background:#f4f4f4; padding:15px; border-radius:8px; border:1px solid #ddd;">
         <summary style="cursor:pointer; font-weight:bold; font-size:1.1em;">Se alle 114 unikke overskrifter fra alle kilder</summary>
         <ul style="margin-top:15px; padding-left:20px; line-height:1.5;">
-          <li style="margin-bottom:6px;"><strong>[Arbejderen]</strong> <a href="https://arbejderen.dk/debat/naar-verden-mister-retningen/" target="_blank">Når verden mister retningen</a></li><li style="margin-bottom:6px;"><strong>[Arbejderen]</strong> <a href="https://arbejderen.dk/laeser-til-laeser/nyt-arkiv-til-bevarelse-af-venstrefloejens-historie/" target="_blank">Nyt arkiv til bevarelse af venstrefløjens historie</a></li><li style="margin-bottom:6px;"><strong>[Arbejderen]</strong> <a href="https://arbejderen.dk/fagligt/mobilisering-til-demonstration-mod-det-28-regime-er-i-gang-det-er-for-vigtigt-til-ikke-at-vaere-drastisk/" target="_blank">Mobilisering til demonstration mod det 28. regime er i gang: “Det er for vigtigt til ikke at være drastisk”</a></li><li style="margin-bottom:6px;"><strong>[Arbejderen]</strong> <a href="https://arbejderen.dk/indland/almen-modstand-uforstaaelig-dom/" target="_blank">Almen Modstand: Uforståelig dom</a></li><li style="margin-bottom:6px;"><strong>[Arbejderen]</strong> <a href="https://arbejderen.dk/udland/brint-fra-afrika-nykolonialisme-og-fatamorgana/" target="_blank">Brint fra Afrika: Nykolonialisme og fatamorgana</a></li><li style="margin-bottom:6px;"><strong>[Arbejderen]</strong> <a href="https://arbejderen.dk/indland/europaraadet-kraever-dansk-handlingsplan-om-had-mod-muslimer/" target="_blank">Europarådet kræver dansk handlingsplan mod had mod muslimer</a></li><li style="margin-bottom:6px;"><strong>[Arbejderen]</strong> <a href="https://arbejderen.dk/debat/cop31-er-sammenbruddet-lykkeligt/" target="_blank">COP31 – er sammenbruddet lykkeligt?</a></li><li style="margin-bottom:6px;"><strong>[Arbejderen]</strong> <a href="https://arbejderen.dk/leder/cop31-fiaskoen-udstiller-kapitalismens-umuliggoeren-af-klimahandling/" target="_blank">COP31-fiaskoen udstiller, at kapitalismen umuliggør klimahandling</a></li><li style="margin-bottom:6px;"><strong>[Arbejderen]</strong> <a href="https://arbejderen.dk/indland/lovforslag-om-foertidspension-5000-borgere/" target="_blank">Lovforslag om førtidspension kan ramme langt flere end 5.000 borgere</a></li><li style="margin-bottom:6px;"><strong>[Arbejderen]</strong> <a href="https://arbejderen.dk/kultur/det-socialistiske-albanien-set-indefra/" target="_blank">Det socialistiske Albanien set indefra</a></li><li style="margin-bottom:6px;"><strong>[Fagbevægelsens Hovedorganisation]</strong> <a href="https://fho.dk/blog/2026/11/27/her-er-vinderne-af-fagtalent-2026/" target="_blank">Her er vinderne af Fagtalent 2026</a></li><li style="margin-bottom:6px;"><strong>[Fagbevægelsens Hovedorganisation]</strong> <a href="https://fho.dk/blog/2026/11/26/kamera-gps-og-adgangskort-ved-du-hvad-din-arbejdsplads-registrerer/" target="_blank">Kamera, GPS og adgangskort: Ved du, hvad din arbejdsplads registrerer?</a></li><li style="margin-bottom:6px;"><strong>[Fagbevægelsens Hovedorganisation]</strong> <a href="https://fho.dk/blog/2026/11/25/efter-stress-faerre-timer-nu-kan-give-flere-arbejdstimer-paa-sigt/" target="_blank">Efter stress: Færre timer nu kan give flere arbejdstimer på sigt</a></li><li style="margin-bottom:6px;"><strong>[Fagbevægelsens Hovedorganisation]</strong> <a href="https://fho.dk/blog/2026/11/25/kl-og-fh-i-faelles-opraab-til-christiansborg-vi-skal-ikke-acceptere-at-kriminelle-driver-rovdrift-paa-vores-velfaerdssamfund/" target="_blank">KL og FH i fælles opråb til Christiansborg: Vi skal ikke acceptere, at kriminelle driver rovdrift på vores velfærdssamfund</a></li><li style="margin-bottom:6px;"><strong>[Fagbevægelsens Hovedorganisation]</strong> <a href="https://fho.dk/blog/2026/11/24/nanna-hoejlund-vi-skal-udvikle-unges-arbejdsevne-ikke-afvikle-deres-oekonomiske-tryghed/" target="_blank">Nanna Højlund: Vi skal udvikle unges arbejdsevne – ikke afvikle deres økonomiske tryghed</a></li><li style="margin-bottom:6px;"><strong>[Fagbevægelsens Hovedorganisation]</strong> <a href="https://fho.dk/blog/2026/11/24/hvem-passer-paa-arbejdsmiljoeet-naar-algoritmerne-fordeler-arbejdet/" target="_blank">Hvem passer på arbejdsmiljøet, når algoritmerne fordeler arbejdet?</a></li><li style="margin-bottom:6px;"><strong>[Fagbevægelsens Hovedorganisation]</strong> <a href="https://fho.dk/blog/2026/11/23/forebygge-stress-paa-arbejdspladserne/" target="_blank">Flemming H. Grønsund: Vi skal blive bedre til at forebygge stress på arbejdspladserne</a></li><li style="margin-bottom:6px;"><strong>[Fagbevægelsens Hovedorganisation]</strong> <a href="https://fho.dk/blog/2026/11/23/fh-vil-investere-200-millioner-i-ledernes-kompetencer-til-at-forebygge-stress/" target="_blank">FH vil investere 200 millioner i ledernes kompetencer til at forebygge stress</a></li><li style="margin-bottom:6px;"><strong>[Fagbevægelsens Hovedorganisation]</strong> <a href="https://fho.dk/blog/2026/11/23/fh-saet-medarbejderejede-virksomheder-paa-finansloven/" target="_blank">FH: Sæt medarbejderejede virksomheder på finansloven</a></li><li style="margin-bottom:6px;"><strong>[Fagbevægelsens Hovedorganisation]</strong> <a href="https://fho.dk/blog/2026/11/20/fh-vil-styrke-kampen-mod-stress-med-mere-uddannelse/" target="_blank">FH vil styrke kampen mod stress med mere uddannelse</a></li><li style="margin-bottom:6px;"><strong>[Altinget]</strong> <a href="https://www.altinget.dk/artikel/klimaskam-findes-ikke" target="_blank">Klimaskam findes ikke</a></li><li style="margin-bottom:6px;"><strong>[Altinget]</strong> <a href="https://www.altinget.dk/artikel/lektor-politikerne-vil-reformere-folkeskolen-men-glemmer-de-forandringer-der-allerede-er-sat-i-gang" target="_blank">Lektor: Politikerne vil reformere folkeskolen, men glemmer de forandringer, der allerede er sat i gang</a></li><li style="margin-bottom:6px;"><strong>[Altinget]</strong> <a href="https://www.altinget.dk/artikel/udlandsredaktoer-her-er-det-du-skal-tage-med-fra-det-amerikanske-midtvejsvalg" target="_blank">Udlandsredaktør: Her er det, du skal tage med fra det amerikanske midtvejsvalg</a></li><li style="margin-bottom:6px;"><strong>[Altinget]</strong> <a href="https://www.altinget.dk/artikel/dkpol-mette-frederiksen-forlaenger-sin-selvskabte-krise" target="_blank">#dkpol: Mette Frederiksen forlænger sin selvskabte krise</a></li><li style="margin-bottom:6px;"><strong>[Altinget]</strong> <a href="https://www.altinget.dk/artikel/dramatisk-oproer-fra-danmark-og-andre-sparelande-faar-eus-milliardforhandling-til-at-bryde-sammen" target="_blank">Dramatisk oprør fra Danmark og andre sparelande får EU’s milliardforhandling til at bryde sammen</a></li><li style="margin-bottom:6px;"><strong>[Altinget]</strong> <a href="https://www.altinget.dk/artikel/derfor-klarer-ghettoloven-frisag-i-hoejesteret" target="_blank">Derfor klarer ghettoloven frisag i Højesteret</a></li><li style="margin-bottom:6px;"><strong>[Altinget]</strong> <a href="https://www.altinget.dk/artikel/spaniens-valg-europas-sidste-store-roede-bastion-staar-til-at-falde" target="_blank">Spaniens valg: Europas sidste store røde bastion står til at falde</a></li><li style="margin-bottom:6px;"><strong>[Altinget]</strong> <a href="https://www.altinget.dk/artikel/torsdag-toerner-eus-ledere-sammen-paa-ekstraordinaert-topmoede-det-skal-du-vide-om-deres-pengeslagsmaal" target="_blank">Torsdag tørner EU’s ledere sammen på ekstraordinært topmøde. Det skal du vide om deres pengeslagsmål</a></li><li style="margin-bottom:6px;"><strong>[Altinget]</strong> <a href="https://www.altinget.dk/artikel/frederikssund-satser-paa-at-bekaempe-skolefravaer" target="_blank">Frederikssund satser på at bekæmpe skolefravær</a></li><li style="margin-bottom:6px;"><strong>[Altinget]</strong> <a href="https://www.altinget.dk/artikel/hvem-faar-plads-i-regeringens-prestige-kommission-her-er-navnene-alle-taler-om" target="_blank">Hvem får plads i regeringens prestige-kommissioner? Her er navnene, alle taler om</a></li><li style="margin-bottom:6px;"><strong>[Altinget]</strong> <a href="https://www.altinget.dk/artikel/fondsmagt-er-som-et-billardbord-et-stoed-bestemmer-ikke-udfaldet-men-rykker-alle-kuglerne" target="_blank">Fondsmagt er som et billardbord: Et stød bestemmer ikke udfaldet, men rykker alle kuglerne</a></li><li style="margin-bottom:6px;"><strong>[Altinget]</strong> <a href="https://www.altinget.dk/artikel/dramatisk-spoergetime-mette-frederiksen-balancerede-paa-enhedslistens-roede-linje" target="_blank">Dramatisk spørgetime: Mette Frederiksen balancerede på Enhedslistens røde linje</a></li><li style="margin-bottom:6px;"><strong>[Altinget]</strong> <a href="https://www.altinget.dk/artikel/med-skatteaftalen-fik-loekke-sit-trofae-nu-er-det-pia-olsen-dyhr-og-pelle-dragsteds-tur-til-at-levere" target="_blank">Med skatteaftalen fik Løkke sit trofæ. Nu er det Pia Olsen Dyhr og Pelle Dragsteds tur til at levere</a></li><li style="margin-bottom:6px;"><strong>[Altinget]</strong> <a href="https://www.altinget.dk/artikel/dkpol-taler-med-alex-vanopslagh" target="_blank">#dkpol taler med: Alex Vanopslagh</a></li><li style="margin-bottom:6px;"><strong>[Altinget]</strong> <a href="https://www.altinget.dk/artikel/eu-chef-vil-skaere-mere-i-fremtidsbudget-men-stadig-ikke-nok-for-danmark-og-tyskland" target="_blank">EU-chef vil skære mere i fremtidsbudget, men stadig ikke nok for Danmark og Tyskland</a></li><li style="margin-bottom:6px;"><strong>[Ingeniøren articles]</strong> <a href="https://ing.dk/artikel/kampen-om-danmarks-fregat-milliarder-spidser-til-her-er-det-franske-bud-paa-fremtidens-danske-flaade" target="_blank">Kampen om Danmarks fregat-milliarder spidser til: Her er det franske bud på fremtidens danske flåde</a> <a href="https://ing.dk/user/login?destination=/" target="_blank" style="font-size:0.85em; color:#555;">(Log ind via IDA)</a></li><li style="margin-bottom:6px;"><strong>[Ingeniøren articles]</strong> <a href="https://ing.dk/artikel/christiansborg-afviser-droppe-motorvej-trods-milliardtab-vi-traekker-ikke-stikket-paa-det-her" target="_blank">Christiansborg afviser at droppe motorvej trods milliardtab: »Vi trækker ikke stikket på det her«</a> <a href="https://ing.dk/user/login?destination=/" target="_blank" style="font-size:0.85em; color:#555;">(Log ind via IDA)</a></li><li style="margin-bottom:6px;"><strong>[Ingeniøren articles]</strong> <a href="https://ing.dk/artikel/fyrtaarn-falder-foer-rejsegilde-strid-om-lejekontrakt-afliver-prestigefyldt-klimabyggeri" target="_blank">Fyrtårn falder før rejsegilde: Strid om lejekontrakt afliver prestigefyldt klimabyggeri</a> <a href="https://ing.dk/user/login?destination=/" target="_blank" style="font-size:0.85em; color:#555;">(Log ind via IDA)</a></li><li style="margin-bottom:6px;"><strong>[Ingeniøren articles]</strong> <a href="https://ing.dk/artikel/milliarddyre-fregatter-genovervejes-efter-droneangreb-maaske-kan-vi-klare-os-med-faerre" target="_blank">Milliarddyre fregatter genovervejes efter droneangreb: »Måske kan vi klare os med færre«</a> <a href="https://ing.dk/user/login?destination=/" target="_blank" style="font-size:0.85em; color:#555;">(Log ind via IDA)</a></li><li style="margin-bottom:6px;"><strong>[Ingeniøren articles]</strong> <a href="https://ing.dk/holdning/var-det-mig-der-loeste-opgaven" target="_blank">Blogindlæg: Var det mig, der løste opgaven?</a> <a href="https://ing.dk/user/login?destination=/" target="_blank" style="font-size:0.85em; color:#555;">(Log ind via IDA)</a></li><li style="margin-bottom:6px;"><strong>[Ingeniøren articles]</strong> <a href="https://ing.dk/artikel/traenet-paa-data-fra-danmark-ny-ai-forudser-tidlig-doed-ud-fra-et-enkelt-billede" target="_blank">Trænet på data fra Danmark: Ny AI forudser tidlig død ud fra ét enkelt billede</a> <a href="https://ing.dk/user/login?destination=/" target="_blank" style="font-size:0.85em; color:#555;">(Log ind via IDA)</a></li><li style="margin-bottom:6px;"><strong>[Ingeniøren articles]</strong> <a href="https://ing.dk/artikel/togbro-paa-2700-tons-sat-op-paa-under-24-timer-saadan-loeste-ingenioerer-kaempeopgave-i-hamborg" target="_blank">Togbro på 2.700 tons sat op på under 24 timer: Sådan løste ingeniører kæmpeopgave i Hamborg</a> <a href="https://ing.dk/user/login?destination=/" target="_blank" style="font-size:0.85em; color:#555;">(Log ind via IDA)</a></li><li style="margin-bottom:6px;"><strong>[Ingeniøren articles]</strong> <a href="https://ing.dk/artikel/milliardregning-til-skatteborgerne-professorer-beder-politikere-vrage-fordyret-motorvej" target="_blank">Milliardregning til skatteborgerne: Professorer beder politikere vrage fordyret motorvej</a> <a href="https://ing.dk/user/login?destination=/" target="_blank" style="font-size:0.85em; color:#555;">(Log ind via IDA)</a></li><li style="margin-bottom:6px;"><strong>[Ingeniøren articles]</strong> <a href="https://ing.dk/holdning/europa-halter-bagefter-i-kaploebet-om-fremtidens-ai-robotter-nu-skal-vi-selv-paa-banen" target="_blank">Leder: Europa halter bagefter i kapløbet om fremtidens AI-robotter – nu skal vi selv på banen</a> <a href="https://ing.dk/user/login?destination=/" target="_blank" style="font-size:0.85em; color:#555;">(Log ind via IDA)</a></li><li style="margin-bottom:6px;"><strong>[Ingeniøren articles]</strong> <a href="https://ing.dk/artikel/ai-ryger-paa-skoleskemaet-laererne-ved-lige-saa-lidt-som-eleverne" target="_blank">AI ryger på skoleskemaet: »Lærerne ved lige så lidt som eleverne«</a> <a href="https://ing.dk/user/login?destination=/" target="_blank" style="font-size:0.85em; color:#555;">(Log ind via IDA)</a></li><li style="margin-bottom:6px;"><strong>[Ingeniøren articles]</strong> <a href="https://ing.dk/artikel/it-mastodont-fyrer-chef-efter-ingenioeren-afsloering-det-blev-en-kort-fornoejelse" target="_blank">It-mastodont fyrer chef efter Ingeniøren-afsløring: »Det blev en kort fornøjelse«</a> <a href="https://ing.dk/user/login?destination=/" target="_blank" style="font-size:0.85em; color:#555;">(Log ind via IDA)</a></li><li style="margin-bottom:6px;"><strong>[Ingeniøren articles]</strong> <a href="https://ing.dk/artikel/se-om-du-bliver-ramt-disse-14-elbilmaerker-koerer-rundt-med-en-alvorlig-fejl-0" target="_blank">Se, om du bliver ramt: Disse 14 elbilmærker kører rundt med en alvorlig fejl</a> <a href="https://ing.dk/user/login?destination=/" target="_blank" style="font-size:0.85em; color:#555;">(Log ind via IDA)</a></li><li style="margin-bottom:6px;"><strong>[Ingeniøren articles]</strong> <a href="https://ing.dk/artikel/chokerende-opdagelse-rumsonde-opklarer-gaadefuld-asteroide-kollision" target="_blank">»Chokerende« opdagelse: Rumsonde opklarer gådefuld asteroide-kollision</a> <a href="https://ing.dk/user/login?destination=/" target="_blank" style="font-size:0.85em; color:#555;">(Log ind via IDA)</a></li><li style="margin-bottom:6px;"><strong>[Ingeniøren articles]</strong> <a href="https://ing.dk/artikel/klimaraadet-slaar-alarm-landbruget-mangler-teknologi-til-fjerne-14-millioner-tons-co2" target="_blank">Klimarådet slår alarm: Landbruget mangler teknologi til at fjerne 1,4 millioner tons CO2</a> <a href="https://ing.dk/user/login?destination=/" target="_blank" style="font-size:0.85em; color:#555;">(Log ind via IDA)</a></li><li style="margin-bottom:6px;"><strong>[Ingeniøren articles]</strong> <a href="https://ing.dk/artikel/ny-ai-broeler-i-nyborg-vaekker-bekymring-der-er-formentlig-ogsaa-tale-om-flere-databrud" target="_blank">Ny AI-brøler i Nyborg vækker bekymring: »Der er formentlig også tale om flere databrud«</a> <a href="https://ing.dk/user/login?destination=/" target="_blank" style="font-size:0.85em; color:#555;">(Log ind via IDA)</a></li><li style="margin-bottom:6px;"><strong>[Version2 articles]</strong> <a href="https://www.version2.dk/artikel/jensen-huangs-vanvittige-comeback-beviser-ai-lige-nu-er-utaemmelig" target="_blank">Jensen Huangs vanvittige comeback beviser, at AI lige nu er utæmmelig</a> <a href="https://www.version2.dk/user/login?destination=/" target="_blank" style="font-size:0.85em; color:#555;">(Log ind via IDA)</a></li><li style="margin-bottom:6px;"><strong>[Version2 articles]</strong> <a href="https://www.version2.dk/artikel/it-kaempe-dumpet-af-professionelle-i-dag-er-det-naermest-et-ukendt-dyr" target="_blank">It-kæmpe dumpet af professionelle: »I dag er det nærmest et ukendt dyr«</a> <a href="https://www.version2.dk/user/login?destination=/" target="_blank" style="font-size:0.85em; color:#555;">(Log ind via IDA)</a></li><li style="margin-bottom:6px;"><strong>[Version2 articles]</strong> <a href="https://www.version2.dk/artikel/hospital-delte-anne-maries-dybt-private-data-med-microsoft-uden-samtykke-det-goer-mig-rigtig-vred" target="_blank">Hospital delte Anne-Maries dybt private data med Microsoft uden samtykke: »Det gør mig rigtig vred«</a> <a href="https://www.version2.dk/user/login?destination=/" target="_blank" style="font-size:0.85em; color:#555;">(Log ind via IDA)</a></li><li style="margin-bottom:6px;"><strong>[Version2 articles]</strong> <a href="https://www.version2.dk/holdning/fantasifulde-tal-loese-paastande-og-moerklagte-ejere-mudrer-debatten-om-datacentre" target="_blank">Synspunkt: Fantasifulde tal, løse påstande og mørklagte ejere mudrer debatten om datacentre</a> <a href="https://www.version2.dk/user/login?destination=/" target="_blank" style="font-size:0.85em; color:#555;">(Log ind via IDA)</a></li><li style="margin-bottom:6px;"><strong>[Version2 articles]</strong> <a href="https://www.version2.dk/artikel/politi-dropper-palantir-koeber-ukendt-tysk-dataplatform" target="_blank">Politi dropper Palantir: Køber ukendt tysk dataplatform</a> <a href="https://www.version2.dk/user/login?destination=/" target="_blank" style="font-size:0.85em; color:#555;">(Log ind via IDA)</a></li><li style="margin-bottom:6px;"><strong>[Version2 articles]</strong> <a href="https://www.version2.dk/artikel/dyk-ned-i-danmarks-nye-datacentre-faa-hele-overblikket-her" target="_blank">Dyk ned i Danmarks nye datacentre: Få hele overblikket her</a> <a href="https://www.version2.dk/user/login?destination=/" target="_blank" style="font-size:0.85em; color:#555;">(Log ind via IDA)</a></li><li style="margin-bottom:6px;"><strong>[Version2 articles]</strong> <a href="https://www.version2.dk/holdning/itu-rektor-svarer-i-ai-debat-forskere-og-ledelser-paa-landets-universiteter-sidder-med-samme" target="_blank">Synspunkt: ITU-rektor svarer i AI-debat: Forskere og ledelser på landets universiteter sidder med samme spørgsmål som de studerende</a> <a href="https://www.version2.dk/user/login?destination=/" target="_blank" style="font-size:0.85em; color:#555;">(Log ind via IDA)</a></li><li style="margin-bottom:6px;"><strong>[Version2 articles]</strong> <a href="https://www.version2.dk/artikel/hoejere-loen-traekker-it-folk-til-det-private-men-pengene-goer-det-ikke-alene" target="_blank">Højere løn trækker it-folk til det private – men pengene gør det ikke alene</a> <a href="https://www.version2.dk/user/login?destination=/" target="_blank" style="font-size:0.85em; color:#555;">(Log ind via IDA)</a></li><li style="margin-bottom:6px;"><strong>[Version2 articles]</strong> <a href="https://www.version2.dk/artikel/datacenter-direktoer-forklarer-derfor-er-der-saa-meget-mystik-om-nye-projekter" target="_blank">Datacenter-direktør forklarer: Derfor er der så meget mystik om nye projekter</a> <a href="https://www.version2.dk/user/login?destination=/" target="_blank" style="font-size:0.85em; color:#555;">(Log ind via IDA)</a></li><li style="margin-bottom:6px;"><strong>[Version2 articles]</strong> <a href="https://www.version2.dk/artikel/nvidia-i-kovending-topchef-genindtraeder-med-oejeblikkelig-virkning" target="_blank">Nvidia i kovending: Topchef genindtræder med øjeblikkelig virkning</a> <a href="https://www.version2.dk/user/login?destination=/" target="_blank" style="font-size:0.85em; color:#555;">(Log ind via IDA)</a></li><li style="margin-bottom:6px;"><strong>[Version2 articles]</strong> <a href="https://www.version2.dk/artikel/krypteringsprofessor-afblaeser-panik-efter-knaekket-gaade-men-en-opdagelse-vil-faa-ham-op-af-stolen" target="_blank">Krypteringsprofessor afblæser panik efter knækket gåde: Men én opdagelse vil få ham op af stolen</a> <a href="https://www.version2.dk/user/login?destination=/" target="_blank" style="font-size:0.85em; color:#555;">(Log ind via IDA)</a></li><li style="margin-bottom:6px;"><strong>[Videnskab.dk]</strong> <a href="https://videnskab.dk/kultur-samfund/hvorfor-ridsede-stenalderfolk-figurer-i-skandinaviske-klipper-det-har-forskere-nu-et-bud-paa/" target="_blank">Hvorfor ridsede stenalderfolk figurer i skandinaviske klipper? Det har forskere nu et bud på</a></li><li style="margin-bottom:6px;"><strong>[Videnskab.dk]</strong> <a href="https://videnskab.dk/krop-sundhed/weekendquizzen-hvor-meget-ved-du-om-cigaretter-snus-og-vapes/" target="_blank">Weekendquizzen: Hvor meget ved du om cigaretter, snus og vapes?</a></li><li style="margin-bottom:6px;"><strong>[Videnskab.dk]</strong> <a href="https://videnskab.dk/rummet/se-billederne-hobbyforsker-finder-unikke-mikrometeoritter-paa-hustage-i-danmark/" target="_blank">Se billederne: Hobbyforsker finder unikke mikrometeoritter på hustage i Danmark</a></li><li style="margin-bottom:6px;"><strong>[Videnskab.dk]</strong> <a href="https://videnskab.dk/om-videnskabdk/tusindvis-af-danskere-protesterer-over-nedskaering-af-videnskab-dk-i-skubber-jo-folk-i-retning-af-fordummende-sociale-medier/" target="_blank">Tusindvis af danskere protesterer over nedskæring af Videnskab.dk: »I skubber jo folk i retning af fordummende sociale medier«</a></li><li style="margin-bottom:6px;"><strong>[Videnskab.dk]</strong> <a href="https://videnskab.dk/rummet/asteroide-mast-flad-efter-sammenstoed-med-rumsonde/" target="_blank">Asteroide mast flad efter sammenstød med rumsonde</a></li><li style="margin-bottom:6px;"><strong>[Videnskab.dk]</strong> <a href="https://videnskab.dk/krop-sundhed/saa-du-den-roede-plet-simpelt-spoergsmaal-afsloerer-en-af-hjernens-store-gaader/" target="_blank">Så du den røde plet? Simpelt spørgsmål afslører en af hjernens store gåder</a></li><li style="margin-bottom:6px;"><strong>[Videnskab.dk]</strong> <a href="https://videnskab.dk/kultur-samfund/vores-vinduer-afsloerer-en-hel-del-om-samtidens-idealer/" target="_blank">Vores vinduer afslører en hel del om samtidens idealer</a></li><li style="margin-bottom:6px;"><strong>[Videnskab.dk]</strong> <a href="https://videnskab.dk/naturvidenskab/uddoed-vampyrkamel-plejede-at-husere-paa-de-nordamerikanske-sletter/" target="_blank">Uddød ‘vampyrkamel’ plejede at husere på de nordamerikanske sletter</a></li><li style="margin-bottom:6px;"><strong>[Videnskab.dk]</strong> <a href="https://videnskab.dk/kultur-samfund/syrnet-maelk-fundet-i-jaettestuer-nyt-studie-tyder-paa-mystiske-forhistoriske-begravelsesritualer/" target="_blank">Syrnet mælk fundet i jættestuer: Nyt studie tyder på mystiske forhistoriske begravelsesritualer</a></li><li style="margin-bottom:6px;"><strong>[Videnskab.dk]</strong> <a href="https://videnskab.dk/krop-sundhed/virker-paracetamol-ikke-mod-hovedpine/" target="_blank">Virker paracetamol ikke mod hovedpine?</a></li><li style="margin-bottom:6px;"><strong>[Videnskab.dk]</strong> <a href="https://videnskab.dk/kultur-samfund/seksuelle-overgreb-er-ikke-okay-i-gta-men-du-maa-gerne-myrde-hvorfor/" target="_blank">Seksuelle overgreb er ikke okay i GTA, men du må gerne myrde - hvorfor?</a></li><li style="margin-bottom:6px;"><strong>[Videnskab.dk]</strong> <a href="https://videnskab.dk/kultur-samfund/vikinge-genstand-var-muligvis-mindre-fast-fashion-end-man-troede/" target="_blank">Vikinge-genstand var muligvis mindre &#x27;fast-fashion&#x27;, end man troede</a></li><li style="margin-bottom:6px;"><strong>[Videnskab.dk]</strong> <a href="https://videnskab.dk/kultur-samfund/skinger-eller-skrigeskinke-vrede-kvinder-betaler-en-anden-pris-end-maend/" target="_blank">Skinger eller skrigeskinke: Vrede kvinder betaler en anden pris end mænd</a></li><li style="margin-bottom:6px;"><strong>[Videnskab.dk]</strong> <a href="https://videnskab.dk/naturvidenskab/forskere-jagede-et-skibsvrag-men-fandt-i-stedet-noget-maerkvaerdigt-paa-havets-bund/" target="_blank">Forskere jagede et skibsvrag, men fandt i stedet noget mærkværdigt på havets bund</a></li><li style="margin-bottom:6px;"><strong>[Videnskab.dk]</strong> <a href="https://videnskab.dk/teknologi/goer-vindmoeller-og-solceller-vores-elsystem-mere-saarbart/" target="_blank">Gør vindmøller og solceller vores elsystem mere sårbart?</a></li><li style="margin-bottom:6px;"><strong>[Kort nyt | DR]</strong> <a href="https://www.dr.dk/nyheder/seneste/politikreds-skruer-bissen-paa-overfor-ltf" target="_blank">Politikreds skruer bissen på overfor LTF</a></li><li style="margin-bottom:6px;"><strong>[Kort nyt | DR]</strong> <a href="https://www.dr.dk/nyheder/seneste/unge-maend-idoemmes-flere-aars-faengsel-i-narkosag" target="_blank">To unge mænd idømmes flere års fængsel i narkosag</a></li><li style="margin-bottom:6px;"><strong>[Kort nyt | DR]</strong> <a href="https://www.dr.dk/nyheder/seneste/faerre-danskere-lever-med-kol" target="_blank">Færre danskere lever med KOL</a></li><li style="margin-bottom:6px;"><strong>[Kort nyt | DR]</strong> <a href="https://www.dr.dk/nyheder/seneste/styrelse-advarer-dyreejere-om-haartabsmiddel" target="_blank">Styrelse advarer dyreejere om hårtabsmiddel</a></li><li style="margin-bottom:6px;"><strong>[Kort nyt | DR]</strong> <a href="https://www.dr.dk/nyheder/seneste/fn-advarer-sult-og-hungersnoed-truer-16-omraader-i-verden" target="_blank">FN advarer: Sult og hungersnød truer 16 områder i verden</a></li><li style="margin-bottom:6px;"><strong>[Kort nyt | DR]</strong> <a href="https://www.dr.dk/nyheder/seneste/18-aarig-faengslet-skud-mod-tidligere-boksers-kolonihave" target="_blank">18-årig fængslet for skud mod tidligere boksers kolonihave</a></li><li style="margin-bottom:6px;"><strong>[Kort nyt | DR]</strong> <a href="https://www.dr.dk/nyheder/seneste/landsret-stadfaester-dom-mod-27-aarig-drab" target="_blank">Landsret stadfæster dom mod 27-årig for drab</a></li><li style="margin-bottom:6px;"><strong>[Kort nyt | DR]</strong> <a href="https://www.dr.dk/nyheder/seneste/ny-kritik-af-familieretshuset" target="_blank">Familieretshuset får igen kritik</a></li><li style="margin-bottom:6px;"><strong>[Kort nyt | DR]</strong> <a href="https://www.dr.dk/nyheder/seneste/ny-rigsadvokat-udpeget" target="_blank">Ny rigsadvokat udpeget</a></li><li style="margin-bottom:6px;"><strong>[Kort nyt | DR]</strong> <a href="https://www.dr.dk/nyheder/seneste/skat-kontrollerer-igen-content-creators-fejl-i-95-procent-af-indberetningerne" target="_blank">Skat kontrollerer igen content creators: Fejl i 95 procent af indberetningerne</a></li><li style="margin-bottom:6px;"><strong>[Kort nyt | DR]</strong> <a href="https://www.dr.dk/nyheder/seneste/nordmakedoner-varetaegtsfaengslet-efter-bombespraengning" target="_blank">Nordmakedoner varetægtsfængslet efter bombesprængning</a></li><li style="margin-bottom:6px;"><strong>[Kort nyt | DR]</strong> <a href="https://www.dr.dk/nyheder/seneste/novo-lancerer-vaegtabspille-i-sverige-juleaftensdag" target="_blank">Novo lancerer vægttabspille i Sverige juleaftensdag</a></li><li style="margin-bottom:6px;"><strong>[Kort nyt | DR]</strong> <a href="https://www.dr.dk/nyheder/seneste/resten-af-aaret-kan-du-koere-gratis-i-s-tog-om-soendagen" target="_blank">Resten af året kan du køre gratis i S-tog om søndagen</a></li><li style="margin-bottom:6px;"><strong>[Kort nyt | DR]</strong> <a href="https://www.dr.dk/nyheder/seneste/fransk-stjerneskuespiller-skal-igen-retten" target="_blank">Fransk stjerneskuespiller skal igen for retten</a></li><li style="margin-bottom:6px;"><strong>[Kort nyt | DR]</strong> <a href="https://www.dr.dk/nyheder/seneste/kvinde-omkommet-i-brand-i-ringe-paa-fyn" target="_blank">Kvinde omkommet i brand i Ringe på Fyn</a></li><li style="margin-bottom:6px;"><strong>[RESPONSYS - Forside GENERELT]</strong> <a href="https://avisendanmark.dk/danmark/radiovaert-joern-hjorting-er-doed-95-aar?rss" target="_blank">Radiovært Jørn Hjorting er død - 95 år</a></li><li style="margin-bottom:6px;"><strong>[RESPONSYS - Forside GENERELT]</strong> <a href="https://avisendanmark.dk/danmark/tusinder-af-danske-gymnasieelevers-telefonnumre-laekket?rss" target="_blank">Tusinder af danske gymnasieelevers telefonnumre er lækket</a></li><li style="margin-bottom:6px;"><strong>[RESPONSYS - Forside GENERELT]</strong> <a href="https://avisendanmark.dk/sport/kriseramte-aab-smider-steffen-hoejer-paa-porten?rss" target="_blank">Kriseramte AaB smider Steffen Højer på porten</a></li><li style="margin-bottom:6px;"><strong>[RESPONSYS - Forside GENERELT]</strong> <a href="https://avisendanmark.dk/politik/minister-tager-nyt-skridt-mod-fremtidig-ulvejagt-i-danmark?rss" target="_blank">Minister tager nyt skridt mod fremtidig ulvejagt i Danmark</a></li><li style="margin-bottom:6px;"><strong>[RESPONSYS - Forside GENERELT]</strong> <a href="https://avisendanmark.dk/danmark/styrelse-advarer-kontakt-med-haartabsmidler-kan-vaere-doedelig-for-katte?rss" target="_blank">Styrelse advarer: Kontakt med hårtabsmidler kan være dødelig for katte</a></li><li style="margin-bottom:6px;"><strong>[RESPONSYS - Forside GENERELT]</strong> <a href="https://avisendanmark.dk/krimi/21-aarig-blev-frifundet-for-voldtaegt-nu-er-han-anklaget-igen-det-loeb-mig-koldt-ned-ad-ryggen?rss" target="_blank">21-årig blev frifundet for voldtægt - nu er han anklaget igen: &#x27;Det løb mig koldt ned ad ryggen&#x27;</a></li><li style="margin-bottom:6px;"><strong>[RESPONSYS - Forside GENERELT]</strong> <a href="https://avisendanmark.dk/udland/spansk-premierminister-foer-valg-kan-ikke-forestille-mig-nederlag?rss" target="_blank">Spansk premierminister før valg: Kan ikke forestille mig nederlag</a></li><li style="margin-bottom:6px;"><strong>[RESPONSYS - Forside GENERELT]</strong> <a href="https://avisendanmark.dk/krimi/tv-2-vil-bistaa-politiet-i-opklaringsarbejde-om-den-sorte-svane?rss" target="_blank">TV 2 vil bistå politiet i opklaringsarbejde om Den sorte svane</a></li><li style="margin-bottom:6px;"><strong>[RESPONSYS - Forside GENERELT]</strong> <a href="https://avisendanmark.dk/udland/fn-advarer-om-risiko-for-hungersnoed-i-flere-lande?rss" target="_blank">FN advarer om risiko for sultkriser i flere lande</a></li><li style="margin-bottom:6px;"><strong>[RESPONSYS - Forside GENERELT]</strong> <a href="https://avisendanmark.dk/krimi/landsret-stadfaester-dom-for-knivdrab-paa-barndomsven?rss" target="_blank">Landsret stadfæster dom for knivdrab på barndomsven</a></li><li style="margin-bottom:6px;"><strong>[TV 2 Nyheder]</strong> <a href="https://nyheder.tv2.dk/samfund/2025-05-12-nekrolog-joern-hjorting-var-radioens-og-livets-positive-stemme" target="_blank">Nekrolog: Jørn Hjorting var radioens og livets positive stemme</a></li><li style="margin-bottom:6px;"><strong>[TV 2 Nyheder]</strong> <a href="https://nyheder.tv2.dk/samfund/2026-11-27-over-15000-gymnasieelevers-telefonnumre-laekket" target="_blank">Over 15.000 gymnasieelevers telefonnumre lækket</a></li><li style="margin-bottom:6px;"><strong>[TV 2 Nyheder]</strong> <a href="https://nyheder.tv2.dk/2026-11-25-it-teamleder-ringede-112-og-fik-hjaelp-gennem-kameraet-et-meget-vaerdifuldt-vaerktoej" target="_blank">IT-teamleder ringede 112 og fik hjælp gennem kameraet: - Et meget værdifuldt værktøj</a></li><li style="margin-bottom:6px;"><strong>[TV 2 Nyheder]</strong> <a href="https://nyheder.tv2.dk/2026-11-27-en-18-aarig-mand-er-fredag-blevet-anholdt-og-sigtet-for-at-have-affyret-skud-mod-tidligere-boksers-kolonihavehus" target="_blank">En 18-årig mand fængslet for mistanke om drabsforsøg på tidligere bokser og hans ekskæreste</a></li><li style="margin-bottom:6px;"><strong>[TV 2 Nyheder]</strong> <a href="https://nyheder.tv2.dk/2026-11-24-74-piskeslag-for-manglende-hijab-mens-elitens-boern-popper-champagne-i-poolen" target="_blank">74 piskeslag for manglende hijab, mens elitens børn popper champagne i poolen</a></li><li style="margin-bottom:6px;"><strong>[TV 2 Nyheder]</strong> <a href="https://nyheder.tv2.dk/2026-11-27-vanvidskoersel-har-kostet-leasingfirma-biler-for-en-million" target="_blank">Vanvidskørsel har kostet leasingfirma biler for en million</a></li><li style="margin-bottom:6px;"><strong>[TV 2 Nyheder]</strong> <a href="https://nyheder.tv2.dk/politik/2026-11-26-danskerne-peger-paa-uventet-kandidat-som-blaa-statsminister-viser-ny-maaling" target="_blank">Danskerne peger på uventet kandidat som blå statsminister, viser ny måling</a></li><li style="margin-bottom:6px;"><strong>[TV 2 Nyheder]</strong> <a href="https://nyheder.tv2.dk/2026-11-26-truslen-om-droner-skaber-tvivl-om-milliarddyre-fregatter-til-forsvaret" target="_blank">Russisk krigsskib blev sænket – nu vil politikere genoverveje dansk milliardkøb</a></li><li style="margin-bottom:6px;"><strong>[TV 2 Nyheder]</strong> <a href="https://nyheder.tv2.dk/samfund/2026-11-26-antibiotikaforbruget-til-dyr-fortsaetter-med-at-stige" target="_blank">Antibiotikaforbruget til dyr fortsætter med at stige</a></li><li style="margin-bottom:6px;"><strong>[TV 2 Nyheder]</strong> <a href="https://nyheder.tv2.dk/krimi/2026-11-26-osteopat-tiltalt-for-seksuelle-kraenkelser-under-behandlinger" target="_blank">Falsk osteopat tiltalt for seksuelle krænkelser under behandlinger</a></li><li style="margin-bottom:6px;"><strong>[TV 2 Nyheder]</strong> <a href="https://nyheder.tv2.dk/samfund/2026-11-25-80-aarig-ramt-af-vildfaren-golfbold-man-kan-sgu-doe-af-det" target="_blank">80-årig ramt af vildfaren golfbold: - Man kan sgu dø af det</a></li><li style="margin-bottom:6px;"><strong>[TV 2 Nyheder]</strong> <a href="https://nyheder.tv2.dk/udland/2026-11-25-laek-afsloerer-enorme-tabstal-saa-laenge-overlever-en-russisk-soldat-ved-fronten" target="_blank">Læk afslører enorme tabstal – så længe overlever en russisk soldat ved fronten</a></li><li style="margin-bottom:6px;"><strong>[TV 2 Nyheder]</strong> <a href="https://nyheder.tv2.dk/samfund/2026-11-26-rejsekort-mangler-at-udbetale-128-millioner-kroner" target="_blank">Rejsekort mangler at udbetale 128 millioner kroner</a></li>
+          <li style="margin-bottom:6px;"><strong>[Arbejderen]</strong> <a href="https://arbejderen.dk/debat/naar-verden-mister-retningen/" target="_blank">Når verden mister retningen</a></li><li style="margin-bottom:6px;"><strong>[Arbejderen]</strong> <a href="https://arbejderen.dk/laeser-til-laeser/nyt-arkiv-til-bevarelse-af-venstrefloejens-historie/" target="_blank">Nyt arkiv til bevarelse af venstrefløjens historie</a></li><li style="margin-bottom:6px;"><strong>[Arbejderen]</strong> <a href="https://arbejderen.dk/fagligt/mobilisering-til-demonstration-mod-det-28-regime-er-i-gang-det-er-for-vigtigt-til-ikke-at-vaere-drastisk/" target="_blank">Mobilisering til demonstration mod det 28. regime er i gang: “Det er for vigtigt til ikke at være drastisk”</a></li><li style="margin-bottom:6px;"><strong>[Arbejderen]</strong> <a href="https://arbejderen.dk/indland/almen-modstand-uforstaaelig-dom/" target="_blank">Almen Modstand: Uforståelig dom</a></li><li style="margin-bottom:6px;"><strong>[Arbejderen]</strong> <a href="https://arbejderen.dk/udland/brint-fra-afrika-nykolonialisme-og-fatamorgana/" target="_blank">Brint fra Afrika: Nykolonialisme og fatamorgana</a></li><li style="margin-bottom:6px;"><strong>[Arbejderen]</strong> <a href="https://arbejderen.dk/indland/europaraadet-kraever-dansk-handlingsplan-om-had-mod-muslimer/" target="_blank">Europarådet kræver dansk handlingsplan mod had mod muslimer</a></li><li style="margin-bottom:6px;"><strong>[Arbejderen]</strong> <a href="https://arbejderen.dk/debat/cop31-er-sammenbruddet-lykkeligt/" target="_blank">COP31 – er sammenbruddet lykkeligt?</a></li><li style="margin-bottom:6px;"><strong>[Arbejderen]</strong> <a href="https://arbejderen.dk/leder/cop31-fiaskoen-udstiller-kapitalismens-umuliggoeren-af-klimahandling/" target="_blank">COP31-fiaskoen udstiller, at kapitalismen umuliggør klimahandling</a></li><li style="margin-bottom:6px;"><strong>[Arbejderen]</strong> <a href="https://arbejderen.dk/indland/lovforslag-om-foertidspension-5000-borgere/" target="_blank">Lovforslag om førtidspension kan ramme langt flere end 5.000 borgere</a></li><li style="margin-bottom:6px;"><strong>[Arbejderen]</strong> <a href="https://arbejderen.dk/kultur/det-socialistiske-albanien-set-indefra/" target="_blank">Det socialistiske Albanien set indefra</a></li><li style="margin-bottom:6px;"><strong>[Fagbevægelsens Hovedorganisation]</strong> <a href="https://fho.dk/blog/2026/11/27/her-er-vinderne-af-fagtalent-2026/" target="_blank">Her er vinderne af Fagtalent 2026</a></li><li style="margin-bottom:6px;"><strong>[Fagbevægelsens Hovedorganisation]</strong> <a href="https://fho.dk/blog/2026/11/26/kamera-gps-og-adgangskort-ved-du-hvad-din-arbejdsplads-registrerer/" target="_blank">Kamera, GPS og adgangskort: Ved du, hvad din arbejdsplads registrerer?</a></li><li style="margin-bottom:6px;"><strong>[Fagbevægelsens Hovedorganisation]</strong> <a href="https://fho.dk/blog/2026/11/25/efter-stress-faerre-timer-nu-kan-give-flere-arbejdstimer-paa-sigt/" target="_blank">Efter stress: Færre timer nu kan give flere arbejdstimer på sigt</a></li><li style="margin-bottom:6px;"><strong>[Fagbevægelsens Hovedorganisation]</strong> <a href="https://fho.dk/blog/2026/11/25/kl-og-fh-i-faelles-opraab-til-christiansborg-vi-skal-ikke-acceptere-at-kriminelle-driver-rovdrift-paa-vores-velfaerdssamfund/" target="_blank">KL og FH i fælles opråb til Christiansborg: Vi skal ikke acceptere, at kriminelle driver rovdrift på vores velfærdssamfund</a></li><li style="margin-bottom:6px;"><strong>[Fagbevægelsens Hovedorganisation]</strong> <a href="https://fho.dk/blog/2026/11/24/nanna-hoejlund-vi-skal-udvikle-unges-arbejdsevne-ikke-afvikle-deres-oekonomiske-tryghed/" target="_blank">Nanna Højlund: Vi skal udvikle unges arbejdsevne – ikke afvikle deres økonomiske tryghed</a></li><li style="margin-bottom:6px;"><strong>[Fagbevægelsens Hovedorganisation]</strong> <a href="https://fho.dk/blog/2026/11/24/hvem-passer-paa-arbejdsmiljoeet-naar-algoritmerne-fordeler-arbejdet/" target="_blank">Hvem passer på arbejdsmiljøet, når algoritmerne fordeler arbejdet?</a></li><li style="margin-bottom:6px;"><strong>[Fagbevægelsens Hovedorganisation]</strong> <a href="https://fho.dk/blog/2026/11/23/forebygge-stress-paa-arbejdspladserne/" target="_blank">Flemming H. Grønsund: Vi skal blive bedre til at forebygge stress på arbejdspladserne</a></li><li style="margin-bottom:6px;"><strong>[Fagbevægelsens Hovedorganisation]</strong> <a href="https://fho.dk/blog/2026/11/23/fh-vil-investere-200-millioner-i-ledernes-kompetencer-til-at-forebygge-stress/" target="_blank">FH vil investere 200 millioner i ledernes kompetencer til at forebygge stress</a></li><li style="margin-bottom:6px;"><strong>[Fagbevægelsens Hovedorganisation]</strong> <a href="https://fho.dk/blog/2026/11/23/fh-saet-medarbejderejede-virksomheder-paa-finansloven/" target="_blank">FH: Sæt medarbejderejede virksomheder på finansloven</a></li><li style="margin-bottom:6px;"><strong>[Fagbevægelsens Hovedorganisation]</strong> <a href="https://fho.dk/blog/2026/11/20/fh-vil-styrke-kampen-mod-stress-med-mere-uddannelse/" target="_blank">FH vil styrke kampen mod stress med mere uddannelse</a></li><li style="margin-bottom:6px;"><strong>[Altinget]</strong> <a href="https://www.altinget.dk/artikel/klimaskam-findes-ikke" target="_blank">Klimaskam findes ikke</a></li><li style="margin-bottom:6px;"><strong>[Altinget]</strong> <a href="https://www.altinget.dk/artikel/lektor-politikerne-vil-reformere-folkeskolen-men-glemmer-de-forandringer-der-allerede-er-sat-i-gang" target="_blank">Lektor: Politikerne vil reformere folkeskolen, men glemmer de forandringer, der allerede er sat i gang</a></li><li style="margin-bottom:6px;"><strong>[Altinget]</strong> <a href="https://www.altinget.dk/artikel/udlandsredaktoer-her-er-det-du-skal-tage-med-fra-det-amerikanske-midtvejsvalg" target="_blank">Udlandsredaktør: Her er det, du skal tage med fra det amerikanske midtvejsvalg</a></li><li style="margin-bottom:6px;"><strong>[Altinget]</strong> <a href="https://www.altinget.dk/artikel/dkpol-mette-frederiksen-forlaenger-sin-selvskabte-krise" target="_blank">#dkpol: Mette Frederiksen forlænger sin selvskabte krise</a></li><li style="margin-bottom:6px;"><strong>[Altinget]</strong> <a href="https://www.altinget.dk/artikel/dramatisk-oproer-fra-danmark-og-andre-sparelande-faar-eus-milliardforhandling-til-at-bryde-sammen" target="_blank">Dramatisk oprør fra Danmark og andre sparelande får EU’s milliardforhandling til at bryde sammen</a></li><li style="margin-bottom:6px;"><strong>[Altinget]</strong> <a href="https://www.altinget.dk/artikel/derfor-klarer-ghettoloven-frisag-i-hoejesteret" target="_blank">Derfor klarer ghettoloven frisag i Højesteret</a></li><li style="margin-bottom:6px;"><strong>[Altinget]</strong> <a href="https://www.altinget.dk/artikel/spaniens-valg-europas-sidste-store-roede-bastion-staar-til-at-falde" target="_blank">Spaniens valg: Europas sidste store røde bastion står til at falde</a></li><li style="margin-bottom:6px;"><strong>[Altinget]</strong> <a href="https://www.altinget.dk/artikel/torsdag-toerner-eus-ledere-sammen-paa-ekstraordinaert-topmoede-det-skal-du-vide-om-deres-pengeslagsmaal" target="_blank">Torsdag tørner EU’s ledere sammen på ekstraordinært topmøde. Det skal du vide om deres pengeslagsmål</a></li><li style="margin-bottom:6px;"><strong>[Altinget]</strong> <a href="https://www.altinget.dk/artikel/frederikssund-satser-paa-at-bekaempe-skolefravaer" target="_blank">Frederikssund satser på at bekæmpe skolefravær</a></li><li style="margin-bottom:6px;"><strong>[Altinget]</strong> <a href="https://www.altinget.dk/artikel/hvem-faar-plads-i-regeringens-prestige-kommission-her-er-navnene-alle-taler-om" target="_blank">Hvem får plads i regeringens prestige-kommissioner? Her er navnene, alle taler om</a></li><li style="margin-bottom:6px;"><strong>[Altinget]</strong> <a href="https://www.altinget.dk/artikel/fondsmagt-er-som-et-billardbord-et-stoed-bestemmer-ikke-udfaldet-men-rykker-alle-kuglerne" target="_blank">Fondsmagt er som et billardbord: Et stød bestemmer ikke udfaldet, men rykker alle kuglerne</a></li><li style="margin-bottom:6px;"><strong>[Altinget]</strong> <a href="https://www.altinget.dk/artikel/dramatisk-spoergetime-mette-frederiksen-balancerede-paa-enhedslistens-roede-linje" target="_blank">Dramatisk spørgetime: Mette Frederiksen balancerede på Enhedslistens røde linje</a></li><li style="margin-bottom:6px;"><strong>[Altinget]</strong> <a href="https://www.altinget.dk/artikel/med-skatteaftalen-fik-loekke-sit-trofae-nu-er-det-pia-olsen-dyhr-og-pelle-dragsteds-tur-til-at-levere" target="_blank">Med skatteaftalen fik Løkke sit trofæ. Nu er det Pia Olsen Dyhr og Pelle Dragsteds tur til at levere</a></li><li style="margin-bottom:6px;"><strong>[Altinget]</strong> <a href="https://www.altinget.dk/artikel/dkpol-taler-med-alex-vanopslagh" target="_blank">#dkpol taler med: Alex Vanopslagh</a></li><li style="margin-bottom:6px;"><strong>[Altinget]</strong> <a href="https://www.altinget.dk/artikel/eu-chef-vil-skaere-mere-i-fremtidsbudget-men-stadig-ikke-nok-for-danmark-og-tyskland" target="_blank">EU-chef vil skære mere i fremtidsbudget, men stadig ikke nok for Danmark og Tyskland</a></li><li style="margin-bottom:6px;"><strong>[Ingeniøren articles]</strong> <a href="https://ing.dk/artikel/kampen-om-danmarks-fregat-milliarder-spidser-til-her-er-det-franske-bud-paa-fremtidens-danske-flaade" target="_blank">Kampen om Danmarks fregat-milliarder spidser til: Her er det franske bud på fremtidens danske flåde</a> <a href="https://ing.dk/user/login?destination=/" target="_blank" style="font-size:0.85em; color:#555;">(Log ind via IDA)</a></li><li style="margin-bottom:6px;"><strong>[Ingeniøren articles]</strong> <a href="https://ing.dk/artikel/christiansborg-afviser-droppe-motorvej-trods-milliardtab-vi-traekker-ikke-stikket-paa-det-her" target="_blank">Christiansborg afviser at droppe motorvej trods milliardtab: »Vi trækker ikke stikket på det her«</a> <a href="https://ing.dk/user/login?destination=/" target="_blank" style="font-size:0.85em; color:#555;">(Log ind via IDA)</a></li><li style="margin-bottom:6px;"><strong>[Ingeniøren articles]</strong> <a href="https://ing.dk/artikel/fyrtaarn-falder-foer-rejsegilde-strid-om-lejekontrakt-afliver-prestigefyldt-klimabyggeri" target="_blank">Fyrtårn falder før rejsegilde: Strid om lejekontrakt afliver prestigefyldt klimabyggeri</a> <a href="https://ing.dk/user/login?destination=/" target="_blank" style="font-size:0.85em; color:#555;">(Log ind via IDA)</a></li><li style="margin-bottom:6px;"><strong>[Ingeniøren articles]</strong> <a href="https://ing.dk/artikel/milliarddyre-fregatter-genovervejes-efter-droneangreb-maaske-kan-vi-klare-os-med-faerre" target="_blank">Milliarddyre fregatter genovervejes efter droneangreb: »Måske kan vi klare os med færre«</a> <a href="https://ing.dk/user/login?destination=/" target="_blank" style="font-size:0.85em; color:#555;">(Log ind via IDA)</a></li><li style="margin-bottom:6px;"><strong>[Ingeniøren articles]</strong> <a href="https://ing.dk/holdning/var-det-mig-der-loeste-opgaven" target="_blank">Blogindlæg: Var det mig, der løste opgaven?</a> <a href="https://ing.dk/user/login?destination=/" target="_blank" style="font-size:0.85em; color:#555;">(Log ind via IDA)</a></li><li style="margin-bottom:6px;"><strong>[Ingeniøren articles]</strong> <a href="https://ing.dk/artikel/traenet-paa-data-fra-danmark-ny-ai-forudser-tidlig-doed-ud-fra-et-enkelt-billede" target="_blank">Trænet på data fra Danmark: Ny AI forudser tidlig død ud fra ét enkelt billede</a> <a href="https://ing.dk/user/login?destination=/" target="_blank" style="font-size:0.85em; color:#555;">(Log ind via IDA)</a></li><li style="margin-bottom:6px;"><strong>[Ingeniøren articles]</strong> <a href="https://ing.dk/artikel/togbro-paa-2700-tons-sat-op-paa-under-24-timer-saadan-loeste-ingenioerer-kaempeopgave-i-hamborg" target="_blank">Togbro på 2.700 tons sat op på under 24 timer: Sådan løste ingeniører kæmpeopgave i Hamborg</a> <a href="https://ing.dk/user/login?destination=/" target="_blank" style="font-size:0.85em; color:#555;">(Log ind via IDA)</a></li><li style="margin-bottom:6px;"><strong>[Ingeniøren articles]</strong> <a href="https://ing.dk/artikel/milliardregning-til-skatteborgerne-professorer-beder-politikere-vrage-fordyret-motorvej" target="_blank">Milliardregning til skatteborgerne: Professorer beder politikere vrage fordyret motorvej</a> <a href="https://ing.dk/user/login?destination=/" target="_blank" style="font-size:0.85em; color:#555;">(Log ind via IDA)</a></li><li style="margin-bottom:6px;"><strong>[Ingeniøren articles]</strong> <a href="https://ing.dk/holdning/europa-halter-bagefter-i-kaploebet-om-fremtidens-ai-robotter-nu-skal-vi-selv-paa-banen" target="_blank">Leder: Europa halter bagefter i kapløbet om fremtidens AI-robotter – nu skal vi selv på banen</a> <a href="https://ing.dk/user/login?destination=/" target="_blank" style="font-size:0.85em; color:#555;">(Log ind via IDA)</a></li><li style="margin-bottom:6px;"><strong>[Ingeniøren articles]</strong> <a href="https://ing.dk/artikel/ai-ryger-paa-skoleskemaet-laererne-ved-lige-saa-lidt-som-eleverne" target="_blank">AI ryger på skoleskemaet: »Lærerne ved lige så lidt som eleverne«</a> <a href="https://ing.dk/user/login?destination=/" target="_blank" style="font-size:0.85em; color:#555;">(Log ind via IDA)</a></li><li style="margin-bottom:6px;"><strong>[Ingeniøren articles]</strong> <a href="https://ing.dk/artikel/it-mastodont-fyrer-chef-efter-ingenioeren-afsloering-det-blev-en-kort-fornoejelse" target="_blank">It-mastodont fyrer chef efter Ingeniøren-afsløring: »Det blev en kort fornøjelse«</a> <a href="https://ing.dk/user/login?destination=/" target="_blank" style="font-size:0.85em; color:#555;">(Log ind via IDA)</a></li><li style="margin-bottom:6px;"><strong>[Ingeniøren articles]</strong> <a href="https://ing.dk/artikel/se-om-du-bliver-ramt-disse-14-elbilmaerker-koerer-rundt-med-en-alvorlig-fejl-0" target="_blank">Se, om du bliver ramt: Disse 14 elbilmærker kører rundt med en alvorlig fejl</a> <a href="https://ing.dk/user/login?destination=/" target="_blank" style="font-size:0.85em; color:#555;">(Log ind via IDA)</a></li><li style="margin-bottom:6px;"><strong>[Ingeniøren articles]</strong> <a href="https://ing.dk/artikel/chokerende-opdagelse-rumsonde-opklarer-gaadefuld-asteroide-kollision" target="_blank">»Chokerende« opdagelse: Rumsonde opklarer gådefuld asteroide-kollision</a> <a href="https://ing.dk/user/login?destination=/" target="_blank" style="font-size:0.85em; color:#555;">(Log ind via IDA)</a></li><li style="margin-bottom:6px;"><strong>[Ingeniøren articles]</strong> <a href="https://ing.dk/artikel/klimaraadet-slaar-alarm-landbruget-mangler-teknologi-til-fjerne-14-millioner-tons-co2" target="_blank">Klimarådet slår alarm: Landbruget mangler teknologi til at fjerne 1,4 millioner tons CO2</a> <a href="https://ing.dk/user/login?destination=/" target="_blank" style="font-size:0.85em; color:#555;">(Log ind via IDA)</a></li><li style="margin-bottom:6px;"><strong>[Ingeniøren articles]</strong> <a href="https://ing.dk/artikel/ny-ai-broeler-i-nyborg-vaekker-bekymring-der-er-formentlig-ogsaa-tale-om-flere-databrud" target="_blank">Ny AI-brøler i Nyborg vækker bekymring: »Der er formentlig også tale om flere databrud«</a> <a href="https://ing.dk/user/login?destination=/" target="_blank" style="font-size:0.85em; color:#555;">(Log ind via IDA)</a></li><li style="margin-bottom:6px;"><strong>[Version2 articles]</strong> <a href="https://www.version2.dk/holdning/meshcore-2" target="_blank">Blogindlæg: Meshcore #2</a> <a href="https://www.version2.dk/user/login?destination=/" target="_blank" style="font-size:0.85em; color:#555;">(Log ind via IDA)</a></li><li style="margin-bottom:6px;"><strong>[Version2 articles]</strong> <a href="https://www.version2.dk/artikel/jensen-huangs-vanvittige-comeback-beviser-ai-lige-nu-er-utaemmelig" target="_blank">Jensen Huangs vanvittige comeback beviser, at AI lige nu er utæmmelig</a> <a href="https://www.version2.dk/user/login?destination=/" target="_blank" style="font-size:0.85em; color:#555;">(Log ind via IDA)</a></li><li style="margin-bottom:6px;"><strong>[Version2 articles]</strong> <a href="https://www.version2.dk/artikel/it-kaempe-dumpet-af-professionelle-i-dag-er-det-naermest-et-ukendt-dyr" target="_blank">It-kæmpe dumpet af professionelle: »I dag er det nærmest et ukendt dyr«</a> <a href="https://www.version2.dk/user/login?destination=/" target="_blank" style="font-size:0.85em; color:#555;">(Log ind via IDA)</a></li><li style="margin-bottom:6px;"><strong>[Version2 articles]</strong> <a href="https://www.version2.dk/artikel/hospital-delte-anne-maries-dybt-private-data-med-microsoft-uden-samtykke-det-goer-mig-rigtig-vred" target="_blank">Hospital delte Anne-Maries dybt private data med Microsoft uden samtykke: »Det gør mig rigtig vred«</a> <a href="https://www.version2.dk/user/login?destination=/" target="_blank" style="font-size:0.85em; color:#555;">(Log ind via IDA)</a></li><li style="margin-bottom:6px;"><strong>[Version2 articles]</strong> <a href="https://www.version2.dk/holdning/fantasifulde-tal-loese-paastande-og-moerklagte-ejere-mudrer-debatten-om-datacentre" target="_blank">Synspunkt: Fantasifulde tal, løse påstande og mørklagte ejere mudrer debatten om datacentre</a> <a href="https://www.version2.dk/user/login?destination=/" target="_blank" style="font-size:0.85em; color:#555;">(Log ind via IDA)</a></li><li style="margin-bottom:6px;"><strong>[Version2 articles]</strong> <a href="https://www.version2.dk/artikel/politi-dropper-palantir-koeber-ukendt-tysk-dataplatform" target="_blank">Politi dropper Palantir: Køber ukendt tysk dataplatform</a> <a href="https://www.version2.dk/user/login?destination=/" target="_blank" style="font-size:0.85em; color:#555;">(Log ind via IDA)</a></li><li style="margin-bottom:6px;"><strong>[Version2 articles]</strong> <a href="https://www.version2.dk/artikel/dyk-ned-i-danmarks-nye-datacentre-faa-hele-overblikket-her" target="_blank">Dyk ned i Danmarks nye datacentre: Få hele overblikket her</a> <a href="https://www.version2.dk/user/login?destination=/" target="_blank" style="font-size:0.85em; color:#555;">(Log ind via IDA)</a></li><li style="margin-bottom:6px;"><strong>[Version2 articles]</strong> <a href="https://www.version2.dk/holdning/itu-rektor-svarer-i-ai-debat-forskere-og-ledelser-paa-landets-universiteter-sidder-med-samme" target="_blank">Synspunkt: ITU-rektor svarer i AI-debat: Forskere og ledelser på landets universiteter sidder med samme spørgsmål som de studerende</a> <a href="https://www.version2.dk/user/login?destination=/" target="_blank" style="font-size:0.85em; color:#555;">(Log ind via IDA)</a></li><li style="margin-bottom:6px;"><strong>[Version2 articles]</strong> <a href="https://www.version2.dk/artikel/hoejere-loen-traekker-it-folk-til-det-private-men-pengene-goer-det-ikke-alene" target="_blank">Højere løn trækker it-folk til det private – men pengene gør det ikke alene</a> <a href="https://www.version2.dk/user/login?destination=/" target="_blank" style="font-size:0.85em; color:#555;">(Log ind via IDA)</a></li><li style="margin-bottom:6px;"><strong>[Version2 articles]</strong> <a href="https://www.version2.dk/artikel/datacenter-direktoer-forklarer-derfor-er-der-saa-meget-mystik-om-nye-projekter" target="_blank">Datacenter-direktør forklarer: Derfor er der så meget mystik om nye projekter</a> <a href="https://www.version2.dk/user/login?destination=/" target="_blank" style="font-size:0.85em; color:#555;">(Log ind via IDA)</a></li><li style="margin-bottom:6px;"><strong>[Version2 articles]</strong> <a href="https://www.version2.dk/artikel/nvidia-i-kovending-topchef-genindtraeder-med-oejeblikkelig-virkning" target="_blank">Nvidia i kovending: Topchef genindtræder med øjeblikkelig virkning</a> <a href="https://www.version2.dk/user/login?destination=/" target="_blank" style="font-size:0.85em; color:#555;">(Log ind via IDA)</a></li><li style="margin-bottom:6px;"><strong>[Videnskab.dk]</strong> <a href="https://videnskab.dk/naturvidenskab/sort-sol-er-der-en-fugl-der-saetter-tempoet-og-venter-staerene-paa-de-langsomme/" target="_blank">Sort sol: Er der én fugl, der sætter tempoet, og venter stærene på de langsomme?</a></li><li style="margin-bottom:6px;"><strong>[Videnskab.dk]</strong> <a href="https://videnskab.dk/kultur-samfund/hvorfor-ridsede-stenalderfolk-figurer-i-skandinaviske-klipper-det-har-forskere-nu-et-bud-paa/" target="_blank">Hvorfor ridsede stenalderfolk figurer i skandinaviske klipper? Det har forskere nu et bud på</a></li><li style="margin-bottom:6px;"><strong>[Videnskab.dk]</strong> <a href="https://videnskab.dk/krop-sundhed/weekendquizzen-hvor-meget-ved-du-om-cigaretter-snus-og-vapes/" target="_blank">Weekendquizzen: Hvor meget ved du om cigaretter, snus og vapes?</a></li><li style="margin-bottom:6px;"><strong>[Videnskab.dk]</strong> <a href="https://videnskab.dk/rummet/se-billederne-hobbyforsker-finder-unikke-mikrometeoritter-paa-hustage-i-danmark/" target="_blank">Se billederne: Hobbyforsker finder unikke mikrometeoritter på hustage i Danmark</a></li><li style="margin-bottom:6px;"><strong>[Videnskab.dk]</strong> <a href="https://videnskab.dk/om-videnskabdk/tusindvis-af-danskere-protesterer-over-nedskaering-af-videnskab-dk-i-skubber-jo-folk-i-retning-af-fordummende-sociale-medier/" target="_blank">Tusindvis af danskere protesterer over nedskæring af Videnskab.dk: »I skubber jo folk i retning af fordummende sociale medier«</a></li><li style="margin-bottom:6px;"><strong>[Videnskab.dk]</strong> <a href="https://videnskab.dk/rummet/asteroide-mast-flad-efter-sammenstoed-med-rumsonde/" target="_blank">Asteroide mast flad efter sammenstød med rumsonde</a></li><li style="margin-bottom:6px;"><strong>[Videnskab.dk]</strong> <a href="https://videnskab.dk/krop-sundhed/saa-du-den-roede-plet-simpelt-spoergsmaal-afsloerer-en-af-hjernens-store-gaader/" target="_blank">Så du den røde plet? Simpelt spørgsmål afslører en af hjernens store gåder</a></li><li style="margin-bottom:6px;"><strong>[Videnskab.dk]</strong> <a href="https://videnskab.dk/kultur-samfund/vores-vinduer-afsloerer-en-hel-del-om-samtidens-idealer/" target="_blank">Vores vinduer afslører en hel del om samtidens idealer</a></li><li style="margin-bottom:6px;"><strong>[Videnskab.dk]</strong> <a href="https://videnskab.dk/naturvidenskab/uddoed-vampyrkamel-plejede-at-husere-paa-de-nordamerikanske-sletter/" target="_blank">Uddød ‘vampyrkamel’ plejede at husere på de nordamerikanske sletter</a></li><li style="margin-bottom:6px;"><strong>[Videnskab.dk]</strong> <a href="https://videnskab.dk/kultur-samfund/syrnet-maelk-fundet-i-jaettestuer-nyt-studie-tyder-paa-mystiske-forhistoriske-begravelsesritualer/" target="_blank">Syrnet mælk fundet i jættestuer: Nyt studie tyder på mystiske forhistoriske begravelsesritualer</a></li><li style="margin-bottom:6px;"><strong>[Videnskab.dk]</strong> <a href="https://videnskab.dk/krop-sundhed/virker-paracetamol-ikke-mod-hovedpine/" target="_blank">Virker paracetamol ikke mod hovedpine?</a></li><li style="margin-bottom:6px;"><strong>[Videnskab.dk]</strong> <a href="https://videnskab.dk/kultur-samfund/seksuelle-overgreb-er-ikke-okay-i-gta-men-du-maa-gerne-myrde-hvorfor/" target="_blank">Seksuelle overgreb er ikke okay i GTA, men du må gerne myrde - hvorfor?</a></li><li style="margin-bottom:6px;"><strong>[Videnskab.dk]</strong> <a href="https://videnskab.dk/kultur-samfund/vikinge-genstand-var-muligvis-mindre-fast-fashion-end-man-troede/" target="_blank">Vikinge-genstand var muligvis mindre &#x27;fast-fashion&#x27;, end man troede</a></li><li style="margin-bottom:6px;"><strong>[Videnskab.dk]</strong> <a href="https://videnskab.dk/kultur-samfund/skinger-eller-skrigeskinke-vrede-kvinder-betaler-en-anden-pris-end-maend/" target="_blank">Skinger eller skrigeskinke: Vrede kvinder betaler en anden pris end mænd</a></li><li style="margin-bottom:6px;"><strong>[Videnskab.dk]</strong> <a href="https://videnskab.dk/naturvidenskab/forskere-jagede-et-skibsvrag-men-fandt-i-stedet-noget-maerkvaerdigt-paa-havets-bund/" target="_blank">Forskere jagede et skibsvrag, men fandt i stedet noget mærkværdigt på havets bund</a></li><li style="margin-bottom:6px;"><strong>[Kort nyt | DR]</strong> <a href="https://www.dr.dk/nyheder/seneste/politiet-anholder-person-efter-uroligheder-mellem-ishockeyfans" target="_blank">Politiet anholder person efter uroligheder mellem ishockeyfans</a></li><li style="margin-bottom:6px;"><strong>[Kort nyt | DR]</strong> <a href="https://www.dr.dk/nyheder/seneste/usa-angriber-fartoej-i-omanbugten" target="_blank">USA angriber fartøj i Omanbugten</a></li><li style="margin-bottom:6px;"><strong>[Kort nyt | DR]</strong> <a href="https://www.dr.dk/nyheder/seneste/15-aarig-doed-efter-trafikulykke-i-tirsdags" target="_blank">15-årig død efter trafikulykke i tirsdags</a></li><li style="margin-bottom:6px;"><strong>[Kort nyt | DR]</strong> <a href="https://www.dr.dk/nyheder/seneste/otte-migranter-doede-i-forsoeget-paa-naa-europa" target="_blank">Otte migranter døde i forsøget på at nå Europa</a></li><li style="margin-bottom:6px;"><strong>[Kort nyt | DR]</strong> <a href="https://www.dr.dk/nyheder/seneste/styrelse-foelger-sikkerhedsbrud-hos-teleudbyder-flere-organisationer-ventes-ramt" target="_blank">Styrelse følger sikkerhedsbrud hos teleudbyder - flere organisationer ventes ramt</a></li><li style="margin-bottom:6px;"><strong>[Kort nyt | DR]</strong> <a href="https://www.dr.dk/nyheder/seneste/politikreds-skruer-bissen-paa-overfor-ltf" target="_blank">Politikreds skruer bissen på overfor LTF</a></li><li style="margin-bottom:6px;"><strong>[Kort nyt | DR]</strong> <a href="https://www.dr.dk/nyheder/seneste/unge-maend-idoemmes-flere-aars-faengsel-i-narkosag" target="_blank">To unge mænd idømmes flere års fængsel i narkosag</a></li><li style="margin-bottom:6px;"><strong>[Kort nyt | DR]</strong> <a href="https://www.dr.dk/nyheder/seneste/faerre-danskere-lever-med-kol" target="_blank">Færre danskere lever med KOL</a></li><li style="margin-bottom:6px;"><strong>[Kort nyt | DR]</strong> <a href="https://www.dr.dk/nyheder/seneste/styrelse-advarer-dyreejere-om-haartabsmiddel" target="_blank">Styrelse advarer dyreejere om hårtabsmiddel</a></li><li style="margin-bottom:6px;"><strong>[Kort nyt | DR]</strong> <a href="https://www.dr.dk/nyheder/seneste/fn-advarer-sult-og-hungersnoed-truer-16-omraader-i-verden" target="_blank">FN advarer: Sult og hungersnød truer 16 områder i verden</a></li><li style="margin-bottom:6px;"><strong>[Kort nyt | DR]</strong> <a href="https://www.dr.dk/nyheder/seneste/18-aarig-faengslet-skud-mod-tidligere-boksers-kolonihave" target="_blank">18-årig fængslet for skud mod tidligere boksers kolonihave</a></li><li style="margin-bottom:6px;"><strong>[Kort nyt | DR]</strong> <a href="https://www.dr.dk/nyheder/seneste/landsret-stadfaester-dom-mod-27-aarig-drab" target="_blank">Landsret stadfæster dom mod 27-årig for drab</a></li><li style="margin-bottom:6px;"><strong>[Kort nyt | DR]</strong> <a href="https://www.dr.dk/nyheder/seneste/ny-kritik-af-familieretshuset" target="_blank">Familieretshuset får igen kritik</a></li><li style="margin-bottom:6px;"><strong>[Kort nyt | DR]</strong> <a href="https://www.dr.dk/nyheder/seneste/ny-rigsadvokat-udpeget" target="_blank">Ny rigsadvokat udpeget</a></li><li style="margin-bottom:6px;"><strong>[Kort nyt | DR]</strong> <a href="https://www.dr.dk/nyheder/seneste/skat-kontrollerer-igen-content-creators-fejl-i-95-procent-af-indberetningerne" target="_blank">Skat kontrollerer igen content creators: Fejl i 95 procent af indberetningerne</a></li><li style="margin-bottom:6px;"><strong>[RESPONSYS - Forside GENERELT]</strong> <a href="https://avisendanmark.dk/sport/tyson-fury-faar-groent-lys-til-boksebrag-efter-helbredsbekymring?rss" target="_blank">Tyson Fury får grønt lys til boksebrag efter helbredsbekymring</a></li><li style="margin-bottom:6px;"><strong>[RESPONSYS - Forside GENERELT]</strong> <a href="https://avisendanmark.dk/sport/broendby-traener-tidligt-maal-gav-os-en-svaer-opgave?rss" target="_blank">Brøndby-træner: Tidligt mål gav os en svær opgave</a></li><li style="margin-bottom:6px;"><strong>[RESPONSYS - Forside GENERELT]</strong> <a href="https://avisendanmark.dk/udland/ukraine-nedskyder-for-foerste-gang-russisk-drone-med-lasersystem?rss" target="_blank">Ukraine nedskyder for første gang russisk drone med lasersystem</a></li><li style="margin-bottom:6px;"><strong>[RESPONSYS - Forside GENERELT]</strong> <a href="https://avisendanmark.dk/udland/openai-og-apple-beskylder-hinanden-for-at-stjaele-hemmeligheder?rss" target="_blank">OpenAI og Apple beskylder hinanden for at stjæle hemmeligheder</a></li><li style="margin-bottom:6px;"><strong>[RESPONSYS - Forside GENERELT]</strong> <a href="https://avisendanmark.dk/politik/ny-skatteordning-skal-goere-firmacykler-mere-attraktive-fra-2028?rss" target="_blank">Ny skatteordning skal gøre firmacykler mere attraktive fra 2028</a></li><li style="margin-bottom:6px;"><strong>[RESPONSYS - Forside GENERELT]</strong> <a href="https://avisendanmark.dk/danmark/velkommen-skyldte-42-825-elkunder-292-millioner-kroner-ved-konkurs?rss" target="_blank">Velkommen skyldte 42.825 elkunder 292 millioner kroner ved konkurs</a></li><li style="margin-bottom:6px;"><strong>[RESPONSYS - Forside GENERELT]</strong> <a href="https://avisendanmark.dk/danmark/virksomhed-kender-endnu-ikke-omfanget-af-cyberangreb?rss" target="_blank">Teleudbyder kender endnu ikke omfanget af cyberangreb</a></li><li style="margin-bottom:6px;"><strong>[RESPONSYS - Forside GENERELT]</strong> <a href="https://avisendanmark.dk/udland/putin-praesenterer-ny-atomubaad?rss" target="_blank">Putin præsenterer ny atomubåd</a></li><li style="margin-bottom:6px;"><strong>[RESPONSYS - Forside GENERELT]</strong> <a href="https://avisendanmark.dk/udland/amerikansk-militaerfly-beskyder-fragtskib-i-omanbugten?rss" target="_blank">Amerikansk militærfly beskyder fragtskib i Omanbugten</a></li><li style="margin-bottom:6px;"><strong>[TV 2 Nyheder]</strong> <a href="https://nyheder.tv2.dk/business/2026-11-27-elselskab-skyldte-elkunder-292-millioner-ved-konkurs-kuratorer-har-nu-orienteret-politiet" target="_blank">Elselskab skyldte elkunder 292 millioner ved konkurs – kuratorer har orienteret politiet</a></li><li style="margin-bottom:6px;"><strong>[TV 2 Nyheder]</strong> <a href="https://nyheder.tv2.dk/samfund/2026-11-27-jurastuderendes-droem-om-at-blive-anklager-er-knust" target="_blank">Jurastuderendes drøm om at blive anklager ”er knust”</a></li><li style="margin-bottom:6px;"><strong>[TV 2 Nyheder]</strong> <a href="https://nyheder.tv2.dk/samfund/2026-11-27-flere-organisationer-kan-vaere-ramt-af-datalaek-siger-styrelse" target="_blank">Teleudbyder bekræfter cyberangreb – flere er ramt</a></li><li style="margin-bottom:6px;"><strong>[TV 2 Nyheder]</strong> <a href="https://nyheder.tv2.dk/samfund/2026-11-27-stjaalet-kirke-kobber-er-dukket-op-langt-fra-gerningssted" target="_blank">Stjålet kirke-kobber er dukket op langt fra gerningssted</a></li><li style="margin-bottom:6px;"><strong>[TV 2 Nyheder]</strong> <a href="https://nyheder.tv2.dk/2026-11-27-restaurant-til-angreb-paa-dobbeltbookere-bruger-saerligt-kneb-til-at-finde-dem" target="_blank">Restaurant til angreb på dobbeltbookere – bruger særligt kneb til at finde dem</a></li><li style="margin-bottom:6px;"><strong>[TV 2 Nyheder]</strong> <a href="https://nyheder.tv2.dk/samfund/2026-11-27-et-ord-har-skabt-debat-men-er-danmark-paa-vej-mod-en-befolkningsudskiftning" target="_blank">Ét ord har skabt debat – men er Danmark på vej mod en befolkningsudskiftning?</a></li><li style="margin-bottom:6px;"><strong>[TV 2 Nyheder]</strong> <a href="https://nyheder.tv2.dk/samfund/2026-11-27-superbrugsen-i-faaborg-forbyder-skoleboern-at-handle-i-butikken" target="_blank">Fynsk Superbrugsen forbyder skolebørn at handle i butikken</a></li><li style="margin-bottom:6px;"><strong>[TV 2 Nyheder]</strong> <a href="https://nyheder.tv2.dk/samfund/2025-05-12-nekrolog-joern-hjorting-var-radioens-og-livets-positive-stemme" target="_blank">Nekrolog: Jørn Hjorting var radioens og livets positive stemme</a></li><li style="margin-bottom:6px;"><strong>[TV 2 Nyheder]</strong> <a href="https://nyheder.tv2.dk/samfund/2026-11-27-over-15000-gymnasieelevers-telefonnumre-laekket" target="_blank">Over 15.000 gymnasieelevers telefonnumre lækket</a></li><li style="margin-bottom:6px;"><strong>[TV 2 Nyheder]</strong> <a href="https://nyheder.tv2.dk/krimi/2026-11-26-tv-2-sigtet-i-forbindelse-med-den-sorte-svane" target="_blank">TV 2 vil bistå politiet i opklaringsarbejde om Den sorte svane</a></li><li style="margin-bottom:6px;"><strong>[TV 2 Nyheder]</strong> <a href="https://nyheder.tv2.dk/2026-11-25-it-teamleder-ringede-112-og-fik-hjaelp-gennem-kameraet-et-meget-vaerdifuldt-vaerktoej" target="_blank">IT-teamleder ringede 112 og fik hjælp gennem kameraet: - Et meget værdifuldt værktøj</a></li><li style="margin-bottom:6px;"><strong>[TV 2 Nyheder]</strong> <a href="https://nyheder.tv2.dk/2026-11-27-en-18-aarig-mand-er-fredag-blevet-anholdt-og-sigtet-for-at-have-affyret-skud-mod-tidligere-boksers-kolonihavehus" target="_blank">En 18-årig mand fængslet for mistanke om drabsforsøg på tidligere bokser og hans ekskæreste</a></li><li style="margin-bottom:6px;"><strong>[TV 2 Nyheder]</strong> <a href="https://nyheder.tv2.dk/2026-11-24-74-piskeslag-for-manglende-hijab-mens-elitens-boern-popper-champagne-i-poolen" target="_blank">74 piskeslag for manglende hijab, mens elitens børn popper champagne i poolen</a></li><li style="margin-bottom:6px;"><strong>[TV 2 Nyheder]</strong> <a href="https://nyheder.tv2.dk/2026-11-27-vanvidskoersel-har-kostet-leasingfirma-biler-for-en-million" target="_blank">Vanvidskørsel har kostet leasingfirma biler for en million</a></li>
         </ul>
       </details>
     </section>
